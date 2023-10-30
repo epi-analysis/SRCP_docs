@@ -25,7 +25,7 @@ system too.
 
 .. raw:: html
 
-    <video controls src="_static/SRCP_latest.mp4"></video>
+    <video controls src="_static/SRCP_latest.mp4", width = 90%></video>
 
 
 
