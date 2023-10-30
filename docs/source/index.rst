@@ -23,8 +23,8 @@ HPC) and therefore it can be helpful to refer to the
 `documentation <https://docs.hpc.cam.ac.uk/hpc/index.html>`__ for this
 system too.
 
-<video controls src="../../images/SRCP_latest.mp4"></video>
+.. raw:: html
+    <video controls src="../../images/SRCP_latest.mp4"></video>
 
-https://github.com/epi-analysis/SRCP/assets/8521654/6772e3d4-7f0f-4e92-9466-86b65bec506c
 
 
