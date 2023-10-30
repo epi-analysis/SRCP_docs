@@ -24,7 +24,7 @@ HPC) and therefore it can be helpful to refer to the
 system too.
 
 .. raw:: html
-    <video controls src="../../images/SRCP_latest.mp4"></video>
+    <video controls src="_static/SRCP_latest.mp4"></video>
 
 
 
