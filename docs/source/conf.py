@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'MRC Epidemiology SRCP'
+copyright = '2023, University of Cambridge'
+author = 'Tom Bishop'
 
 release = '0.1'
 version = '0.1.0'
