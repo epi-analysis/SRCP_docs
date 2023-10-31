@@ -28,5 +28,16 @@ system too.
     <video controls src="_static/SRCP_latest.mp4", width = 90%></video>
 
 
+Contents
+--------
 
+.. toctree::
+
+   00-Logging-in-for-the-First-Time
+   01-Getting-Started
+   02-Modules-Environment
+   03-Running-applications-through-the-remote-desktop
+   04-Taking-files-on-and-off-SRCP
+   05-Running-compute-jobs
+   06-Data-management
 
