@@ -32,7 +32,7 @@ Contents
 --------
 
 .. toctree:
-   :maxdepth: 1
+   :maxdepth: 2
    00-Logging-in-for-the-First-Time
    01-Getting-Started
    02-Modules-Environment
