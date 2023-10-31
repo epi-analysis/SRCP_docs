@@ -31,7 +31,7 @@ system too.
 Contents
 --------
 
-.. toctree:
+.. toctree::
    :maxdepth: 2
 
    00-Logging-in-for-the-First-Time
