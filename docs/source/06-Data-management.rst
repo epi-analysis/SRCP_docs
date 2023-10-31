@@ -1,5 +1,8 @@
+Data-management
+===============
+
 Overview
-========
+--------
 
 Data Managers are responsible for:
 
@@ -12,7 +15,7 @@ Data Managers are responsible for:
    does not contain anything it shouldn’t
 
 Prerequisites
-=============
+-------------
 
 To perform the data management tasks, the Data Manager needs to:
 
@@ -24,7 +27,7 @@ To perform the data management tasks, the Data Manager needs to:
    client <https://github.com/epi-analysis/SRCP/wiki/04-Taking-files-on-and-off-SRCP#sftp-clients>`__
 
 Bringing study data into SRCP
-=============================
+-----------------------------
 
 As summary of the process for bringing study data into SRCP is:
 
@@ -40,7 +43,7 @@ As summary of the process for bringing study data into SRCP is:
 8. Tidy up
 
 Prerequisite - setting up the project folder
---------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before bringing in the data, it is recommended that some additional
 subfolders are created in the project folder
@@ -99,7 +102,7 @@ permission for directories and ``R`` permission for files this time**:
 for easy cut and paste**
 
 Example of uploading a data release using WinSCP
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1.  Connect to the Cambridge VPN or use a computer connected to the
     Cambridge network
@@ -181,7 +184,7 @@ Example of uploading a data release using WinSCP
     copies of the data from your triage folder to save storage space.
 
 Process for users wishing to bring files into SRCP
-==================================================
+--------------------------------------------------
 
 Users may ask Data Managers to allow them to upload files to SRCP. This
 might be to bring in extra data sets or bespoke code that they cannot
@@ -209,7 +212,7 @@ or code into SRCP is:
 8. Tidy up
 
 Example of enabling a user to bring files into SRCP using WinSCP
-----------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. After receiving a request to make a user’s uploaded files available,
    you will need to download the files yourself to check them. The
@@ -258,7 +261,7 @@ Example of enabling a user to bring files into SRCP using WinSCP
    their local computer?)
 
 Process for users wishing to take files off SRCP
-================================================
+------------------------------------------------
 
 Users will ask Data Managers to allow them to download files from SRCP.
 This is so that they can remove summary results for their research, not
@@ -292,7 +295,7 @@ is:
    files <https://github.com/epi-analysis/SRCP/wiki/04-Taking-files-on-and-off-SRCP#example-of-downloading-files-using-winscp>`__
 
 Example of enabling a user to download files from SRCP using WinSCP
--------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. After receiving a request from a user to make some of their files
    available for download, you will need to download the files yourself
@@ -345,10 +348,10 @@ Example of enabling a user to download files from SRCP using WinSCP
    have downloaded the files to their local computer?)
 
 Work in progress
-================
+----------------
 
 Using the command line
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 Once the remote desktop session is running, the following steps can be
 followed from a terminal:
@@ -380,7 +383,7 @@ that the file was moved and tell them the location, or explain what
 needs to be changed for the file to be acceptable for upload.
 
 Using file manager
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Once the remote desktop session is running, the following steps can be
 followed using the file manager application:
@@ -412,7 +415,7 @@ the location, or explain what needs to be changed for the file to be
 acceptable for upload.
 
 Examining items to be taken in or out
-=====================================
+-------------------------------------
 
 Files that are to be taken out from the system should be checked to
 ensure that they do not contain study data, only summary results. More
@@ -440,7 +443,7 @@ Users may want to bring in code or containers. This should be scanned
 (TO DO - recommend some tools) to check for security problems.
 
 Notes on project permissions
-============================
+----------------------------
 
 The platform manager group can rwx on folders and files created in
 project folders by any other platform - controlled by NFS ACL. The
