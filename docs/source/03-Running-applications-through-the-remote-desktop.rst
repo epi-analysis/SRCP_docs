@@ -1,3 +1,6 @@
+Running applications through the remote desktop
+===============================================
+
 The remote desktop provides an interactive session for users. This
 allows the use of applications such as RStudio and Jupyter.
 
