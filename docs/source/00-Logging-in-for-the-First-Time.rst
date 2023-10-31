@@ -1,3 +1,6 @@
+Logging in for the First Time
+=============================
+
 In order to connect to SRCP, you will need the following things:
 
 -  CRSid and associated password (AKA Raven password), which should have
