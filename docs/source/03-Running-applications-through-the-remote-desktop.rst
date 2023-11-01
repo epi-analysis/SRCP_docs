@@ -9,7 +9,7 @@ from being removed. Common package repositories such as *CRAN* and
 *conda forge* have been whitelisted so that packages can be installed by
 the user from these locations. If you require code that is held in
 **GitHub**, this will need to be brought into SRCP via the Secure Data
-Management process as a zip file. Similarly, Docker containers will need
+Management process :ref:`data-transfer`  as a zip file. Similarly, Docker containers will need
 to be brought in and run through Singularity/Apptainer. The reason for
 this is that we cannot allow direct access to GitHub and DockerHub as
 this would give users the ability to remove data without permission by
