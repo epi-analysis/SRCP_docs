@@ -34,7 +34,7 @@ RStudio
 the Global Options menu:
 
 .. figure:: ../../images/rstudio-global-options.png
-  :scale: 80 %
+  :scale: 70 %
   :alt: RStudio
 
 **TIP** if you run into build errors, there are some tips here:*
@@ -84,7 +84,7 @@ Stata
 2. Start Stata: ``$ xstata``
 
 .. figure:: ../../images/stata.png
-  :scale: 80 %
+  :scale: 60 %
   :alt: Stata
 
 Apptainer (Singularity)
