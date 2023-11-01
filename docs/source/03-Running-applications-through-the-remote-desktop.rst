@@ -8,8 +8,8 @@ allows the use of applications such as RStudio and Jupyter.
 from being removed. Common package repositories such as *CRAN* and
 *conda forge* have been whitelisted so that packages can be installed by
 the user from these locations. If you require code that is held in
-**GitHub**, this will need to be brought into SRCP via the Secure Data
-Management process :ref:`data-transfer`  as a zip file. Similarly, Docker containers will need
+**GitHub**, this will need to be brought into SRCP via the Data
+Transfer process as a zip file (see :ref:`data-transfer`). Similarly, Docker containers will need
 to be brought in and run through Singularity/Apptainer. The reason for
 this is that we cannot allow direct access to GitHub and DockerHub as
 this would give users the ability to remove data without permission by
@@ -18,9 +18,7 @@ pushing to these locations.
 RStudio
 -------
 
-*Might need to add steps for setting up compilers for installing like:*
-https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages
-*and also for setting the default CRAN to be one that is whitelisted*
+
 
 1. Find the RStudio module: ``$ module avail`` and load it with
    ``$ module load xxxxxx``
@@ -35,13 +33,13 @@ https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages
 **TIP** you can set your default CRAN to ``www.stats.bris.ac.uk/R`` in
 the Global Options menu:
 
-.. raw:: html
+.. figure:: ../../images/rstudio-global-options.png
+  :scale: 100 %
+  :alt: RStudio
 
-   <p align="center">
+**TIP** if you run into build errors, there are some tips here:*
+https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages
 
-.. raw:: html
-
-   </p>
 
 Bioconductor
 ~~~~~~~~~~~~
@@ -68,13 +66,9 @@ Jupyter
 1. Find the gcc module: ``$ module avail`` and load it with
    ``$ module load xxxxxx``:
 
-   .. raw:: html
-
-      <p align="center">
-
-   .. raw:: html
-
-      </p>
+.. figure:: ../../images/gcc-module.png
+  :scale: 100 %
+  :alt: gcc module
 
 2. Find the **py-jupyterlab-server** module:
    ``$ module keyword jupyter`` and load it with
@@ -89,13 +83,9 @@ Stata
    ``$ module load xxxxxx``
 2. Start Stata: ``$ xstata``
 
-   .. raw:: html
-
-      <p align="center">
-
-   .. raw:: html
-
-      </p>
+.. figure:: ../../images/stata.png
+  :scale: 100 %
+  :alt: Stata
 
 Apptainer (Singularity)
 -----------------------
