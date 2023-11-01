@@ -11,7 +11,7 @@ where users can start interactive remote desktop sessions and view
 compute jobs.
 
 .. figure:: ../../images/landing-page.png
-  :scale: 50 %
+  :scale: 30 %
   :alt: SRCP landing page
 
 The menus on the landing page provide access to the following:
