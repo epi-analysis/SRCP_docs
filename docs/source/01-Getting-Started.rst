@@ -11,7 +11,7 @@ where users can start interactive remote desktop sessions and view
 compute jobs.
 
 .. figure:: ../../images/landing-page.png
-  :scale: 30 %
+  :scale: 50 %
   :alt: SRCP landing page
 
 The menus on the landing page provide access to the following:
@@ -36,7 +36,7 @@ character alphanumeric string (e.g. cvh4y5kl3lr). The Partition field
 requires the project identifier plus “-cpu” or “-gpu”:
 
 .. figure:: ../../images/remote-desktop-dialogue.png
-  :scale: 50 %
+  :scale: 80 %
   :alt: SRCP remote desktop dialogue box
 
 When the “launch” button is clicked, the session is placed in a queue.
@@ -46,7 +46,7 @@ available. When you click the button the session is opened in a new tab
 in your browser.
 
 .. figure:: ../../images/remote-desktop-session-card.png
-  :scale: 50 %
+  :scale: 80 %
   :alt: SRCP remote desktop session card
 
 The remote desktop gives you the option of working with files and
@@ -57,7 +57,7 @@ wiki contains instructions for running commonly used applications such
 as RStudio.
 
 .. figure:: ../../images/remote-desktop-example.png
-  :scale: 50 %
+  :scale: 90 %
   :alt: SRCP remote desktop session example
 
 Folder structure on SRCP
