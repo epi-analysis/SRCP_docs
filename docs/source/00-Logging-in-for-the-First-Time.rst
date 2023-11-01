@@ -80,7 +80,6 @@ page <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__
 Upon browsing to this page the user will be presented with a login page:
 
 .. figure:: ../../images/log-in.png
-  :scale: 40 %
   :alt: SRCP log in page
 
 Here the user should enter their credentials to proceed - the CRSid and
