@@ -1,3 +1,5 @@
+.. _data-transfer:
+
 Taking files on and off SRCP
 ============================
 
