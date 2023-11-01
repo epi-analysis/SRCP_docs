@@ -79,13 +79,9 @@ page <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__
 
 Upon browsing to this page the user will be presented with a login page:
 
-.. raw:: html
-
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+.. figure:: ../../images/log-in.png
+  :scale: 20 %
+  :alt: SRCP log in page
 
 Here the user should enter their credentials to proceed - the CRSid and
 Raven password.
@@ -94,13 +90,9 @@ If this is the first time theuser has attempted to in they will be
 presented with a prompt to configure Two Factor Authentication. It will
 look similar to the image shown below.
 
-.. raw:: html
-
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+.. figure:: ../../images/one-time-code.png
+  :scale: 20 %
+  :alt: SRCP one time code
 
 The page has a barcode on it, which can be scanned by a Two Factor
 Authentication management application. There is a video below showing
