@@ -60,23 +60,13 @@ enable access to SRCP.
 
 We support several mobile applications for both Android and iPhone:
 
-+-----------------------------+-----------------+----------------------+
-| Application                 | iPhone          | Android              |
-+=============================+=================+======================+
-| FreeOTP                     | `Yes            | `Yes <https://play.g |
-|                             | <https://itunes | oogle.com/store/apps |
-|                             | .apple.com/gb/a | /details?id=org.fedo |
-|                             | pp/freeotp-auth | rahosted.freeotp>`__ |
-|                             | enticator/id872 |                      |
-|                             | 559395?mt=8>`__ |                      |
-+-----------------------------+-----------------+----------------------+
-| Google Authenticator        | `Yes            | `Ye                  |
-|                             |  <https://itune | s <https://play.goog |
-|                             | s.apple.com/gb/ | le.com/store/apps/de |
-|                             | app/google-auth | tails?id=com.google. |
-|                             | enticator/id388 | android.apps.authent |
-|                             | 497605?mt=8>`__ | icator2&hl=en_GB>`__ |
-+-----------------------------+-----------------+----------------------+
++-----------------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| Application                 | iPhone                                                                        | Android                                                                                     |
++=============================+===============================================================================+=============================================================================================+
+| FreeOTP                     |`Yes <https://itunes.apple.com/gb/app/freeotp-authenticator/id872559395?mt=8>`_|`Yes <https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp>`_              |
++-----------------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| Google Authenticator        |`Yes <https://itunes.apple.com/gb/app/google-authenticator/id388497605?mt=8>`_ |`Yes <https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2>`_|
++-----------------------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Retrieving Your Token
 ---------------------
