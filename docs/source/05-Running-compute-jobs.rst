@@ -3,31 +3,18 @@ Running compute jobs
 Running Jobs on SRCP
 --------------------
 
-SLURM is an open source workload management and job scheduling system
-used by SRCP. SLURM is normally used from the command line, therefore to
-get started you will **need to have a remote desktop session running**.
-Jobs are submitted to SLURM via scripts.
+SLURM is an open source workload management and job scheduling system used by SRCP. SLURM is normally used from the command line, therefore to get started you will **need to have a remote desktop session running**. Jobs are submitted to SLURM via scripts.
 
 Sample submission scripts
 -------------------------
 
-In normal use of SLURM, one creates a batch job which is a shell script
-containing the set of commands to run, plus the resource requirements
-for the job which are coded as specially formatted shell comments at the
-top of the script. A job script can be resubmitted with different
-parameters (e.g. different sets of data or variables).
+In normal use of SLURM, one creates a batch job which is a shell script containing the set of commands to run, plus the resource requirements for the job which are coded as specially formatted shell comments at the top of the script. A job script can be resubmitted with different parameters (e.g. different sets of data or variables).
 
-A read-only sample submission script with parameters set up for your
-project can be found in your project folder in the file called
-``slurm_submit.template``.
+A read-only sample submission script with parameters set up for your project can be found in your project folder in the file called ``slurm_submit.template``.
 
-Lines beginning ``#SBATCH`` are directives to the batch system. The rest
-of each directive specifies arguments to the ``sbatch`` command. SLURM
-stops reading directives at the first executable (i.e. non-blank, and
-doesn’t begin with #) line.
+Lines beginning ``#SBATCH`` are directives to the batch system. The rest of each directive specifies arguments to the ``sbatch`` command. SLURM stops reading directives at the first executable (i.e. non-blank, and doesn’t begin with #) line.
 
-The first directives should not be changed as they are set up for your
-project:
+The first directives should not be changed as they are set up for your project:
 
 ::
 
@@ -39,9 +26,7 @@ project:
 Editing the script
 ~~~~~~~~~~~~~~~~~~
 
-Make a copy of the sample script, and edit it using the VIM editor
-(``$ vim``). For help using vim see this
-`guide <https://www.linuxfoundation.org/blog/blog/classic-sysadmin-vim-101-a-beginners-guide-to-vim>`__
+Make a copy of the sample script, and edit it using (``$ gedit``) Gedit or  VIM editor (``$ vim``). For help using vim see this `guide <https://www.linuxfoundation.org/blog/blog/classic-sysadmin-vim-101-a-beginners-guide-to-vim>`__
 
 Set up
 ~~~~~~
@@ -64,16 +49,14 @@ The main directives to modify are:
    #! interrupted by node failure or system downtime):
    ##SBATCH --no-requeue
 
-The ``--time`` parameter needs to be set to a value sufficiently high
-for your code to finish running.
+The ``--time`` parameter needs to be set to a value sufficiently high for your code to finish running.
 
 The ``--nodes`` parameter will usually be set to 1.
 
 Modules
 ~~~~~~~
 
-The following section should be modified to specify the modules that are
-needed to run your code:
+The following section should be modified to specify the modules that are needed to run your code:
 
 ::
 
@@ -98,8 +81,7 @@ For an example script called ``test.py`` run from Python.
 Output
 ~~~~~~
 
-The following statement can be modified to store any outputs from the
-job:
+The following statement can be modified to store any outputs from the job:
 
 ::
 
@@ -110,16 +92,13 @@ job:
 Submitting the job to the queuing system
 ----------------------------------------
 
-From the command line in your remote desktop session, the command sbatch
-is used to submit jobs, e.g.
+From the command line in your remote desktop session, the command sbatch is used to submit jobs, e.g.
 
 ::
 
    sbatch submission_script
 
-The command will return a unique job identifier, which is used to query
-and control the job and to identify output. See the man page (*man
-sbatch*) for more options.
+The command will return a unique job identifier, which is used to query and control the job and to identify output. See the man page (*man sbatch*) for more options.
 
 Deleting jobs
 -------------
@@ -130,5 +109,4 @@ To cancel a job (either running or still queuing) use scancel:
 
    scancel <jobid>
 
-The ``<jobid>`` is printed when the job is submitted, alternatively use
-the commands ``squeue``, ``qstat`` or ``showq`` to obtain the job ID.
+The ``<jobid>`` is printed when the job is submitted, alternatively use the commands ``squeue``, ``qstat`` or ``showq`` to obtain the job ID.
