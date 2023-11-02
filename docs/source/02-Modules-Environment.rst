@@ -3,42 +3,29 @@ Modules Environment
 Modules
 -------
 
-Software on SRCP is primarily controlled through the *modules*
-environment. By loading and switching modules you control the compilers,
-libraries and software available.
+Software on SRCP is primarily controlled through the *modules* environment. By loading and switching modules you control the compilers, libraries and software available.
 
-When compiling or running programs on SRCP you will need to set up the
-correct modules, to load your compiler and any libraries that are
-required (e.g. numerical libraries, IO format libraries).
+When compiling or running programs on SRCP you will need to set up the correct modules, to load your compiler and any libraries that are required (e.g. numerical libraries, IO format libraries).
 
-Basic usage of the ``module`` command on SRCP is covered below. For full
-documentation please see:
+Basic usage of the ``module`` command on SRCP is covered below. For full documentation please see:
 
 `Linux manual page on modules <http://linux.die.net/man/1/module>`__
 
 Information on the available modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Finding out which modules (and hence which compilers, libraries and
-software) are available on the system is performed using the
-``module avail`` command:
+Finding out which modules (and hence which compilers, libraries and software) are available on the system is performed using the ``module avail`` command:
 
 ::
 
    [user@system ~]$ module avail
 
-This will list all the names and versions of the modules available on
-the service. Not all of them may work for your account however, due to,
-for example, licencing restrictions. You will notice that for many
-modules we have more than one version, each of which is identified by a
-version number. One of these versions is the default. As the service
-develops the default version will change.
+This will list all the names and versions of the modules available on the service. Not all of them may work for your account however, due to, for example, licencing restrictions. You will notice that for many modules we have more than one version, each of which is identified by a version number. One of these versions is the default. As the service develops the default version will change.
 
 How to search for modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``keyword`` command can be used to search for specific items in the
-available modules:
+The ``keyword`` command can be used to search for specific items in the available modules:
 
 ::
 
@@ -54,8 +41,7 @@ available modules:
 Identifying currently loaded modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The simple ``module list`` command will give the names of the modules
-and their versions you have presently loaded in your envionment:
+The simple ``module list`` command will give the names of the modules and their versions you have presently loaded in your envionment:
 
 ::
 
@@ -70,26 +56,22 @@ and their versions you have presently loaded in your envionment:
 Loading, unloading and swapping modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To load a module to use ``module add`` or ``module load``. For example,
-to load the pgi commpiler into the development environment:
+To load a module to use ``module add`` or ``module load``. For example, to load the pgi commpiler into the development environment:
 
 ::
 
    module load pgi
 
-This will load the default version of the pgi compilers Library. If you
-need a specfic version of the module, you can add more information:
+This will load the default version of the pgi compilers Library. If you need a specfic version of the module, you can add more information:
 
 ::
 
    module load pgi/2018
 
-will load version 18.1 for you, regardless of the default. If you want
-to clean up, ``module remove`` will remove a loaded module:
+will load version 18.1 for you, regardless of the default. If you want to clean up, ``module remove`` will remove a loaded module:
 
 ::
 
    module remove pgi
 
-(or ``module rm pgi`` or ``module unload pgi``) will unload whatever
-version of pgi (even if it is not the default) you might have loaded.
+(or ``module rm pgi`` or ``module unload pgi``) will unload whatever version of pgi (even if it is not the default) you might have loaded.
