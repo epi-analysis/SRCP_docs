@@ -92,9 +92,9 @@ Example of uploading files using WinSCP
 
 4. Enter your CRS/Raven password (the same as for the SRCP web interface) and then enter a TOTP from your mobile device for 2 factor authentication (the same as for the SRCP web interface)
 
-.. figure:: ../../images/winscp-topt.png
+.. figure:: ../../images/winscp-totp.png
   :scale: 50 %
-  :alt: WinSCP TOPT log in
+  :alt: WinSCP TOTP log in
 
 5. You should now be connected. The triage upload and download folders on SRCP are shown on the right, and your local machine’s folders on the left. You can transfer files between these locations.
 
