@@ -1,5 +1,7 @@
-Data-management
+Data management
 ===============
+
+This section is for MRC Epidemiology Data Managers.
 
 Overview
 --------
