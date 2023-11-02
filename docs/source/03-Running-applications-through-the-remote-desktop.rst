@@ -92,5 +92,6 @@ Apptainer (Singularity)
 
 Containers can be brought into SRCP in the .sif format via the file
 transfer process. Apptainer is available from the command line:
+::
 
-``$ apptainer exec lolcow_latest.sif cowsay moo``
+$ apptainer exec lolcow_latest.sif cowsay moo
