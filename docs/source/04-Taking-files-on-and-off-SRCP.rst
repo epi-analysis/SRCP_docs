@@ -66,13 +66,13 @@ Example of setting up WinSCP
 2. Start WinSCPand where you will be presented with the Login dialogue
 
 .. figure:: ../../images/winscp-login.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCP login page
 
 3. Choose SFTP as the protocol, enter the hostname as **data-epi-analysis.srcp.hpc.cam.ac.uk**, set the port to 22 and enter your CRSid as the username (i.e. the same username you use to log into the SRCP web interface).
 
 .. figure:: ../../images/winscp-setup.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCP login settings
 
 4. Click Save and then click OK to save the session as a site. This will allow you to reconnected more easily in the future.
@@ -85,7 +85,7 @@ Example of uploading files using WinSCP
 2. Start WinSCPand where you will be presented with the Login dialogue. Select the session for SRCP that you saved previously
 
 .. figure:: ../../images/winscp-prev-login.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCP saved login settings
 
 3. Click the Login button.
@@ -93,19 +93,19 @@ Example of uploading files using WinSCP
 4. Enter your CRS/Raven password (the same as for the SRCP web interface) and then enter a TOTP from your mobile device for 2 factor authentication (the same as for the SRCP web interface)
 
 .. figure:: ../../images/winscp-topt.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCP TOPT log in
 
 5. You should now be connected. The triage upload and download folders on SRCP are shown on the right, and your local machine’s folders on the left. You can transfer files between these locations.
 
 .. figure:: ../../images/winscp-landing.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCP landing page
 
 6. Locate the file on your local machine (left side) that you wish to upload. Drag and drop it into the upload folder on SRCP (right side)
 
 .. figure:: ../../images/winscp-upload.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCP file upload
 
 7. Contact a Data Manager (datasharing@mrc-epid.cam.ac.uk) and let them know that you need files moved from your “upload” folder to your project folder. They will check the files, move them to your project folder if all is OK and notify you that the files are available or advise what changes are needed.
@@ -123,7 +123,7 @@ Example of downloading files using WinSCP
 3. Start WinSCP where you will be presented with the Login dialogue. Select the session for SRCP that you saved previously
 
 .. figure:: ../../images/winscp-prev-login.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCRP saved login
 
 4. Click the Login button.
@@ -131,17 +131,17 @@ Example of downloading files using WinSCP
 5. Enter your CRS/Raven password (the same as for the SRCP web interface) and then enter a TOTP from your mobile device for 2 factor authentication (the same as for the SRCP web interface)
 
 .. figure:: ../../images/winscp-totp.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCRP TOTP login
 
 6. You should now be connected. The triage upload and download folders on SRCP are shown on the right, and your local machine’s folders on the left. You can transfer files between these locations.
 
 .. figure:: ../../images/winscp-landing.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCRP saved login
 
 7. Locate the file on SRCP (right side) that you wish to download. Drag and drop it to the required folder on your local machine (left side)
 
 .. figure:: ../../images/winscp-download.png
-  :scale: 70 %
+  :scale: 50 %
   :alt: WinSCRP file download
