@@ -26,7 +26,7 @@ The first directives should not be changed as they are set up for your project:
 Editing the script
 ~~~~~~~~~~~~~~~~~~
 
-Make a copy of the sample script, and edit it using (``$ gedit``) Gedit or  VIM editor (``$ vim``). For help using vim see this `guide <https://www.linuxfoundation.org/blog/blog/classic-sysadmin-vim-101-a-beginners-guide-to-vim>`__
+Make a copy of the sample script, and edit it using Gedit (``$ gedit``) or  VIM editor (``$ vim``). For help using vim see this `guide <https://www.linuxfoundation.org/blog/blog/classic-sysadmin-vim-101-a-beginners-guide-to-vim>`__
 
 Set up
 ~~~~~~
