@@ -7,7 +7,7 @@ SRCP Landing Page
 After logging in at `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__, you will be redirected to the SRCP landing page. This is the main page where users can start interactive remote desktop sessions and view compute jobs.
 
 .. figure:: ../../images/landing-page.png
-  :scale: 50 %
+  :scale: 40 %
   :alt: SRCP landing page
 
 The menus on the landing page provide access to the following:
@@ -33,7 +33,7 @@ When the “launch” button is clicked, the session is placed in a queue. The s
 The remote desktop gives you the option of working with files and folders via a GUI rather than command line via the File Manager application (highlighted in blue). All other applications are launched from the Terminal (highlighted in green). A separate section in this wiki contains instructions for running commonly used applications such as RStudio.
 
 .. figure:: ../../images/remote-desktop-example.png
-  :scale: 90 %
+  :scale: 70 %
   :alt: SRCP remote desktop session example
 
 Folder structure on SRCP
