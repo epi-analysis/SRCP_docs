@@ -1,3 +1,5 @@
+.. _login-first-time:
+
 Logging in for the First Time
 =============================
 
