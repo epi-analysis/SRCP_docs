@@ -9,8 +9,14 @@ For subsequent log ins you will need:
 
 -  CRSid and associated password (AKA Raven password), which should have been provided as part of the Visiting Workers process
 -  Connection to the Cambridge University VPN (instructions `here <https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn>`__) or a computer that is on the Cambridge University Network
--  The device that you set up for Two Factor Authentication on SRCP
+-  The device that you set up for Two Factor Authentication (2FA) on SRCP
 -  The address of the epi-analysis SRCP platform: `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__ - **you will need to be connected to the Cambridge VPN**
+
+You will be presented with the log in page shown below where you should use your CRSid and associated password (AKA Raven password) and 2FA to log in.
+
+.. figure:: ../../images/log-in.png
+  :scale: 30 %
+  :alt: SRCP log in page
 
 SRCP Landing Page
 -----------------
