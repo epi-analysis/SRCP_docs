@@ -21,7 +21,7 @@ Contents
    :maxdepth: 2
 
    00-Logging-in-for-the-First-Time
-   01-Getting-Started
+   01-Basic-Concepts
    02-Modules-Environment
    03-Running-applications-through-the-remote-desktop
    04-Taking-files-on-and-off-SRCP
