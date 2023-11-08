@@ -6,7 +6,7 @@ Logging in for the First Time
 In order to connect to SRCP, you will need the following things:
 
 -  CRSid and associated password (AKA Raven password), which should have been provided as part of the Visiting Workers process
--  Connection to the Cambridge University VPN (instructions `here <https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn>`__)
+-  Connection to the Cambridge University VPN (instructions `here <https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn>`__)  or a computer that is on the Cambridge University Network
 -  Complete the `SRCP User Access Request <https://www.hpc.cam.ac.uk/srcp-request-user-access>`__ - you will be asked to “Log in with Raven” if not connected to the VPN, use your CRSid and password.
 -  To complete the access request form you will also need the following information:
 
