@@ -1,6 +1,6 @@
 Basic Concepts
 ===============
-
+.. _login-later:
 Logging in to SRCP
 ------------------
 If it is the **first time** you are logging in to SRCP, please refer to :ref:`login-first-time`.
@@ -32,6 +32,7 @@ The menus on the landing page provide access to the following:
 -  Jobs - view compute batch jobs. Large computational tasks should be run as batch jobs.
 -  Interactive Apps - start an interactive remote desktop session. This also is the route to running applications like RStudio or Jupyter, and for managing files.
 
+.. _remote-desktop:
 Interactive Apps - Remote Desktop Session
 -----------------------------------------
 
