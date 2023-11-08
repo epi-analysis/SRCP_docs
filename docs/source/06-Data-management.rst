@@ -194,11 +194,11 @@ A summary of the process for users wishing to download files from SRCP is:
 4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine
 5. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules:
 
--  provide a description of what the file contains, how it was generated and its relevance to the research question
--  files should only contain aggregated, summary results
--  results are clearly labelled
--  files should not have any participant or sample IDs
--  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
+   -  provide a description of what the file contains, how it was generated and its relevance to the research question
+   -  files should only contain aggregated, summary results
+   -  results are clearly labelled
+   -  files should not have any participant or sample IDs
+   -  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
 
 7. On SRCP, the Data Manager moves the files to the user’s “download” triage folder and notifies the user
 8. The user connects to their “download” triage folder using SFTP and `downloads the files <https://github.com/epi-analysis/SRCP/wiki/04-Taking-files-on-and-off-SRCP#example-of-downloading-files-using-winscp>`__
@@ -239,105 +239,71 @@ Using the command line
 Once the remote desktop session is running, the following steps can be followed from a terminal:
 
 **Download**
-1. Navigate to the folder specified by the user:
-``$ cd /<foldername>``
 
-2. Look in the folder ``$ ls -la``
+1. Navigate to the folder specified by the user: ``$ cd /<foldername>``
 
-3. Copy the file requested by the user to your own triage download folder:
-``$ cp <filename> /srv/data-manager/triage/<yourusername>/download``
+2. Look in the folder: ``$ ls -la``
+
+3. Copy the file requested by the user to your own triage download folder: ``$ cp <filename> /srv/data-manager/triage/<yourusername>/download``
 
 4. Connect via SFTP and download the file
 
 5. Check the file for individual level data (i.e. the data should be results only *a more rigorous checklist may be developed*)
 
-6. If the file looks OK, copy the file to the user’s triage download location
-``$ cp <filename> /srv/data-manager/triage/<username>/download``
+6. If the file looks OK, copy the file to the user’s triage download location ``$ cp <filename> /srv/data-manager/triage/<username>/download``
 
 7. Either notify the user that the file was moved as requested to their triage download folder and is available via SFTP, or explain what needs to be changed for the file to be acceptable for download.
 
 **Upload**
-1. Navigate to the user’s triage folder:
-``$ cd /srv/data-manager/triage/<username>/upload`` where ``<username>`` is the CRSid of the user
-2. Look in the folder ``$ ls -la``
+
+1. Navigate to the user’s triage folder: ``$ cd /srv/data-manager/triage/<username>/upload`` where ``<username>`` is the CRSid of the user
+2. Look in the folder: ``$ ls -la``
 3. Copy the file requested by the user to your own triage download folder
-4. Connect
-via SFTP and download the file to your local computer 5. Check the file
-for **what - malicious code? data that they shouldn’t have - how do we
-know?** 6. If the file looks OK, copy the file requested by the user to
-the location required (for example, the user’s project folder)
-``$ cp /srv/data-manager/triage/<username>/upload/<filename> /srv/projects/<projectname>``
-where ``<projectname>`` is the user’s project 7. Either notify the user
-that the file was moved and tell them the location, or explain what
-needs to be changed for the file to be acceptable for upload.
+4. Connect via SFTP and download the file to your local computer
+5. Check the file for **what - malicious code? data that they shouldn’t have - how do we know?**
+6. If the file looks OK, copy the file requested by the user to the location required (for example, the user’s project folder): ``$ cp /srv/data-manager/triage/<username>/upload/<filename> /srv/projects/<projectname>`` where ``<projectname>`` is the user’s project
+7. Either notify the user that the file was moved and tell them the location, or explain what needs to be changed for the file to be acceptable for upload.
 
 Using file manager
 ~~~~~~~~~~~~~~~~~~
 
-Once the remote desktop session is running, the following steps can be
-followed using the file manager application:
+Once the remote desktop session is running, the following steps can be followed using the file manager application:
 
-**Download** 1. Navigate to the folder specified by the user 2. Look in
-the folder 3. Copy the file requested by the user to your own triage
-download folder (``/srv/data-manager/triage/<yourusername>/download``)
-4. Connect via SFTP and download the file 5. Check the file for
-individual level data (i.e. the data should be results only *a more
-rigorous checklist may be developed*) 6. If the file looks OK, copy the
-file to the user’s triage download location
-(``/srv/data-manager/triage/<username>/download`` where ``<username>``
-is the CRSid of the user) 7. Either notify the user that the file was
-moved as requested to their triage download folder and is available via
-SFTP, or explain what needs to be changed for the file to be acceptable
-for download.
+**Download**
 
-**Upload** 1. Navigate to the user’s triage folder:
-``/srv/data-manager/triage/<username>/upload`` where ``<username>`` is
-the CRSid of the user 2. Look in the folder 3. Copy the file requested
-by the user to your own triage download folder 4. Connect via SFTP and
-download the file to your local computer 5. Check the file for **what -
-malicious code? data that they shouldn’t have - how do we know?** 6. If
-the file looks OK, copy the file requested by the user to the location
-required (for example, the user’s project folder)
-``/srv/projects/<projectname>`` where ``<projectname>`` is the user’s
-project 7. Either notify the user that the file was moved and tell them
-the location, or explain what needs to be changed for the file to be
-acceptable for upload.
+1. Navigate to the folder specified by the user
+2. Look in the folder
+3. Copy the file requested by the user to your own triage download folder (``/srv/data-manager/triage/<yourusername>/download``)
+4. Connect via SFTP and download the file
+5. Check the file for individual level data (i.e. the data should be results only *a more rigorous checklist may be developed*)
+6. If the file looks OK, copy the file to the user’s triage download location (``/srv/data-manager/triage/<username>/download`` where ``<username>`` is the CRSid of the user)
+7. Either notify the user that the file was moved as requested to their triage download folder and is available via SFTP, or explain what needs to be changed for the file to be acceptable for download.
+
+**Upload**
+1. Navigate to the user’s triage folder: n``/srv/data-manager/triage/<username>/upload`` where ``<username>`` is nthe CRSid of the user
+2. Look in the folder
+3. Copy the file requested by the user to your own triage download folder
+4. Connect via SFTP and download the file to your local computer
+5. Check the file for **what - malicious code? data that they shouldn’t have - how do we know?**
+6. If the file looks OK, copy the file requested by the user to the location required (for example, the user’s project folder) ``/srv/projects/<projectname>`` where ``<projectname>`` is the user’s project
+7. Either notify the user that the file was moved and tell them the location, or explain what needs to be changed for the file to be acceptable for upload.
 
 Examining items to be taken in or out
 -------------------------------------
 
-Files that are to be taken out from the system should be checked to
-ensure that they do not contain study data, only summary results. More
-detailed guidance can be found
-`here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__
-and `here <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__.
-This guidance is very detailed, so a balance needs to be struck around
-what level of checking is needed.
+Files that are to be taken out from the system should be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `here <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed.
 
-A standard check might be to look for participant IDs in the data export
-as this is clearly an indicator of individual level data.
+A standard check might be to look for participant IDs in the data export as this is clearly an indicator of individual level data.
 
-Often a more formal process is used where researchers have to submit a
-form with details about what the results are and how they relate to the
-project. There can be a service level agreement for the time taken to
-review requests.
+Often a more formal process is used where researchers have to submit a form with details about what the results are and how they relate to the project. There can be a service level agreement for the time taken to review requests.
 
-For data that is to be brought in, checks should be made about whether
-the user has permission to use this data and move it to different
-locations. Some data sets might not be a concern, for example publicly
-available data on air pollution. Questions should be raised if a user is
-trying to bring in something sensitive like patient records.
+For data that is to be brought in, checks should be made about whether the user has permission to use this data and move it to different locations. Some data sets might not be a concern, for example publicly available data on air pollution. Questions should be raised if a user is trying to bring in something sensitive like patient records.
 
-Users may want to bring in code or containers. This should be scanned
-(TO DO - recommend some tools) to check for security problems.
+Users may want to bring in code or containers. This should be scanned (TO DO - recommend some tools) to check for security problems.
 
 Notes on project permissions
 ----------------------------
 
-The platform manager group can rwx on folders and files created in
-project folders by any other platform - controlled by NFS ACL. The
-children of the project folder inherit the permissions.
+The platform manager group can rwx on folders and files created in project folders by any other platform - controlled by NFS ACL. The children of the project folder inherit the permissions.
 
-When the platform manager creates the data/analysis folders, they apply
-ACL permissions to these which are inherited by the items created in
-these folders.
+When the platform manager creates the data/analysis folders, they apply ACL permissions to these which are inherited by the items created in these folders.
