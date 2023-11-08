@@ -20,9 +20,8 @@ RStudio
   :scale: 70 %
   :alt: RStudio
 
-**TIP** if you run into build errors, there are some tips here:*
-https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages
-
+.. note::
+   If you run into build errors, there are some tips `here <https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages>`
 
 Bioconductor
 ~~~~~~~~~~~~
