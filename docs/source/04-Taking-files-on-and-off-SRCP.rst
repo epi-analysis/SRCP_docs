@@ -62,7 +62,7 @@ To connect, an `SFTP client <https://www.sftp.net/clients>`__ is required such a
 Example of setting up WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Connect to the Cambridge VPN
+1. Connect to the Cambridge VPN (or use a computer that is connected to the Cambridge Network)
 
 2. Start WinSCPand where you will be presented with the Login dialogue
 
@@ -82,7 +82,7 @@ Example of setting up WinSCP
 Example of uploading files using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Connect to the Cambridge VPN
+1. Connect to the Cambridge VPN  (or use a computer that is connected to the Cambridge Network)
 
 2. Start WinSCPand where you will be presented with the Login dialogue. Select the session for SRCP that you saved previously
 
