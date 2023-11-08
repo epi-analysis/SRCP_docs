@@ -78,6 +78,7 @@ Example of setting up WinSCP
 
 4. Click Save and then click OK to save the session as a site. This will allow you to reconnected more easily in the future.
 
+.. _SFTP-upload:
 Example of uploading files using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -111,6 +112,7 @@ Example of uploading files using WinSCP
 
 7. Contact a Data Manager (datasharing@mrc-epid.cam.ac.uk) and let them know that you need files moved from your “upload” folder to your project folder. They will check the files, move them to your project folder if all is OK and notify you that the files are available or advise what changes are needed.
 
+.. _SFTP-download:
 Example of downloading files using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
