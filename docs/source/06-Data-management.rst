@@ -59,13 +59,9 @@ where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se
 .. note::
    If you list the project folder contents (``ls -l``) the <project-id> is available for copying and pasting:
 
-.. raw:: html
-
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+.. figure:: ../../images/project-id.png
+  :scale: 70 %
+  :alt: Finding a project ID
 
 We also need to remove the permissions for “other” users:
 ``chmod o-rwx /srv/projects/<userproject>/analysis``
@@ -86,45 +82,29 @@ Example of uploading a data release using WinSCP
 
 2.  Start WinSCP and where you will be presented with the Login dialogue. Select the session for SRCP that you :ref:`saved previously<SFTP-client>`, or enter the details if you have not already done this - **data-epi-analysis.srcp.hpc.cam.ac.uk** on port 22 and your CRSid as the username (i.e. the same username you use to log into the SRCP web interface).
 
-    .. raw:: html
-
-       <p align="center">
-
-    .. raw:: html
-
-       </p>
+.. figure:: ../../images/winscp-prev-login.png
+  :scale: 50 %
+  :alt: WinSCP log in dialogue
 
 3.  Click the Login button.
 
 4.  Enter your CRS/Raven password (the same as for the SRCP web interface) and then enter a TOTP from your mobile device for 2 factor authentication (the same as for the SRCP web interface)
 
-    .. raw:: html
-
-       <p align="center">
-
-    .. raw:: html
-
-       </p>
+.. figure:: ../../images/winscp-totp.png
+  :scale: 50 %
+  :alt: WinSCP TOTP
 
 5.  You should now be connected. The triage upload and download folders on SRCP are shown on the right, and your local machine’s folders on the left. You can transfer files between these locations.
 
-    .. raw:: html
-
-       <p align="center">
-
-    .. raw:: html
-
-       </p>
+.. figure:: ../../images/winscp-landing.png
+  :scale: 50 %
+  :alt: WinSCP landing
 
 6.  Locate the data release on your local machine (left side) that you wish to upload. Drag and drop it into the upload folder on SRCP (right side)
 
-    .. raw:: html
-
-       <p align="center">
-
-    .. raw:: html
-
-       </p>
+.. figure:: ../../images/winscp-upload.png
+  :scale: 50 %
+  :alt: WinSCP file upload
 
 7.  Switch to a browser, log into SRCP and :ref:`start a remote desktop session<remote-desktop>, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
 
@@ -150,8 +130,8 @@ A summary of the process for users wishing to bring supplementary data or code i
 
 1. The user connects to their “upload” triage folder using SFTP and uploads the files.
 2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for :ref:`uploading a file via STFP<SFTP-upload>`
-3. The Data Manager copies the files to their “download” triage folder on SRCP
-4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine
+3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** makes a copy of the files into their home folder on SRCP
+4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** makes a copy of the files into their home folder on SRCP
 5. The Data Manager inspects the files and confirms that they contain appropriate data/code
 6. On SRCP, the Data Manager moves the files from the user’s “upload” triage folder to the user’s project folder and notifies the user
 7. The user uses the files that are now available in their project folder
@@ -166,17 +146,13 @@ Example of enabling a user to bring files into SRCP using WinSCP
 
 3. Navigate to the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` either on the command line or in File Manager
 
-4. Copy the files from the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager.
+4. Copy the files from the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. **OR** make a copy of the files into your home folder on SRCP.
 
-5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine.
+5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine. **OR** make a copy of the files into your home folder on SRCP.
 
-.. raw:: html
-
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+.. figure:: ../../images/winscp-download.png
+  :scale: 50 %
+  :alt: WinSCRP file download
 
 6. Inspect the files. **TO CONFIRM** If they contains data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them.
 
@@ -193,8 +169,8 @@ A summary of the process for users wishing to download files from SRCP is:
 
 1. The user moves the files to their “download” triage folder on SRCP
 2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names they wish to download and their location.
-3. The Data Manager copies the files to their “download” triage folder on SRCP
-4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine
+3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** makes a copy of the files into their home folder on SRCP.
+4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** makes a copy of the files into their home folder on SRCP.
 5. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules:
 
    -  provide a description of what the file contains, how it was generated and its relevance to the research question
@@ -215,17 +191,13 @@ Example of enabling a user to download files from SRCP using WinSCP
 
 3. Navigate to the location specified by the user (e.g. the analysis subfolder in their project folder) either on the command line or in File Manager
 
-4. Copy the files from the location specified by the user to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager.
+4. Copy the files from the location specified by the user to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager.  **OR** make a copy of the files into your home folder on SRCP.
 
-5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine.
+5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine. **OR** make a copy of the files into your home folder on SRCP.
 
-.. raw:: html
-
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+.. figure:: ../../images/winscp-download.png
+  :scale: 50 %
+  :alt: WinSCRP file download
 
 6. Inspect the files. **TO CONFIRM** The files need to be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed.
 
