@@ -73,7 +73,9 @@ The user needs permission to **read and execute** in the ``data`` folder (and su
    nfs4_setfacl -a "A:gd:project-<project-id>-users@hpc.cam.ac.uk:RX" /srv/projects/<userproject>/data
    nfs4_setfacl -a "A:gf:project-<project-id>-users@hpc.cam.ac.uk:R" /srv/projects/<userproject>/data
 
-**TO DO - make this command (and others) available in the shared folder for easy cut and paste**
+.. note::
+   You can find a template for these permission commands in this location: ``/srv/shared/scripts/permission_setup.txt``. Display it on the screen using ``cat /srv/shared/scripts/permission_setup.txt``
+
 
 Example of uploading a data release using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
