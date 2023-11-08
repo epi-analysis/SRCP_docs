@@ -106,7 +106,7 @@ Example of uploading a data release using WinSCP
   :scale: 50 %
   :alt: WinSCP file upload
 
-7.  Switch to a browser, log into SRCP and :ref:`start a remote desktop session<remote-desktop>, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
+7.  Switch to a browser, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
 
 8.  Copy the data from your ``triage/<yourusername>/upload`` folder to the user’s project ``data`` subfolder:
 
@@ -142,7 +142,7 @@ Example of enabling a user to bring files into SRCP using WinSCP
 
 1. After receiving a request to make a user’s uploaded files available, you will need to download the files yourself to check them. The initial step is to copy the files from the user’s “upload” folder to your own “download” folder.
 
-2. To do this, log into SRCP and :ref:`start a remote desktop session<remote-desktop>, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
+2. To do this, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
 
 3. Navigate to the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` either on the command line or in File Manager
 
@@ -187,7 +187,7 @@ Example of enabling a user to download files from SRCP using WinSCP
 
 1. After receiving a request from a user to make some of their files available for download, you will need to download the files yourself to check them. The initial step is to copy the files from the location specified by the user (e.g. the analysis subfolder in their project folder) to your own “download” folder.
 
-2. To do this, log into SRCP and :ref:`start a remote desktop session<remote-desktop>, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
+2. To do this, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
 
 3. Navigate to the location specified by the user (e.g. the analysis subfolder in their project folder) either on the command line or in File Manager
 
