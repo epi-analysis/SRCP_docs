@@ -54,7 +54,10 @@ The user needs permission to **read, write and execute** in the ``analysis`` fol
 
 **TO DO - make this command (and others) available in the shared folder for easy cut and paste**
 
-where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se) and <userproject> is the folder name (e.g. ``2023_06_20_Smith_ENDR023_2020``). **TIP** If you list the project folder contents (``ls -l``) the <project-id> is available for copying and pasting:
+where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se) and <userproject> is the folder name (e.g. ``2023_06_20_Smith_ENDR023_2020``).
+
+.. note::
+   If you list the project folder contents (``ls -l``) the <project-id> is available for copying and pasting:
 
 .. raw:: html
 
