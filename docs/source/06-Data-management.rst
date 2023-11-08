@@ -19,7 +19,7 @@ Prerequisites
 To perform the data management tasks, the Data Manager needs to:
 
 1. Understand how to :ref:`log into SRCP<login-later>`
-2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>`
+2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
 3. Set up an :ref:`SFTP client<SFTP-client>`
 
 Bringing study data into SRCP
@@ -81,7 +81,7 @@ Example of uploading a data release using WinSCP
 
 1.  Connect to the Cambridge VPN or use a computer connected to the Cambridge network
 
-2.  Start WinSCP and where you will be presented with the Login dialogue. Select the session for SRCP that you (saved previously)[https://github.com/epi-analysis/SRCP/wiki/04-Taking-files-on-and-off-SRCP#example-of-setting-up-winscp], or enter the details if you have not already done this - **data-epi-analysis.srcp.hpc.cam.ac.uk** on port 22 and your CRSid as the username (i.e. the same username you use to log into the SRCP web interface).
+2.  Start WinSCP and where you will be presented with the Login dialogue. Select the session for SRCP that you :ref:`saved previously<SFTP-client>`, or enter the details if you have not already done this - **data-epi-analysis.srcp.hpc.cam.ac.uk** on port 22 and your CRSid as the username (i.e. the same username you use to log into the SRCP web interface).
 
     .. raw:: html
 
@@ -123,7 +123,7 @@ Example of uploading a data release using WinSCP
 
        </p>
 
-7.  Switch to a browser, log into SRCP and `start a remote desktop session <https://github.com/epi-analysis/SRCP/wiki/01-Getting-Started#interactive-apps---remote-desktop-session>`__. Currently we are using Account = tq7cr8nq6x7 and Partition = tq7cr8nq6x7-cpu
+7.  Switch to a browser, log into SRCP and :ref:`start a remote desktop session<remote-desktop>, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
 
 8.  Copy the data from your ``triage/<yourusername>/upload`` folder to the user’s project ``data`` subfolder:
 
@@ -146,7 +146,7 @@ Users may ask Data Managers to allow them to upload files to SRCP. This might be
 A summary of the process for users wishing to bring supplementary data or code into SRCP is:
 
 1. The user connects to their “upload” triage folder using SFTP and uploads the files.
-2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for `uploading a file via STFP. <https://github.com/epi-analysis/SRCP/wiki/04-Taking-files-on-and-off-SRCP#example-of-uploading-files-using-winscp>`__
+2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for :ref:`uploading a file via STFP<SFTP-upload>`
 3. The Data Manager copies the files to their “download” triage folder on SRCP
 4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine
 5. The Data Manager inspects the files and confirms that they contain appropriate data/code
@@ -159,13 +159,13 @@ Example of enabling a user to bring files into SRCP using WinSCP
 
 1. After receiving a request to make a user’s uploaded files available, you will need to download the files yourself to check them. The initial step is to copy the files from the user’s “upload” folder to your own “download” folder.
 
-2. To do this, log into SRCP and `start a remote desktop session <https://github.com/epi-analysis/SRCP/wiki/01-Getting-Started#interactive-apps---remote-desktop-session>`__. Currently we are using Account = tq7cr8nq6x7 and Partition = tq7cr8nq6x7-cpu
+2. To do this, log into SRCP and :ref:`start a remote desktop session<remote-desktop>, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
 
 3. Navigate to the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` either on the command line or in File Manager
 
 4. Copy the files from the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager.
 
-5. Start WinSCP and log in using the details (saved previously)[https://github.com/epi-analysis/SRCP/wiki/04-Taking-files-on-and-off-SRCP#example-of-setting-up-winscp]. Navigate to your download folder and copy the files to a location accessible from your local machine.
+5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine.
 
 .. raw:: html
 
@@ -201,20 +201,20 @@ A summary of the process for users wishing to download files from SRCP is:
    -  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
 
 7. On SRCP, the Data Manager moves the files to the user’s “download” triage folder and notifies the user
-8. The user connects to their “download” triage folder using SFTP and `downloads the files <https://github.com/epi-analysis/SRCP/wiki/04-Taking-files-on-and-off-SRCP#example-of-downloading-files-using-winscp>`__
+8. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
 
 Example of enabling a user to download files from SRCP using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. After receiving a request from a user to make some of their files available for download, you will need to download the files yourself to check them. The initial step is to copy the files from the location specified by the user (e.g. the analysis subfolder in their project folder) to your own “download” folder.
 
-2. To do this, log into SRCP and `start a remote desktop session <https://github.com/epi-analysis/SRCP/wiki/01-Getting-Started#interactive-apps---remote-desktop-session>`__. Currently we are using Account = tq7cr8nq6x7 and Partition = tq7cr8nq6x7-cpu
+2. To do this, log into SRCP and :ref:`start a remote desktop session<remote-desktop>, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
 
 3. Navigate to the location specified by the user (e.g. the analysis subfolder in their project folder) either on the command line or in File Manager
 
 4. Copy the files from the location specified by the user to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager.
 
-5. Start WinSCP and log in using the details (saved previously)[https://github.com/epi-analysis/SRCP/wiki/04-Taking-files-on-and-off-SRCP#example-of-setting-up-winscp]. Navigate to your download folder and copy the files to a location accessible from your local machine.
+5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine.
 
 .. raw:: html
 
