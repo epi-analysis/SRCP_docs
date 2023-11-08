@@ -40,6 +40,7 @@ Process for uploading files
 5. The Data Manager moves the file from the user’s “upload” triage folder to the user’s project folder and notifies the user
 6. The user uses the file that is now available in their project folder
 
+.. _SFTP-client:
 Connecting to epi-analysis SRCP with SFTP
 -----------------------------------------
 
