@@ -14,7 +14,7 @@ In order to connect to SRCP, you will need the following things:
    -  User’s vHPC Level of Access = Project User
    -  Project Unique ID = will be provided by the data management team
 
--  The address of the epi-analysis SRCP platform: `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__ - **you will need to be connected to the Cambridge VPN**
+-  The address of the epi-analysis SRCP platform: `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__
 -  A mobile device to set up for two factor authentication
 
 If you need help with any of this information, please contact `Tom Bishop <mailto:trpb2@cam.ac.uk>`__
