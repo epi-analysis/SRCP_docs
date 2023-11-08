@@ -11,7 +11,7 @@ For subsequent log ins you will need:
 -  Connection to the Cambridge University VPN (instructions `here <https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn>`__) or a computer that is on the Cambridge University Network
 -  The device that you set up for Two Factor Authentication (2FA) on SRCP
 -  The address of the epi-analysis SRCP platform: `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__ - **you will need to be connected to the Cambridge VPN**
--  (The project identifier is provided to you by the Data Management Team and is an 11 character alphanumeric string (e.g. cvh4y5kl3lr) - for starting a remote desktop session after log in)
+-  (The project identifier is provided to you by the Data Management Team and is an 11 character alphanumeric string (e.g. cvh4y5kl3lr) - for starting a remote desktop session after log in. Data Managers should use Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu)
 
 You will be presented with the log in page shown below where you should use your CRSid and associated password (AKA Raven password) and 2FA to log in.
 
@@ -37,7 +37,7 @@ The menus on the landing page provide access to the following:
 Interactive Apps - Remote Desktop Session
 -----------------------------------------
 
-To start a remote desktop session, click the Secure Remote Desktop link in the Interactive Apps menu. This takes you to a page where you can specify the duration of the session (maximum 12 hours) and the number of cores required (from 1 to the maximum available for your project). You will also need to specify the Account and Partition. The Account field should be set to your **project identifier** . The **project identifier** is provided to you by the Data Management Team and is an 11 character alphanumeric string (e.g. cvh4y5kl3lr). The Partition field requires the project identifier plus “-cpu” or “-gpu”:
+To start a remote desktop session, click the Secure Remote Desktop link in the Interactive Apps menu. This takes you to a page where you can specify the duration of the session (maximum 12 hours) and the number of cores required (from 1 to the maximum available for your project). You will also need to specify the Account and Partition. The Account field should be set to your **project identifier** . The **project identifier** is provided to you by the Data Management Team and is an 11 character alphanumeric string (e.g. cvh4y5kl3lr). Data Managers should use Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu The Partition field requires the project identifier plus “-cpu” or “-gpu”:
 
 .. figure:: ../../images/remote-desktop-dialogue.png
   :scale: 80 %
