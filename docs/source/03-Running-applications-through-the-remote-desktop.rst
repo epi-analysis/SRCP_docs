@@ -21,7 +21,7 @@ RStudio
   :alt: RStudio
 
 .. note::
-   If you run into build errors, there are some tips `here <https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages>`
+   If you run into build errors, there are some tips `here <https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages>`__
 
 Bioconductor
 ~~~~~~~~~~~~
