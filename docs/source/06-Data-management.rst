@@ -14,8 +14,7 @@ Data Managers are responsible for:
 4. Checking data/code that is brought in or out of SRCP to make sure it does not contain anything it shouldn't
 
 .. note::
-   Data Managers (and users) connect to a remote desktop session, this uses a dedicate noded which is paid for on 
-   an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed)
+   When Data Managers (and users) connect to a remote desktop session, this uses a dedicate node (or cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed)
 
 Prerequisites
 -------------
