@@ -37,7 +37,9 @@ The menus on the landing page provide access to the following:
 Interactive Apps - Remote Desktop Session
 -----------------------------------------
 
-To start a remote desktop session, click the Secure Remote Desktop link in the Interactive Apps menu. This takes you to a page where you can specify the duration of the session (maximum 12 hours) and the number of cores required (from 1 to the maximum available for your project). You will also need to specify the Account and Partition. The Account field should be set to your **project identifier** . The **project identifier** is provided to you by the Data Management Team and is an 11 character alphanumeric string (e.g. cvh4y5kl3lr). Data Managers should use Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu The Partition field requires the project identifier plus “-cpu” or “-gpu”:
+To start a remote desktop session, click the Secure Remote Desktop link in the Interactive Apps menu. This takes you to a page where you can specify the duration of the session (maximum 12 hours) and the number of cores required (from 1 to the maximum available for your project). Your project has been assigned to a dedicate node (or set of cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP. However, you may be sharing resources with colleagues who are working on the project with you, so only request the resources you need (e.g. a single core for prototyping code).
+
+You will also need to specify the Account and Partition. The Account field should be set to your **project identifier** . The **project identifier** is provided to you by the Data Management Team and is an 11 character alphanumeric string (e.g. cvh4y5kl3lr). Data Managers should use Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu The Partition field requires the project identifier plus “-cpu” or “-gpu”:
 
 .. figure:: ../../images/remote-desktop-dialogue.png
   :scale: 80 %
