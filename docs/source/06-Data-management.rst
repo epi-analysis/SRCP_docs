@@ -11,7 +11,11 @@ Data Managers are responsible for:
 1. Initially bringing study data requested by the user into SRCP
 2. Creating folders within the project and setting permissions for the study data
 3. Moving data between the “upload” and “download” triage folders and a user’s project folder (e.g. bringing code in or results out)
-4. Checking data/code that is brought in or out of SRCP to make sure it does not contain anything it shouldn’t
+4. Checking data/code that is brought in or out of SRCP to make sure it does not contain anything it shouldn't
+
+.. note::
+   Data Managers (and users) connect to a remote desktop session, this uses a dedicate noded which is paid for on 
+   an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed)
 
 Prerequisites
 -------------
