@@ -5,17 +5,15 @@ Logging in for the First Time
 
 In order to connect to SRCP, you will need the following things:
 
--  CRSid and associated password (AKA Raven password), which should have been provided as part of the Visiting Workers process
--  Connection to the Cambridge University VPN (instructions `here <https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn>`__)  or a computer that is on the Cambridge University Network
--  Complete the `SRCP User Access Request <https://www.hpc.cam.ac.uk/srcp-request-user-access>`__ - you will be asked to “Log in with Raven” if not connected to the VPN, use your CRSid and password.
--  To complete the access request form you will also need the following information:
-
+1.  CRSid and associated password (AKA Raven account/password), which should have been provided to you as part of the Visiting Workers process
+2.  Complete the `SRCP User Access Request <https://www.hpc.cam.ac.uk/srcp-request-user-access>`__ - you will be asked to “Log in with Raven”, use your CRSid and password. To complete the access request form you will also need the following information:
    -  SRCP platform type = vHPC
    -  User’s vHPC Level of Access = Project User
    -  Project Unique ID = will be provided by the data management team
 
--  The address of the epi-analysis SRCP platform: `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__
--  A mobile device to set up for two factor authentication
+3.  Connection to the Cambridge University VPN (instructions `here <https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn>`__)  or a computer that is on the Cambridge University Network
+4.  The address of the epi-analysis SRCP platform: `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__
+5.  A mobile device to set up for two factor authentication
 
 If you need help with any of this information, please contact `Tom Bishop <mailto:trpb2@cam.ac.uk>`__
 
