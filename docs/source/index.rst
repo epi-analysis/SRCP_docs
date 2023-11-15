@@ -11,7 +11,7 @@ SRCP has some similarities to the Cambridge Service for Data Driven Discovery (C
 
 .. raw:: html
 
-    <video controls src="_static/SRCP_latest.mp4", width = 90%></video>
+    <video controls src="_static/SRCP_slower.mp4", width = 90%></video>
 
 
 Contents
