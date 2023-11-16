@@ -14,7 +14,7 @@ Data Managers are responsible for:
 4. Checking data/code that is brought in or out of SRCP to make sure it does not contain anything it shouldn't
 
 .. note::
-   When Data Managers (and users) connect to a remote desktop session, this uses a dedicate node (or cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed)
+   When Data Managers (and users) connect to a remote desktop session, this uses a dedicated node (or cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed). Nor can you "block" external users by using up all the cores (although you could stop other Data Managers from starting a session).
 
 Prerequisites
 -------------
@@ -151,19 +151,22 @@ Example of enabling a user to bring files into SRCP using WinSCP
 
 3. Navigate to the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` either on the command line or in File Manager
 
-4. Copy the files from the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. **OR** make a copy of the files into your home folder on SRCP.
+4. Copy the files from the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. **OR** leave the files where they are and inspect them directly on SRCP.
 
-5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine. **OR** make a copy of the files into your home folder on SRCP.
+5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine. **OR** leave the files where they are and inspect them directly on SRCP.
 
 .. figure:: ../../images/winscp-download.png
   :scale: 50 %
   :alt: WinSCRP file download
 
-6. Inspect the files. **TO CONFIRM** If they contains data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them.
+6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (might need to download).
+.. note::
+   If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit.
+
 
 7. If the files are OK then on SRCP, move the files from the user’s “upload” triage folder to the user’s project (analysis) folder either on the command line or in File Manager. Notify the user that the files are ready for use.
 
-8. (If the files are large then delete them from both your own and the user’s triage folder to save space? Assume user has a back up on their local computer?)
+8. (If the files are large then delete them from both your own and the user’s triage folder to save space? Or delete them from your local computer? Assume user has a back up on their local computer?)
 
 Process for users wishing to take files off SRCP
 ------------------------------------------------
@@ -196,19 +199,21 @@ Example of enabling a user to download files from SRCP using WinSCP
 
 3. Navigate to the location specified by the user (e.g. the analysis subfolder in their project folder) either on the command line or in File Manager
 
-4. Copy the files from the location specified by the user to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager.  **OR** make a copy of the files into your home folder on SRCP.
+4. Copy the files from the location specified by the user to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager.  **OR** leave the files where they are and inspect them directly on SRCP.
 
-5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine. **OR** make a copy of the files into your home folder on SRCP.
+5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine. **OR** leave the files where they are and inspect them directly on SRCP.
 
 .. figure:: ../../images/winscp-download.png
   :scale: 50 %
   :alt: WinSCRP file download
 
 6. Inspect the files. **TO CONFIRM** The files need to be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed.
+.. note::
+   If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit. In R or Python you could write a script to search for participant IDs or report discrepancies in columns of data (for example, look for a sudden change in the structure of the data that might suggest something hidden).
 
 7. If the files are OK then on SRCP, move the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. Notify the user that the files are ready for download.
 
-8. (If the files are large then delete them from both your own and the user’s triage folder to save space? Confirm with the user that they have downloaded the files to their local computer?)
+8. (If the files are large then delete them from both your own and the user’s triage folder to save space?  Or delete them from your local computer? Confirm with the user that they have downloaded the files to their local computer?)
 
 Work in progress
 ----------------
@@ -273,7 +278,7 @@ Examining items to be taken in or out
 
 Files that are to be taken out from the system should be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `here <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed.
 
-A standard check might be to look for participant IDs in the data export as this is clearly an indicator of individual level data.
+A standard check might be to look for participant IDs in the data export as this is clearly an indicator of individual level data. You could do this using a script in R or Python if the files are large. First create a list of the participant IDs from the data release, then search for these values in the data export.
 
 Often a more formal process is used where researchers have to submit a form with details about what the results are and how they relate to the project. There can be a service level agreement for the time taken to review requests.
 
