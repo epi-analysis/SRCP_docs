@@ -135,11 +135,11 @@ A summary of the process for users wishing to bring supplementary data or code i
 
 1. The user connects to their “upload” triage folder using SFTP and uploads the files.
 2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for :ref:`uploading a file via STFP<SFTP-upload>`
-3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** makes a copy of the files into their home folder on SRCP
-4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP
-5. The Data Manager inspects the files and confirms that they contain appropriate data/code
-6. On SRCP, the Data Manager moves the files from the user’s “upload” triage folder to the user’s project folder and notifies the user
-7. The user uses the files that are now available in their project folder
+3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** accesses the files directly on SRCP.
+4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
+5. The Data Manager inspects the files and confirms that they contain appropriate data/code.
+6. On SRCP, the Data Manager moves the files from the user’s “upload” triage folder to the user’s project folder and notifies the user.
+7. The user uses the files that are now available in their project folder.
 8. Tidy up
 
 Example of enabling a user to bring files into SRCP using WinSCP
@@ -176,9 +176,9 @@ Users will ask Data Managers to allow them to download files from SRCP. This is 
 
 A summary of the process for users wishing to download files from SRCP is:
 
-1. The user moves the files to their “download” triage folder on SRCP
+1. The user moves the files to their “download” triage folder on SRCP.
 2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names they wish to download and their location.
-3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** makes a copy of the files into their home folder on SRCP.
+3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** accesses the files directly on SRCP.
 4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
 5. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules:
 
@@ -188,7 +188,7 @@ A summary of the process for users wishing to download files from SRCP is:
    -  files should not have any participant or sample IDs
    -  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
 
-7. On SRCP, the Data Manager moves the files to the user’s “download” triage folder and notifies the user
+7. On SRCP, the Data Manager moves the files to the user’s “download” triage folder and notifies the user.
 8. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
 
 Example of enabling a user to download files from SRCP using WinSCP
