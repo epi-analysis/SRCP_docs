@@ -5,6 +5,10 @@ The remote desktop provides an interactive session for users. This allows the us
 
 **NOTE** The SRCP platform is isolated from the internet to prevent data from being removed. Common package repositories such as *CRAN* and *conda forge* have been whitelisted so that packages can be installed by the user from these locations. If you require code that is held in **GitHub**, this will need to be brought into SRCP via the Data Transfer process as a zip file (see :ref:`data-transfer`). Similarly, Docker containers will need to be brought in and run through Singularity/Apptainer. The reason for this is that we cannot allow direct access to GitHub and DockerHub as this would give users the ability to remove data without permission by pushing to these locations.
 
+Basic file editing
+------------------
+From the command line, ``vim`` can be used to edit files, but can be rather challenging to use. An alternative is to use ``gedit`` from the command line which will load the file into `gedit <https://help.gnome.org/users/gedit/stable/>`__ which is a more user-friendly interface.
+
 RStudio
 -------
 
@@ -68,3 +72,8 @@ Containers can be brought into SRCP in the .sif format via the file transfer pro
 ::
 
 $ apptainer exec lolcow_latest.sif cowsay moo
+
+Genetics Tools
+--------------
+PLINK, vcftools, bcftools, shapeit
+
