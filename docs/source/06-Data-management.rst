@@ -136,7 +136,7 @@ A summary of the process for users wishing to bring supplementary data or code i
 1. The user connects to their “upload” triage folder using SFTP and uploads the files.
 2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for :ref:`uploading a file via STFP<SFTP-upload>`
 3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** makes a copy of the files into their home folder on SRCP
-4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** makes a copy of the files into their home folder on SRCP
+4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP
 5. The Data Manager inspects the files and confirms that they contain appropriate data/code
 6. On SRCP, the Data Manager moves the files from the user’s “upload” triage folder to the user’s project folder and notifies the user
 7. The user uses the files that are now available in their project folder
@@ -160,6 +160,7 @@ Example of enabling a user to bring files into SRCP using WinSCP
   :alt: WinSCRP file download
 
 6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (might need to download).
+
 .. note::
    If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit.
 
@@ -178,7 +179,7 @@ A summary of the process for users wishing to download files from SRCP is:
 1. The user moves the files to their “download” triage folder on SRCP
 2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names they wish to download and their location.
 3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** makes a copy of the files into their home folder on SRCP.
-4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** makes a copy of the files into their home folder on SRCP.
+4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
 5. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules:
 
    -  provide a description of what the file contains, how it was generated and its relevance to the research question
@@ -208,6 +209,7 @@ Example of enabling a user to download files from SRCP using WinSCP
   :alt: WinSCRP file download
 
 6. Inspect the files. **TO CONFIRM** The files need to be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed.
+
 .. note::
    If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit. In R or Python you could write a script to search for participant IDs or report discrepancies in columns of data (for example, look for a sudden change in the structure of the data that might suggest something hidden).
 
