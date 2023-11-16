@@ -41,14 +41,14 @@ To start a remote desktop session, click the Secure Remote Desktop link in the I
 
 You will also need to specify the Account and Partition:
 
-+------------+-----------------------------------------------------------------------------+
-| Field      | Value                                                                       |
-+============+=============================================================================+
-| Account    |**Project identifier** - 11 character alphanumeric string (e.g. cvh4y5kl3lr) |
-|            |  provided to you by the Data Management Team                                |
-+------------+-----------------------------------------------------------------------------+
-| Partition  |**Project identifier** plus "-cpu" or "-gpu" (e.g. cvh4y5kl3lr-cpu)          |
-+------------+-----------------------------------------------------------------------------+
++------------+------------------------------------------------------------------------------+
+| Field      | Value                                                                        |
++============+==============================================================================+
+| Account    | **Project identifier** - 11 character alphanumeric string (e.g. cvh4y5kl3lr) |
+|            | provided to you by the Data Management Team                                  |
++------------+------------------------------------------------------------------------------+
+| Partition  | **Project identifier** plus "-cpu" or "-gpu" (e.g. cvh4y5kl3lr-cpu)          |
++------------+------------------------------------------------------------------------------+
 
 .. note::
    **Data Managers** should use Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
