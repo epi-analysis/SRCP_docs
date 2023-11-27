@@ -12,7 +12,7 @@ From the command line, ``vim`` can be used to edit files, but can be rather chal
 RStudio
 -------
 
-1. Find the RStudio module: ``$ module avail`` and load it with ``$ module load xxxxxx``
+1. Find the RStudio module: ``$ module avail`` or ``$ module keyword studio`` and load it with ``$ module load xxxxxx`` where ``xxxxxx`` is the module name
 2. Start RStudio without a sandbox ``$ rstudio --no-sandbox``
 3. The RStudio window should open
 4. While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors using a command like ``install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``
@@ -59,7 +59,7 @@ Stata
 -----
 
 1. Find the Stata module: ``$ module keyword stata`` and load it with ``$ module load xxxxxx``
-2. Start Stata: ``$ xstata``
+2. Start Stata: ``$ xstata`` for the basic edition or ``$ xstatamp`` for Stata/MP
 
 .. figure:: ../../images/stata.png
   :scale: 60 %
