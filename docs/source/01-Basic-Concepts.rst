@@ -11,7 +11,7 @@ For subsequent log ins you will need:
 -  **Connection to the Cambridge University VPN** (instructions `here <https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn>`__) or a computer that is on the Cambridge University Network
 -  The device that you set up for Two Factor Authentication (2FA) on SRCP
 -  The address of the epi-analysis SRCP platform: `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__
--  (The project identifier that was provided to you by the Data Management Team and is an 11 character alphanumeric string (e.g. cvh4y5kl3lr) - for starting a remote desktop session after log in. **Data Managers** should use ckpnxp8qnm2)
+-  (The project identifier that was provided to you by the Data Management Team and is an 11 character alphanumeric string (e.g. cvh4y5kl3lr) - for starting a remote desktop session after log in. **Data Managers** should use 9nshgh9hk4z)
 
 You will be presented with the log in page shown below where you should use your CRSid and associated password (AKA Raven password) and 2FA to log in.
 
@@ -51,7 +51,7 @@ You will also need to specify the Account and Partition:
 +------------+------------------------------------------------------------------------------+
 
 .. note::
-   **Data Managers** should use Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
+   **Data Managers** should use Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
 
 .. figure:: ../../images/remote-desktop-dialogue.png
   :scale: 80 %
