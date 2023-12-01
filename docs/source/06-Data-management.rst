@@ -163,7 +163,7 @@ Users will ask Data Managers to allow them to download files from SRCP. This is 
 
 A summary of the process for users wishing to download files from SRCP is:
 
-1. The user moves the files to their “download” triage folder on SRCP.
+1. The user copies the files to their “download” triage folder on SRCP.
 2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names they wish to download and their location.
 3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** accesses the files directly on SRCP.
 4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
@@ -226,7 +226,7 @@ Once the remote desktop session is running, the following steps can be followed 
 
 6. If the file looks OK, copy the file to the user’s triage download location ``$ cp <filename> /srv/data-manager/triage/<username>/download``
 
-7. Either notify the user that the file was moved as requested to their triage download folder and is available via SFTP, or explain what needs to be changed for the file to be acceptable for download.
+7. Either notify the user that the file was copied as requested to their triage download folder and is available via SFTP, or explain what needs to be changed for the file to be acceptable for download.
 
 **Upload**
 
@@ -236,7 +236,7 @@ Once the remote desktop session is running, the following steps can be followed 
 4. Connect via SFTP and download the file to your local computer
 5. Check the file for **what - malicious code? data that they shouldn’t have - how do we know?**
 6. If the file looks OK, copy the file requested by the user to the location required (for example, the user’s project folder): ``$ cp /srv/data-manager/triage/<username>/upload/<filename> /srv/projects/<projectname>`` where ``<projectname>`` is the user’s project
-7. Either notify the user that the file was moved and tell them the location, or explain what needs to be changed for the file to be acceptable for upload.
+7. Either notify the user that the file was copied and tell them the location, or explain what needs to be changed for the file to be acceptable for upload.
 
 Using file manager
 ~~~~~~~~~~~~~~~~~~
@@ -251,7 +251,7 @@ Once the remote desktop session is running, the following steps can be followed 
 4. Connect via SFTP and download the file
 5. Check the file for individual level data (i.e. the data should be results only *a more rigorous checklist may be developed*)
 6. If the file looks OK, copy the file to the user’s triage download location (``/srv/data-manager/triage/<username>/download`` where ``<username>`` is the CRSid of the user)
-7. Either notify the user that the file was moved as requested to their triage download folder and is available via SFTP, or explain what needs to be changed for the file to be acceptable for download.
+7. Either notify the user that the file was copied as requested to their triage download folder and is available via SFTP, or explain what needs to be changed for the file to be acceptable for download.
 
 **Upload**
 1. Navigate to the user’s triage folder: n``/srv/data-manager/triage/<username>/upload`` where ``<username>`` is nthe CRSid of the user
@@ -260,7 +260,7 @@ Once the remote desktop session is running, the following steps can be followed 
 4. Connect via SFTP and download the file to your local computer
 5. Check the file for **what - malicious code? data that they shouldn’t have - how do we know?**
 6. If the file looks OK, copy the file requested by the user to the location required (for example, the user’s project folder) ``/srv/projects/<projectname>`` where ``<projectname>`` is the user’s project
-7. Either notify the user that the file was moved and tell them the location, or explain what needs to be changed for the file to be acceptable for upload.
+7. Either notify the user that the file was copied and tell them the location, or explain what needs to be changed for the file to be acceptable for upload.
 
 Examining items to be taken in or out
 -------------------------------------
@@ -271,7 +271,7 @@ A standard check might be to look for participant IDs in the data export as this
 
 Often a more formal process is used where researchers have to submit a form with details about what the results are and how they relate to the project. There can be a service level agreement for the time taken to review requests.
 
-For data that is to be brought in, checks should be made about whether the user has permission to use this data and move it to different locations. Some data sets might not be a concern, for example publicly available data on air pollution. Questions should be raised if a user is trying to bring in something sensitive like patient records.
+For data that is to be brought in, checks should be made about whether the user has permission to use this data and copied it to different locations. Some data sets might not be a concern, for example publicly available data on air pollution. Questions should be raised if a user is trying to bring in something sensitive like patient records.
 
 Users may want to bring in code or containers. This should be scanned (TO DO - recommend some tools) to check for security problems.
 
