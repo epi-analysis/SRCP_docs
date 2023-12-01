@@ -22,7 +22,7 @@ Prerequisites
 To perform the data management tasks, the Data Manager needs to:
 
 1. Understand how to :ref:`log into SRCP<login-later>`
-2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
+2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
 3. Set up an :ref:`SFTP client<SFTP-client>`
 
 Bringing study data into SRCP
@@ -34,7 +34,7 @@ As summary of the process for bringing study data into SRCP is:
 2. Navigate to the “upload” triage folder and upload the files
 3. Log in to the SRCP web interface
 4. Start a remote desktop session
-5. Move the files from your “upload” triage folder to the required project folder
+5. Copy (not move) the files from your “upload” triage folder to the required project folder
 6. Confirm that an analysis folder has been set up and permissions are set correctly in the project
 7. Notify the user
 8. Tidy up
@@ -48,8 +48,9 @@ Before bringing in the data, it is recommended that some additional subfolders a
 
    ├── 2023_06_20_Smith_ENDR023_2020
    │   ├── data
-   │   │   ├── subfolders in data folder
+   │   │   ├── files and subfolders in data folder
    │   └── analysis
+   │       ├── files and subfolders in analysis folder
 
 The user needs permission to **read, write and execute** in the ``analysis`` folder. The best way to achieve this is with this command:
 
@@ -65,16 +66,6 @@ where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se
 .. figure:: ../../images/project-id.png
   :scale: 70 %
   :alt: Finding a project ID
-
-We also need to remove the permissions for “other” users:
-``chmod o-rwx /srv/projects/<userproject>/analysis``
-
-The user needs permission to **read and execute** in the ``data`` folder (and subfolders) and **read** files - they should not be able to write to this location to avoid inadvertent changes being made to the data. The best way to achieve this is with these commands, **noting the ``RX`` permission for directories and ``R`` permission for files this time**:
-
-::
-
-   nfs4_setfacl -a "A:gd:project-<project-id>-users@hpc.cam.ac.uk:RX" /srv/projects/<userproject>/data
-   nfs4_setfacl -a "A:gf:project-<project-id>-users@hpc.cam.ac.uk:R" /srv/projects/<userproject>/data
 
 .. note::
    You can find a template for these permission commands in this location: ``/srv/shared/scripts/permission_setup.txt``. Display it on the screen using ``cat /srv/shared/scripts/permission_setup.txt``
@@ -111,9 +102,9 @@ Example of uploading a data release using WinSCP
   :scale: 50 %
   :alt: WinSCP file upload
 
-7.  Switch to a browser, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
+7.  Switch to a browser, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
 
-8.  Copy the data from your ``triage/<yourusername>/upload`` folder to the user’s project ``data`` subfolder:
+8.  Copy (not move) the data from your ``triage/<yourusername>/upload`` folder to the user’s project ``data`` subfolder:
 
     1. On the command line:
        ``$ cp /srv/data-manager/triage/<yourusername>/upload/<filename> /srv/projects/<userproject>/data``
@@ -121,10 +112,7 @@ Example of uploading a data release using WinSCP
 
 9.  If required, a ``7z`` archive can be unzipped: ``7zG x myfile.7z``
 
-10. We finally need to remove recursively the read and execute permission for “other” users:
-    ``chmod -R o-rwx /srv/projects/<userproject>/data``
-
-11. If the data are large and a copy is stored elsewhere, delete any copies of the data from your triage folder to save storage space.
+10. If the data are large and a copy is stored elsewhere, delete any copies of the data from your triage folder to save storage space.
 
 Process for users wishing to bring files into SRCP
 --------------------------------------------------
@@ -138,16 +126,16 @@ A summary of the process for users wishing to bring supplementary data or code i
 3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** accesses the files directly on SRCP.
 4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
 5. The Data Manager inspects the files and confirms that they contain appropriate data/code.
-6. On SRCP, the Data Manager moves the files from the user’s “upload” triage folder to the user’s project folder and notifies the user.
-7. The user uses the files that are now available in their project folder.
+6. On SRCP, the Data Manager copies (not moves) the files from the user’s “upload” triage folder to the user’s project data folder and notifies the user.
+7. The user uses the files that are now available in their project data folder (they may need to copy to their analysis folder to edit).
 8. Tidy up
 
 Example of enabling a user to bring files into SRCP using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. After receiving a request to make a user’s uploaded files available, you will need to download the files yourself to check them. The initial step is to copy the files from the user’s “upload” folder to your own “download” folder.
+1. After receiving a request to make a user’s uploaded files available, you will need to download the files yourself to check them. The initial step is to copy the files from the user’s “upload” folder to your own “download” folder. Alternatively, you can take local copies on SRCP and examine the files there.
 
-2. To do this, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
+2. If downloading the files, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
 
 3. Navigate to the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` either on the command line or in File Manager
 
@@ -164,8 +152,7 @@ Example of enabling a user to bring files into SRCP using WinSCP
 .. note::
    If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit.
 
-
-7. If the files are OK then on SRCP, move the files from the user’s “upload” triage folder to the user’s project (analysis) folder either on the command line or in File Manager. Notify the user that the files are ready for use.
+7. If the files are OK then on SRCP, copy (not move) the files from the user’s “upload” triage folder to the user’s project data folder either on the command line or in File Manager. Notify the user that the files are ready for use.
 
 8. (If the files are large then delete them from both your own and the user’s triage folder to save space? Or delete them from your local computer? Assume user has a back up on their local computer?)
 
@@ -188,19 +175,19 @@ A summary of the process for users wishing to download files from SRCP is:
    -  files should not have any participant or sample IDs
    -  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
 
-7. On SRCP, the Data Manager moves the files to the user’s “download” triage folder and notifies the user.
+7. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user.
 8. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
 
 Example of enabling a user to download files from SRCP using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. After receiving a request from a user to make some of their files available for download, you will need to download the files yourself to check them. The initial step is to copy the files from the location specified by the user (e.g. the analysis subfolder in their project folder) to your own “download” folder.
+1. After receiving a request from a user to make some of their files available for download, you will need to download the files yourself to check them. The initial step is to copy the files from the location specified by the user (e.g. the analysis subfolder in their project folder) to your own “download” folder. Alternatively, you can take local copies on SRCP and examine the files there.
 
-2. To do this, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = ckpnxp8qnm2 and Partition = ckpnxp8qnm2-cpu
+2. If downloading the files, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
 
 3. Navigate to the location specified by the user (e.g. the analysis subfolder in their project folder) either on the command line or in File Manager
 
-4. Copy the files from the location specified by the user to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager.  **OR** leave the files where they are and inspect them directly on SRCP.
+4. Copy (not move) the files from the location specified by the user to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager.  **OR** leave the files where they are and inspect them directly on SRCP.
 
 5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine. **OR** leave the files where they are and inspect them directly on SRCP.
 
@@ -213,7 +200,7 @@ Example of enabling a user to download files from SRCP using WinSCP
 .. note::
    If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit. In R or Python you could write a script to search for participant IDs or report discrepancies in columns of data (for example, look for a sudden change in the structure of the data that might suggest something hidden).
 
-7. If the files are OK then on SRCP, move the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. Notify the user that the files are ready for download.
+7. If the files are OK then on SRCP, copy (not move) the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. Notify the user that the files are ready for download.
 
 8. (If the files are large then delete them from both your own and the user’s triage folder to save space?  Or delete them from your local computer? Confirm with the user that they have downloaded the files to their local computer?)
 
