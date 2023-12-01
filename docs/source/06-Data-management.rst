@@ -14,7 +14,7 @@ Data Managers are responsible for:
 4. Checking data/code that is brought in or out of SRCP to make sure it does not contain anything it shouldn't
 
 .. note::
-   When Data Managers (and users) connect to a remote desktop session, this uses a dedicated node (or cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed). Nor can you "block" external users by using up all the cores (although you could stop other Data Managers from starting a session).
+   When Data Managers (and users) connect to a remote desktop session, this uses a node (or cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed). It is unlikely that you will "block" other SRCP users unless you request a large number of cores (e.g. 10) for long periods. For simple tasks like bring data in or out you will only need 1 core. Some data checking could more resource intensive and require more cores.
 
 Prerequisites
 -------------
