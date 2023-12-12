@@ -281,3 +281,11 @@ Notes on project permissions
 The platform manager group can rwx on folders and files created in project folders by any other platform - controlled by NFS ACL. The children of the project folder inherit the permissions.
 
 When the platform manager creates the data/analysis folders, they apply ACL permissions to these which are inherited by the items created in these folders.
+
+Checking resource utilisation
+-----------------------------
+To view usage, the following command can be used:
+
+``$ sreport user top start=2023-01-01``
+
+
