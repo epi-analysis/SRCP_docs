@@ -288,4 +288,13 @@ To view usage, the following command can be used:
 
 ``$ sreport user top start=2023-01-01``
 
+Permission commands for read only data in restricted shared folder
+------------------------------------------------------------------
+The objective is to have a folder in the shared area that is only accessible for users on particular projects
+
+1. Create the folder in /srv/shared/restricted
+2. ``nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" srv/projects/<userproject>/data``
+3. ``nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" srv/projects/<userproject>/data``
+
+
 
