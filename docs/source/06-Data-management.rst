@@ -295,7 +295,8 @@ The objective is to have a folder in the shared area that is only accessible for
 1. Create the folder in /srv/shared/restricted
 2. ``nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" srv/shared/<sharedproject>``
 3. ``nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" srv/shared/<sharedproject>``
-4. These commands will mean that new files and folders added will also have the correct permissions. However they also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: find srv/shared/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;
+4. These commands will mean that new files and folders added will also have the correct permissions. However they also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``find srv/shared/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
+5. Variations of this command can also be used to revoke the permission at the end of a group's access, because the ``find`` command acts recursively
 
 
 
