@@ -75,7 +75,7 @@ Folder structure on SRCP
 There are 4 main folders in the main ``/srv/`` folder:
 
 -  ``home`` - each user has a folder with 50GB of space
--  ``projects`` - you will only have access to your project. The data you requested should be found in this folder. There is 1TB of space available.
+-  ``projects`` - you will only have access to your project, and the Data Management Team will confirm the name of your folder. The data you requested should be found in the read-only **data** folder. You can keep code and copies of the data in the **analysis** subfolder. There is 1TB of space available.
 -  ``data-manager`` - used by Data Managers to transfer data in and out of SRCP - not accessible to users
 -  ``shared`` - contains license files (and in the future helpful code snippets)
 
