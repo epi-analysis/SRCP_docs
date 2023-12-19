@@ -298,5 +298,33 @@ The objective is to have a folder in the shared area that is only accessible for
 4. These commands will mean that new files and folders added will also have the correct permissions. However they also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``find srv/shared/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
 5. Variations of this command can also be used to revoke the permission at the end of a group's access, because the ``find`` command acts recursively
 
+Email templates
+---------------
+After completing VW process - apply for SRCP account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Hi <<name>>
+
+   The next step for SRCP access is to complete this form:
+
+   https://www.hpc.cam.ac.uk/srcp-request-user-access
+
+   You will be asked to log in with Raven, this requires your CRSid (<<CRSid>>) and associated password.
+
+   On the form, enter the following
+      1. *SRCP platform type* = vHPC
+      2. *User’s vHPC Level of Access* = Project User
+      3. *Project Unique ID* = <<project-id>> (NOTE - this project ID is also needed to start sessions on SRCP so please retain it)
+   
+   If you are using a computer connected to the Cambridge University Network then this next step can be skipped. If you are accessing SRCP from an external computer, you need to follow these instructions to connect to the Cambridge VPN:
+
+   https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
+
+   Please do get in touch if you need assistance with setting up the VPN.
+   
+   Best wishes
+   <<sender-name>>
+
+SRCP account set up - next steps
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
