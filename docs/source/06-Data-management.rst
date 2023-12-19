@@ -302,29 +302,51 @@ Email templates
 ---------------
 After completing VW process - apply for SRCP account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   Hi <<name>>
+Hi <<name>>,
 
-   The next step for SRCP access is to complete this form:
+The next step for SRCP access is to complete this form:
 
-   https://www.hpc.cam.ac.uk/srcp-request-user-access
+https://www.hpc.cam.ac.uk/srcp-request-user-access
 
-   You will be asked to log in with Raven, this requires your CRSid (<<CRSid>>) and associated password.
+You will be asked to log in with Raven, this requires your CRSid (<<CRSid>>) and associated password.
 
-   On the form, enter the following
-      1. *SRCP platform type* = vHPC
-      2. *User’s vHPC Level of Access* = Project User
-      3. *Project Unique ID* = <<project-id>> (NOTE - this project ID is also needed to start sessions on SRCP so please retain it)
+On the form, enter the following
+   1. **SRCP platform type** = vHPC
+   2. **User’s vHPC Level of Access** = Project User
+   3. **Project Unique ID** = <<project-id>> (NOTE - this project ID is also needed to start sessions on SRCP so please retain it)
    
-   If you are using a computer connected to the Cambridge University Network then this next step can be skipped. If you are accessing SRCP from an external computer, you need to follow these instructions to connect to the Cambridge VPN:
+If you are using a computer connected to the Cambridge University Network then this next step can be skipped. If you are accessing SRCP from an external computer, you can follow these instructions to prepare a connection to the Cambridge VPN while you wait for your SRCP account:
 
-   https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
+https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
 
-   Please do get in touch if you need assistance with setting up the VPN.
+Please do get in touch if you need assistance with setting up the VPN.
    
-   Best wishes
-   <<sender-name>>
+Best wishes
+<<sender-name>>
 
 SRCP account set up - next steps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The SRCP Data Managers will receive an email from the SRCP support team informing them that an account has been set up for a user. This email is sent to the users "@cam.ac.uk" address so they probably won't know that their account is ready. Therefore we can forward on the email with the following additional information:
+
+Hi <<name>>,
+
+Your SRCP account is ready. To use SRCP you will need to either use a computer connected to the Cambridge University Network, or connected to the Cambridge University VPN. Instructions for connecting to the VPN as here:
+
+https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
+
+Then you can proceed with the "Logging in for the first time section" in the documentation:
+
+https://srcp-docs.readthedocs.io/en/latest/00-Logging-in-for-the-First-Time.html
+
+The following details are needed:
+
+* CRSid = <<CRSid>>
+* Project identifier = <<project-id>>
+* Project folder name = <<project-folder-name>>
+
+Best wishes
+<<sender-name>>
+
+
 
 
