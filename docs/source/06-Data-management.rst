@@ -311,6 +311,7 @@ https://www.hpc.cam.ac.uk/srcp-request-user-access
 You will be asked to log in with Raven, this requires your CRSid (<<CRSid>>) and associated password.
 
 On the form, enter the following
+
    1. **SRCP platform type** = vHPC
    2. **User’s vHPC Level of Access** = Project User
    3. **Project Unique ID** = <<project-id>> (NOTE - this project ID is also needed to start sessions on SRCP so please retain it)
@@ -326,7 +327,7 @@ Best wishes
 
 SRCP account set up - next steps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The SRCP Data Managers will receive an email from the SRCP support team informing them that an account has been set up for a user. This email is sent to the users "@cam.ac.uk" address so they probably won't know that their account is ready. Therefore we can forward on the email with the following additional information:
+The SRCP Data Managers will receive an email from the SRCP support team informing them that an account has been set up for a user. This email is sent to the user's "@cam.ac.uk" address so they probably won't know that their account is ready. Therefore we can forward on the email with the following additional information:
 
 Hi <<name>>,
 
