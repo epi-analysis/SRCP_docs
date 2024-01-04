@@ -58,9 +58,7 @@ The user needs permission to **read, write and execute** in the ``analysis`` fol
 
 ``nfs4_setfacl -a "A:fdg:project-<project-id>-users@hpc.cam.ac.uk:RWX" /srv/projects/<userproject>/analysis``
 
-**TO DO - make this command (and others) available in the shared folder for easy cut and paste**
-
-where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se) and <userproject> is the folder name (e.g. ``2023_06_20_Smith_ENDR023_2020``).
+where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se) and <userproject> is the folder name (e.g. ``2023_06_20_Smith_ENDR023_2020``). You can find a template for these permission commands in this location: ``/srv/shared/scripts/permission_setup.txt``. Display it on the screen using ``cat /srv/shared/scripts/permission_setup.txt``
 
 .. note::
    If you list the project folder contents (``ls -l``) the <project-id> is available for copying and pasting:
@@ -69,8 +67,7 @@ where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se
   :scale: 70 %
   :alt: Finding a project ID
 
-.. note::
-   You can find a template for these permission commands in this location: ``/srv/shared/scripts/permission_setup.txt``. Display it on the screen using ``cat /srv/shared/scripts/permission_setup.txt``
+
 
 
 Example of uploading a data release using WinSCP
