@@ -52,6 +52,8 @@ Before bringing in the data, it is recommended that some additional subfolders a
    │   └── analysis
    │       ├── files and subfolders in analysis folder
 
+The subfolders can be be created in the project folder with the commmand ``$ mkdir data`` for example
+
 The user needs permission to **read, write and execute** in the ``analysis`` folder. The best way to achieve this is with this command:
 
 ``nfs4_setfacl -a "A:fdg:project-<project-id>-users@hpc.cam.ac.uk:RWX" /srv/projects/<userproject>/analysis``
