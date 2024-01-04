@@ -62,10 +62,9 @@ where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se
 
 .. note::
    If you list the project folder contents (``ls -l``) the <project-id> is available for copying and pasting:
-
-.. figure:: ../../images/project-id.png
-  :scale: 70 %
-  :alt: Finding a project ID
+   .. figure:: ../../images/project-id.png
+     :scale: 70 %
+     :alt: Finding a project ID
 
 
 
