@@ -61,10 +61,11 @@ The user needs permission to **read, write and execute** in the ``analysis`` fol
 where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se) and <userproject> is the folder name (e.g. ``2023_06_20_Smith_ENDR023_2020``). You can find a template for these permission commands in this location: ``/srv/shared/scripts/permission_setup.txt``. Display it on the screen using ``cat /srv/shared/scripts/permission_setup.txt``
 
 .. note::
-   If you list the project folder contents (``ls -l``) the <project-id> is available for copying and pasting:
-   .. figure:: ../../images/project-id.png
-     :scale: 70 %
-     :alt: Finding a project ID
+   If you list the project folder contents (``ls -l``) the <project-id> is available for copying and pasting - see the image below:
+
+.. figure:: ../../images/project-id.png
+   :scale: 70 %
+   :alt: Finding a project ID
 
 
 
