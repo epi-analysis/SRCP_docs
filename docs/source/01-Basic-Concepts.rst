@@ -102,5 +102,9 @@ File Manager application
 
 The File Manager application is similar to the Windows Explorer application, in that it can be used to open, explore, copy, cut, paste, move and delete files and folders. When the application is launched, you will be in your home folder ``/srv/home/<user-id>``. The 'up arrow' (highlighted in green) can be used to move up a folder level. This allows you to reach the ``/srv/`` folder.
 
+.. figure:: ../../images/file-manager-home-up.PNG
+  :scale: 30 %
+  :alt: File manager home folder
+
 
 
