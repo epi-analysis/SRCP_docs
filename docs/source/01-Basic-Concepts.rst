@@ -96,3 +96,11 @@ There are 4 main folders in the main ``/srv/`` folder:
 All data is backed up across 2 sites and lost files can be recovered in the event of a disaster or accidental deletion.
 
 **TO DO - mention symlink to project folder, use quota command to check space (does this work?)**
+
+File Manager application
+------------------------
+
+The File Manager application is similar to the Windows Explorer application, in that it can be used to open, explore, copy, cut, paste, move and delete files and folders. When the application is launched, you will be in your home folder ``/srv/home/<user-id>``. The 'up arrow' (highlighted in green) can be used to move up a folder level. This allows you to reach the ``/srv/`` folder.
+
+
+
