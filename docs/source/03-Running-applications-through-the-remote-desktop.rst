@@ -75,11 +75,15 @@ $ apptainer exec lolcow_latest.sif cowsay moo
 
 Genetics Tools
 --------------
+
 PLINK, vcftools and  bcftools
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 These can all be loaded as modules. For example for PLINK:
-   ``$ module keyword plink`` and load it with
-   ``$ module load xxxxxx``
+
+1. ``$ module keyword plink`` and load it with
+2. ``$ module load xxxxxx``
+
 Then PLINK can be run as normal
 
 METAL, REGENIE, SNPTest
