@@ -75,5 +75,20 @@ $ apptainer exec lolcow_latest.sif cowsay moo
 
 Genetics Tools
 --------------
-PLINK, vcftools, bcftools, shapeit
+PLINK, vcftools and  bcftools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+These can all be loaded as modules. For example for PLINK:
+   ``$ module keyword plink`` and load it with
+   ``$ module load xxxxxx``
+Then PLINK can be run as normal
+
+METAL, REGENIE, SNPTest
+~~~~~~~~~~~~~~~~~~~~~~~
+These executables can be imported throught the file transfer process
+
+Variant Effect Predictor
+~~~~~~~~~~~~~~~~~~~~~~~~
+TBC - (https://www.ensembl.org/info/docs/tools/vep/index.html)
+
+
 
