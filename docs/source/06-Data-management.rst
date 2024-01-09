@@ -42,7 +42,7 @@ As summary of the process for bringing study data into SRCP is:
 Prerequisite - setting up the project folder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before bringing in the data, it is recommended that some additional subfolders are created in the project folder (e.g. ``2023_06_20_Smith_ENDR023_2020``). The project folder can be written to by members of the ``platform-b864dfnfpqj-managers`` group, i.e. Data Managers, but users cannot write to this folder. The data should be stored in a read-only location so that it cannot be changed accidentally - the ``data`` subfolder. This can be created with the command ``mkdir data`` and will automatically have the correct read-only permissions for users. Any subfolders or files created in the data folder will also have the correct permissions. Users will also need a location to do their work and save results - the ``analysis`` subfolder. The suggested folder structure looks like this:
+Before bringing in the data, it is recommended that some additional subfolders are created in the project folder (e.g. ``2023_06_20_Smith_ENDR023_2020``). The project folder can be written to by members of the ``platform-b864dfnfpqj-managers`` group, i.e. Data Managers, but users cannot write to this folder. The data should be stored in a read-only location so that it cannot be changed accidentally - the ``data`` subfolder. This can be created with the command ``mkdir data`` and will automatically have the correct read-only permissions for users. Any subfolders or files created in the ``data`` subfolder will also have the correct permissions. Users will also need a location to do their work and save results - the ``analysis`` subfolder. The suggested folder structure looks like this:
 
 ::
 
