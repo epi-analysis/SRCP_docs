@@ -327,11 +327,13 @@ The SRCP Data Managers will receive an email from the SRCP support team informin
 
 Hi <<name>>,
 
-Your SRCP account is ready. To use SRCP you will need to either use a computer connected to the Cambridge University Network, or connected to the Cambridge University VPN. Instructions for connecting to the VPN as here:
+Your SRCP account is ready. There is a brief introductory video and overview of SRCP on the documentation homepage: https://srcp-docs.readthedocs.io/
+
+If you feel you would like me to demonstrate the basic functionality of SRCP (logging in, starting a remote desktop, running applications etc) I am happy to set up a meeting with you. Otherwise, to use SRCP you will need to either use a computer connected to the Cambridge University Network, or the Cambridge University VPN.  Instructions for connecting to the VPN as here:
 
 https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
 
-Then you can proceed with the "Logging in for the first time section" in the documentation:
+Then you can proceed with the “Logging in for the first time section” in the documentation:
 
 https://srcp-docs.readthedocs.io/en/latest/00-Logging-in-for-the-First-Time.html
 
