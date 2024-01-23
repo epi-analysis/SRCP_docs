@@ -37,18 +37,22 @@ The menus on the landing page provide access to the following:
 Interactive Apps - Remote Desktop Session
 -----------------------------------------
 
-To start a remote desktop session, click the Secure Remote Desktop link in the Interactive Apps menu. This takes you to a page where you can specify the duration of the session (maximum 12 hours) and the number of cores required (from 1 to the maximum available for your project). Your project has been assigned to a dedicate node (or set of cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP. However, you may be sharing resources with colleagues who are working on the project with you, so only request the resources you need (e.g. a single core for prototyping code).
+To start a remote desktop session, click the Secure Remote Desktop link in the Interactive Apps menu. This takes you to a page where you can specify the duration of the session (maximum 12 hours) and the number of cores required (from 1 to the maximum available for your project). Your project has shared access to a dedicated node (or set of cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP. However, you may be sharing resources with other users or colleagues who are working on the project with you, so only request the resources you need (e.g. a single core for prototyping code). Otherwise they may not be able to start a session and their job will be queued until resources are available. Note also that when the session closes after the specified number of hours work may be lost if files haven't been saved.
 
-You will also need to specify the Account and Partition:
+You will also need to specify the Account, Partition, Hours and Cores:
 
-+------------+------------------------------------------------------------------------------+
-| Field      | Value                                                                        |
-+============+==============================================================================+
-| Account    | **Project identifier** - 11 character alphanumeric string (e.g. cvh4y5kl3lr) |
-|            | provided to you by the Data Management Team                                  |
-+------------+------------------------------------------------------------------------------+
-| Partition  | **Project identifier** plus "-cpu" or "-gpu" (e.g. cvh4y5kl3lr-cpu)          |
-+------------+------------------------------------------------------------------------------+
++------------+--------------------------------------------------------------------------------------------------------------------+
+| Field      | Value                                                                                                              |
++============+====================================================================================================================+
+| Account    | **Project identifier** - 11 character alphanumeric string (e.g. cvh4y5kl3lr)                                       |
+|            | provided to you by the Data Management Team                                                                        |
++------------+--------------------------------------------------------------------------------------------------------------------+
+| Partition  | **Project identifier** plus "-cpu" or "-gpu" (e.g. cvh4y5kl3lr-cpu)                                                |
++------------+--------------------------------------------------------------------------------------------------------------------+
+| Hours      | Number of hours the session will run for. Make sure any work is saved before the session ends or work may be lost  |
++------------+--------------------------------------------------------------------------------------------------------------------+
+| Cores      | Number of cores to use                                                                                             |
++------------+--------------------------------------------------------------------------------------------------------------------+
 
 .. note::
    **Data Managers** should use Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
@@ -68,6 +72,9 @@ The remote desktop gives you the option of working with files and folders via a 
 .. figure:: ../../images/remote-desktop-example.png
   :scale: 70 %
   :alt: SRCP remote desktop session example
+
+.. note::
+   When 
 
 Folder structure on SRCP
 ------------------------
