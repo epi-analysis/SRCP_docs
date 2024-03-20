@@ -335,7 +335,7 @@ Hi <<name>>,
 
 Your SRCP account is ready. There is a brief introductory video and overview of SRCP on the documentation homepage: https://srcp-docs.readthedocs.io/
 
-If you feel you would like me to demonstrate the basic functionality of SRCP (logging in, starting a remote desktop, running applications etc) I am happy to set up a meeting with you. Otherwise, to use SRCP you will need to either use a computer connected to the Cambridge University Network, or the Cambridge University VPN.  Instructions for connecting to the VPN as here:
+If you feel you would like me to demonstrate the basic functionality of SRCP (logging in, starting a remote desktop, running applications etc) I am happy to set up a meeting with you. Otherwise, to use SRCP you will need to either use a computer connected to the Cambridge University Network, or the Cambridge University VPN.  Instructions for connecting to the VPN are here:
 
 https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
 
