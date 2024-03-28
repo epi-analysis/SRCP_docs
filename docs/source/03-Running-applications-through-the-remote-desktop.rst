@@ -59,7 +59,7 @@ Stata
 -----
 
 1. Find the Stata module: ``$ module keyword stata`` and load it with ``$ module load xxxxxx``
-2. Start Stata: ``$ xstata`` for the basic edition or ``$ xstatamp`` for Stata/MP
+2. Start Stata: ``$ xstata`` for the basic edition or ``$ xstata-mp`` for Stata/MP
 
 .. figure:: ../../images/stata.png
   :scale: 60 %
