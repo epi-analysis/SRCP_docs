@@ -9,11 +9,6 @@ SRCP is Linux-based and has standard analysis software such as R and Python avai
 
 SRCP has some similarities to the Cambridge Service for Data Driven Discovery (CSD3) system (also known as the High Performance Computer or HPC) and therefore it can be helpful to refer to the `documentation <https://docs.hpc.cam.ac.uk/hpc/index.html>`__ for this system too.
 
-.. raw:: html
-
-    <video controls src="_static/SRCP_slower.mp4", width = 90%></video>
-
-
 Contents
 --------
 
