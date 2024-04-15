@@ -11,7 +11,7 @@ SRCP has some similarities to the Cambridge Service for Data Driven Discovery (C
 
 A short video explaining more about SRCP can be viewed here:
 
-.. image:: _static/my_image_small.png
+.. image:: ../../images/log-in.png
    :target: https://universityofcambridgecloud-my.sharepoint.com/:v:/g/personal/trpb2_cam_ac_uk/EU4atqRYYt9Dh63aACMjjiMBEXmPvrAQSbb4JU4C8l-iJA?e=CfDW3k
 
 
