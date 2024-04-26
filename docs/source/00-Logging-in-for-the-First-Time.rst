@@ -14,7 +14,7 @@ In order to connect to SRCP, you will need the following things:
 4.  The address of the epi-analysis SRCP platform: `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__
 5.  A mobile device to set up for two factor authentication
 
-If you need help with any of this information, please `contact us <mailto:srcpg@mrc-epid.cam.ac.uk>`__
+If you need help with any of this information, please `contact us <mailto:srcp@mrc-epid.cam.ac.uk>`__
 
 Configuring Two Factor Authentication
 -------------------------------------
@@ -81,7 +81,7 @@ Recovering from a lost token or device
 
 If a user loses their Time-based one-time password (TOTP) codes or mobile device, they will be unable to access the platform until they have raised a support request with the SRCP Support Team, who at that point are the only people who can regenerate the user’s TOTP codes. Before doing this however, the SRCP Support Team must go through a process to establish the real identity of this user. This involves confirming the reset with the MRC Epidemiology Unit team.
 
-If you have lost your mobile device or token please submit a support request to the `SRCP helpdesk <mailto:support@hpc.cam.ac.uk>`__. The user must also notify the MRC Epidemiology Unit team with whom the SRCP helpdesk contacts for approval. This must happen before the SRCP helpdesk can issue a replacement token.
+If you have lost your mobile device or token please submit a support request to the `SRCP helpdesk <mailto:support@hpc.cam.ac.uk>`__. The user must also notify the ` MRC Epidemiology Unit team<mailto:srcp@mrc-epid.cam.ac.uk>`__ with whom the SRCP helpdesk contacts for approval. This must happen before the SRCP helpdesk can issue a replacement token.
 
 Once the MRC Epidemiology Unit has approved the token reset request and the user has demonstrated ownership of their password the Helpdesk will issue a new private token.
 
