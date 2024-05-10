@@ -16,7 +16,7 @@ RStudio
 2. Start RStudio ``$ rstudio``
 3. The RStudio window should open
 4. While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors using a command like ``install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``
-5. If you require a package that is not available on CRAN, then please contact support
+5. If you require a package that is not available on CRAN, then please contact us (srcp@mrc-epid.cam.ac.uk)
 
 **TIP** you can set your default CRAN to ``www.stats.bris.ac.uk/R`` in the Global Options menu:
 
@@ -24,8 +24,18 @@ RStudio
   :scale: 70 %
   :alt: RStudio
 
-.. note::
-   If you run into build errors, there are some tips `here <https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages>`__
+R Package Installation Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+R packages are often not written entirely in R, but in low-level, compiled languages, most typically C++ and Fortran, for speed. This requires various compilers, headers and libraries for the packages to compile properly. On SRCP, these might have to be loaded as separate modules before you start R. For example, you might see an error like this:
+
+.. figure:: ../../images/r-package-error.png
+  :scale: 100 %
+  :alt: Rerror
+
+This describes the library that is missing. You can search for a module that provides the library by doing ``$ module keyword harf`` or similar and then load the module that is found with ``$ module load xxxxxx`` where ``xxxxxx`` is the module name (e.g. harfbuzz/4.2.1/gcc)
+
+If you run into errors relating to the compiler, there are some tips `here <https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages>`__
 
 Bioconductor
 ~~~~~~~~~~~~
