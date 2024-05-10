@@ -14,11 +14,7 @@ In order to connect to SRCP, you will need the following things:
 4.  The address of the epi-analysis SRCP platform: `epi-analysis.srcp.hpc.cam.ac.uk <https://epi-analysis.srcp.hpc.cam.ac.uk/>`__
 5.  A mobile device to set up for two factor authentication
 
-If you need help with any of this information, please `contact us <mailto:srcp@mrc-epid.cam.ac.uk>`__
-
-or `contact us <srcp@mrc-epid.cam.ac.uk>`__
-
-or just this srcp@mrc-epid.cam.ac.uk
+If you need help with any of this information, please contact us (srcp@mrc-epid.cam.ac.uk)
 
 Configuring Two Factor Authentication
 -------------------------------------
