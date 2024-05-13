@@ -1,7 +1,7 @@
 Data management
 ===============
 
-This section is for MRC Epidemiology Data Managers.
+This section is for **MRC Epidemiology Data Managers**, not for collaborators using SRCP for their analyses.
 
 Overview
 --------
