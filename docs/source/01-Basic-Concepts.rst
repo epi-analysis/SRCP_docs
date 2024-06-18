@@ -125,11 +125,11 @@ To find the data for your project:
 3. You will see a list of the folders you have access to. In most cases you will only have access to one project. Double click on the project folder required to open it.
 
 .. figure:: ../../images/you-project-folder.png
-  :scale: 50 %
+  :scale: 80 %
   :alt: Your project folder
 
 4. In your project folder, there is a subfolder called 'data'. This is where you will find the data. The 'analysis' folder is empty and this is where you can save your code and copies of the data.
 
 .. figure:: ../../images/analysis-data.png
-  :scale: 50 %
+  :scale: 80 %
   :alt: Analysis and data folders
