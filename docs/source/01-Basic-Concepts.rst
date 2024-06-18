@@ -67,6 +67,9 @@ When the “launch” button is clicked, the session is placed in a queue. The s
   :scale: 80 %
   :alt: SRCP remote desktop session card
 
+The remote desktop
+~~~~~~~~~~~~~~~~~~
+
 The remote desktop gives you the option of working with files and folders via a GUI rather than command line via the File Manager application (highlighted in blue). All other applications are launched from the Terminal (highlighted in green). A separate section in this wiki contains instructions for running commonly used applications such as RStudio.
 
 .. figure:: ../../images/remote-desktop-example.png
