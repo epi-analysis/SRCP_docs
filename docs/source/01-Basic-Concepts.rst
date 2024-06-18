@@ -124,7 +124,7 @@ To find the data for your project:
 
 3. You will see a list of the folders you have access to. Double click on the project folder.
 
-.. figure:: ../../images/your-project-folder.png
+.. figure:: ../../images/you-project-folder.png
   :scale: 50 %
   :alt: Your project folder
 
