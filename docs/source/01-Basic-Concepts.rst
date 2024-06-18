@@ -119,7 +119,7 @@ Finding data in your project using File Manager
 To find the data for your project:
 
 1. Use the 'up arrow' described above to navigate to the ``/srv/`` folder.
-2. Double click on the 'projects' folder
+2. Double click on the ``projects`` folder
 
 .. figure:: ../../images/projects-folder.png
   :scale: 80 %
@@ -131,7 +131,7 @@ To find the data for your project:
   :scale: 80 %
   :alt: Your project folder
 
-4. In your project folder, there is a subfolder called 'data'. This is where you will find the data. The 'analysis' folder is empty and this is where you can save your code and copies of the data.
+4. In your project folder, there is a subfolder called ``data``. This is where you will find the data. The ``analysis`` folder is empty and this is where you can save your code and copies of the data.
 
 .. figure:: ../../images/analysis-data.png
   :scale: 80 %
