@@ -122,7 +122,7 @@ To find the data for your project:
   :scale: 80 %
   :alt: Projects folder
 
-3. You will see a list of the folders you have access to. Double click on the project folder.
+3. You will see a list of the folders you have access to. In most cases you will only have access to one project. Double click on the project folder required to open it.
 
 .. figure:: ../../images/you-project-folder.png
   :scale: 50 %
