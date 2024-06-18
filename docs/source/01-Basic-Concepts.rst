@@ -73,9 +73,6 @@ The remote desktop gives you the option of working with files and folders via a 
   :scale: 70 %
   :alt: SRCP remote desktop session example
 
-.. note::
-   When 
-
 Folder structure on SRCP
 ------------------------
 
@@ -113,5 +110,14 @@ The File Manager application is similar to the Windows Explorer application, in 
   :scale: 70 %
   :alt: File manager home folder
 
+Finding data in your project using File Manager
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+To find the data for your project:
+
+1. Use the 'up arrow' described above to navigate to the ``/srv/`` folder.
+2. Double click on the 'projects' folder
+.. figure:: ../../images/projects-folder.png
+  :scale: 80 %
+  :alt: SRCP remote desktop dialogue box
 
