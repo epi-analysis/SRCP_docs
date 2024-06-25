@@ -52,7 +52,8 @@ Some additional steps are required to display graphics and plots in RStudio. The
   :scale: 70 %
   :alt: AGG
 
-While the steps above are performed once, the **next time** you start RStudio you will still need to load the libpng module before starting RStudio in order to display graphics and plots.
+.. note::
+   While the steps above are performed once, the **next time** you start RStudio you will still need to load the libpng module before starting RStudio in order to display graphics and plots.
 
 Bioconductor
 ~~~~~~~~~~~~
