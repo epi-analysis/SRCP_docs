@@ -56,9 +56,11 @@ The subfolders can be be created in the project folder with the commmand ``$ mkd
 
 The user needs permission to **read, write and execute** in the ``analysis`` folder, which is not set up automatically. The best way to achieve this is with this command:
 
-``nfs4_setfacl -a "A:fdg:project-<project-id>-users@hpc.cam.ac.uk:RWX" /srv/projects/<userproject>/analysis``
+.. code-block:: console
 
-where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se) and <userproject> is the folder name (e.g. ``2023_06_20_Smith_ENDR023_2020``). You can find a template for these permission commands in this location: ``/srv/shared/scripts/permission_setup.txt``. Display it on the screen using ``cat /srv/shared/scripts/permission_setup.txt``. Once these permissions are set, subfolders and files created in the ``analysis`` subfolder will inherit the read, write and execute permissions.
+   $ nfs4_setfacl -a "A:fdg:project-<project-id>-users@hpc.cam.ac.uk:RWX" /srv/projects/<userproject>/analysis
+
+where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se) and <userproject> is the folder name (e.g. ``2023_06_20_Smith_ENDR023_2020``). You can find a template for these permission commands in this location: ``/srv/shared/scripts/permission_setup.txt``. Display it on the screen using ``$ cat /srv/shared/scripts/permission_setup.txt``. Once these permissions are set, subfolders and files created in the ``analysis`` subfolder will inherit the read, write and execute permissions.
 
 .. note::
    If you list the project folder contents (``ls -l``) the <project-id> is available for copying and pasting - see the image below:
@@ -68,10 +70,16 @@ where <project-id> is the 11 character alphanumeric identifier (e.g. ck5gh6d3se
    :alt: Finding a project ID
 
 To check that the permissions have been set correctly, use the following command:
-``nfs4_getfacl /srv/projects/<userproject>/analysis``
+
+.. code-block:: console
+
+   $ nfs4_getfacl /srv/projects/<userproject>/analysis
 
 and the top (most recent) line should look like this:
-``A:fdg:project-<project-id>-users@hpc.cam.ac.uk:rwaDdxtTnNcCoy``
+
+.. code-block:: console
+
+   A:fdg:project-<project-id>-users@hpc.cam.ac.uk:rwaDdxtTnNcCoy
 
 Example of uploading a data release using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
