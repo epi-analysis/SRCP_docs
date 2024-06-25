@@ -12,13 +12,13 @@ From the command line, ``vim`` can be used to edit files, but can be rather chal
 RStudio
 -------
 
-1. Find the RStudio module: ``$ module avail`` or ``$ module keyword studio`` and load it with ``$ module load xxxxxx`` where ``xxxxxx`` is the module name
+1. Find the RStudio module: ``$ module avail`` or ``$ module keyword studio`` and load it with ``$ module load xxxxxx`` where ``xxxxxx`` is the full module name
 2. Start RStudio ``$ rstudio``
 3. The RStudio window should open
 4. While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors using a command like ``install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``
 5. If you require a package that is not available on CRAN, then please contact us (srcp@mrc-epid.cam.ac.uk)
 
-**TIP** you can set your default CRAN to ``www.stats.bris.ac.uk/R`` in the Global Options menu:
+**TIP** you can set your default CRAN to ``www.stats.bris.ac.uk/R`` in the Tools -> Global Options menu:
 
 .. figure:: ../../images/rstudio-global-options.png
   :scale: 70 %
@@ -37,6 +37,23 @@ This describes the library that is missing. You can search for a module that pro
 
 If you run into errors relating to the compiler, there are some tips `here <https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages>`__
 
+R graphics and plots
+~~~~~~~~~~~~~~~~~~~~
+Some additional steps are required to display graphics and plots in RStudio. The ``ragg`` R package has to be installed, and the following steps need to be performed once:
+
+1. A series of modules need to be loaded before starting RStudio and installing ``ragg``: freetype, libpng, libtiff and libjpeg
+2. As an example for freetype, find the full module name with: ``$ module avail`` or ``$ module keyword freetype`` and load it with ``$ module load xxxxxx`` where ``xxxxxx`` is the full module name
+3. Repeat this for the 4 modules
+4. Start RStudio ``$ rstudio``
+5. Install the ``ragg`` R package (``> install.packages("ragg")``)
+6. In the Tools -> Global Options menu, go to General -> Graphics and set the Backend to AGG:
+
+.. figure:: ../../images/agg.png
+  :scale: 70 %
+  :alt: AGG
+
+While the steps above are performed once, the **next time** you start RStudio you will still need to load the libpng module before starting RStudio in order to display graphics and plots.
+
 Bioconductor
 ~~~~~~~~~~~~
 
@@ -45,7 +62,7 @@ Bioconductor can be installed in the usual way as the necessary repositories hav
 Conda
 -----
 
-1. Find the miniconda module: ``$ module avail`` or ``$ module keyword conda`` and load it with ``$ module load xxxxxx``
+1. Find the full miniconda module name: ``$ module avail`` or ``$ module keyword conda`` and load it with ``$ module load xxxxxx``
 2. While general access to the internet is not available, it is possible install packages from the ``conda-forge`` channel
 3. If you require a package that is not available on ``conda-forge``, then please contact support
 
@@ -54,7 +71,7 @@ Conda
 Jupyter
 -------
 
-1. Find the gcc module: ``$ module avail`` and load it with ``$ module load xxxxxx``:
+1. Find the full gcc module name: ``$ module avail`` and load it with ``$ module load xxxxxx``:
 
 .. figure:: ../../images/gcc-module.png
   :scale: 100 %
@@ -68,7 +85,7 @@ Jupyter
 Stata
 -----
 
-1. Find the Stata module: ``$ module keyword stata`` and load it with ``$ module load xxxxxx``
+1. Find the full Stata module name: ``$ module keyword stata`` and load it with ``$ module load xxxxxx``
 2. Start Stata: ``$ xstata`` for the basic edition or ``$ xstata-mp`` for Stata/MP
 
 .. figure:: ../../images/stata.png
