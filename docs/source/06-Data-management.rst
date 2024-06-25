@@ -117,10 +117,18 @@ Example of uploading a data release using WinSCP
 8.  Copy (not move) the data from your ``triage/<yourusername>/upload`` folder to the user’s project ``data`` subfolder:
 
     1. On the command line:
-       ``$ cp /srv/data-manager/triage/<yourusername>/upload/<filename> /srv/projects/<userproject>/data``
+
+         .. code-block:: console
+
+             $ cp /srv/data-manager/triage/<yourusername>/upload/<filename> /srv/projects/<userproject>/data
+
     2. Or from the file manager application (which works in a similar way to Windows File Explorer)
 
-9.  If required, a ``7z`` archive can be unzipped: ``7zG x myfile.7z``
+9.  If required, a ``7z`` archive can be unzipped:
+
+      .. code-block:: console
+
+         $ 7zG x myfile.7z
 
 10. If the data are large and a copy is stored elsewhere, delete any copies of the data from your triage folder to save storage space.
 
