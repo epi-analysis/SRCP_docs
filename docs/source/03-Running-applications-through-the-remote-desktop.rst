@@ -58,16 +58,6 @@ which tells R to use the system compilers. If you run into problems with the com
   CFLAGS = -std=c99
   CXXFLAGS = -std=c++11
 
-
-4. While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors using a command like ``install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``
-5. If you require a package that is not available on CRAN, then please contact us (srcp@mrc-epid.cam.ac.uk)
-
-**TIP** you can set your default CRAN to ``www.stats.bris.ac.uk/R`` in the Tools -> Global Options menu:
-
-.. figure:: ../../images/rstudio-global-options.png
-  :scale: 70 %
-  :alt: RStudio
-
 R Package Installation
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -80,9 +70,6 @@ R packages are often not written entirely in R, but in low-level, compiled langu
   :alt: Rerror
 
 This describes the library that is missing. You can search for a module that provides the library by doing ``$ module keyword harf`` or similar and then load the module that is found with ``$ module load xxxxxx`` where ``xxxxxx`` is the module name (e.g. harfbuzz/4.2.1/gcc). Note that in this example there are 2 libraries needed - harfbuzz and fribidi. Both of the corresponding modules will need to be loaded **before** starting RStudio.
-
-
-
 
 Bioconductor
 ~~~~~~~~~~~~
