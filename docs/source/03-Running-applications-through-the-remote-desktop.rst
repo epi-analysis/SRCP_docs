@@ -15,27 +15,14 @@ RStudio
 1. Find the RStudio module: ``$ module avail`` or ``$ module keyword studio`` and load it with ``$ module load xxxxxx`` where ``xxxxxx`` is the full module name
 2. Start RStudio ``$ rstudio``
 3. The RStudio window should open
-4. While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors using a command like ``install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``
-5. If you require a package that is not available on CRAN, then please contact us (srcp@mrc-epid.cam.ac.uk)
 
-**TIP** you can set your default CRAN to ``www.stats.bris.ac.uk/R`` in the Tools -> Global Options menu:
+Set default CRAN
+~~~~~~~~~~~~~~~~
+For easier package installation, set your default CRAN to ``www.stats.bris.ac.uk/R`` in the Tools -> Global Options menu (only needs to be done once):
 
 .. figure:: ../../images/rstudio-global-options.png
   :scale: 70 %
   :alt: RStudio
-
-R Package Installation Issues
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-R packages are often not written entirely in R, but in low-level, compiled languages, most typically C++ and Fortran, for speed. This requires various compilers, headers and libraries for the packages to compile properly. On SRCP, these might have to be loaded as separate modules before you start R. For example, you might see an error like this:
-
-.. figure:: ../../images/r-package-error.png
-  :scale: 100 %
-  :alt: Rerror
-
-This describes the library that is missing. You can search for a module that provides the library by doing ``$ module keyword harf`` or similar and then load the module that is found with ``$ module load xxxxxx`` where ``xxxxxx`` is the module name (e.g. harfbuzz/4.2.1/gcc). Note that in this example there are 2 libraries needed - harfbuzz and fribidi. Both of the corresponding modules will need to be loaded **before** starting RStudio.
-
-If you run into errors relating to the compiler, there are some tips `here <https://docs.hpc.cam.ac.uk/hpc/software-packages/r.html#installing-r-packages>`__
 
 R graphics and plots
 ~~~~~~~~~~~~~~~~~~~~
@@ -54,6 +41,48 @@ Some additional steps are required to display graphics and plots in RStudio. The
 
 .. note::
    While the steps above are performed once, the **next time** you start RStudio you will still need to load the libpng module before starting RStudio in order to display graphics and plots.
+
+Compiler settings
+~~~~~~~~~~~~~~~~~
+To aid package installation, it is recommended that you create the file ~/.R/Makevars in your home directory and add::
+
+CC = gcc
+CXX = g++
+CXX11 = g++
+FC = gfortran
+F77 = gfortran
+F90 = gfortran
+
+which tells R to use the system compilers. If you run into problems with the compiler versions being too old, then try loading a more recent compiler before starting R. If you run into problems that refer to the C or C++ standard versions then try adding::
+
+CFLAGS = -std=c99
+CXXFLAGS = -std=c++11
+
+
+4. While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors using a command like ``install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``
+5. If you require a package that is not available on CRAN, then please contact us (srcp@mrc-epid.cam.ac.uk)
+
+**TIP** you can set your default CRAN to ``www.stats.bris.ac.uk/R`` in the Tools -> Global Options menu:
+
+.. figure:: ../../images/rstudio-global-options.png
+  :scale: 70 %
+  :alt: RStudio
+
+R Package Installation
+~~~~~~~~~~~~~~~~~~~~~~
+
+While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors using a command like ``install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``. If you have set the default CRAN (as described above), the ``repo=`` part can be left out. If you require a package that is not available on CRAN, then please contact us (srcp@mrc-epid.cam.ac.uk)
+
+R packages are often not written entirely in R, but in low-level, compiled languages, most typically C++ and Fortran, for speed. This requires various compilers, headers and libraries for the packages to compile properly. On SRCP, these might have to be loaded as separate modules before you start R. For example, you might see an error like this:
+
+.. figure:: ../../images/r-package-error.png
+  :scale: 100 %
+  :alt: Rerror
+
+This describes the library that is missing. You can search for a module that provides the library by doing ``$ module keyword harf`` or similar and then load the module that is found with ``$ module load xxxxxx`` where ``xxxxxx`` is the module name (e.g. harfbuzz/4.2.1/gcc). Note that in this example there are 2 libraries needed - harfbuzz and fribidi. Both of the corresponding modules will need to be loaded **before** starting RStudio.
+
+
+
 
 Bioconductor
 ~~~~~~~~~~~~
