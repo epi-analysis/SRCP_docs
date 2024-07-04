@@ -46,17 +46,17 @@ Compiler settings
 ~~~~~~~~~~~~~~~~~
 To aid package installation, it is recommended that you create the file ~/.R/Makevars in your home directory and add::
 
-CC = gcc
-CXX = g++
-CXX11 = g++
-FC = gfortran
-F77 = gfortran
-F90 = gfortran
+  CC = gcc
+  CXX = g++
+  CXX11 = g++
+  FC = gfortran
+  F77 = gfortran
+  F90 = gfortran
 
 which tells R to use the system compilers. If you run into problems with the compiler versions being too old, then try loading a more recent compiler before starting R. If you run into problems that refer to the C or C++ standard versions then try adding::
 
-CFLAGS = -std=c99
-CXXFLAGS = -std=c++11
+  CFLAGS = -std=c99
+  CXXFLAGS = -std=c++11
 
 
 4. While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors using a command like ``install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``
