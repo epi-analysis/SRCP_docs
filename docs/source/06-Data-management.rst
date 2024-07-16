@@ -321,7 +321,7 @@ After completing VW process - apply for SRCP account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Hi <<name>>,
 
-The next step for SRCP access is to complete this form:
+Thank you for your application to access EPIC Norfolk data. The next step is to apply for access to the Secure Research Computing Platform (SRCP) where you will be able to work with the data. Please complete this form:
 
 https://www.hpc.cam.ac.uk/srcp-request-user-access
 
