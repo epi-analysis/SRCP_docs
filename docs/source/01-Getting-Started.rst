@@ -36,21 +36,6 @@ The remote desktop gives you the option of working with files and folders via a 
   :scale: 70 %
   :alt: SRCP remote desktop session example
 
-Disabling the lock screen
--------------------------
-If a session is left idle, the lock screen will activate. You will be prompted for your password to unlock your session (the same as the log in password):
-
-.. figure:: ../../images/lock-screen.png
-  :scale: 70 %
-  :alt: Lock screen
-
-The lock screen can be disabled through the Applications menu:
-
-.. figure:: ../../images/lock-screen-settings.png
-  :scale: 70 %
-  :alt: Lock screen settings
-
-
 Folder structure on SRCP
 ------------------------
 
