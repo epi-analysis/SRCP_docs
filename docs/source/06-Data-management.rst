@@ -1,5 +1,5 @@
-Data management
-===============
+Data management (internal MRC Epidemiology Unit only)
+=====================================================
 
 This section is for **MRC Epidemiology Data Managers**, not for collaborators using SRCP for their analyses.
 
