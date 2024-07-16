@@ -24,40 +24,6 @@ For easier package installation, set your default CRAN to ``www.stats.bris.ac.uk
   :scale: 70 %
   :alt: RStudio
 
-R graphics and plots
-~~~~~~~~~~~~~~~~~~~~
-Some additional steps are required to display graphics and plots in RStudio. The ``ragg`` R package has to be installed, and the following steps need to be performed once:
-
-1. A series of modules need to be loaded before starting RStudio and installing ``ragg``: freetype, libpng, libtiff and libjpeg
-2. As an example for freetype, find the full module name with: ``$ module avail`` or ``$ module keyword freetype`` and load it with ``$ module load xxxxxx`` where ``xxxxxx`` is the full module name
-3. Repeat this for the 4 modules
-4. Start RStudio ``$ rstudio``
-5. Install the ``ragg`` R package (``> install.packages("ragg")``)
-6. In the Tools -> Global Options menu, go to General -> Graphics and set the Backend to AGG:
-
-.. figure:: ../../images/agg.png
-  :scale: 70 %
-  :alt: AGG
-
-.. note::
-   While the steps above are performed once, the **next time** you start RStudio you will still need to load the libpng module before starting RStudio in order to display graphics and plots.
-
-Compiler settings
-~~~~~~~~~~~~~~~~~
-To aid package installation, it is recommended that you create the file ~/.R/Makevars in your home directory and add::
-
-  CC = gcc
-  CXX = g++
-  CXX11 = g++
-  FC = gfortran
-  F77 = gfortran
-  F90 = gfortran
-
-which tells R to use the system compilers. If you run into problems with the compiler versions being too old, then try loading a more recent compiler before starting R. If you run into problems that refer to the C or C++ standard versions then try adding::
-
-  CFLAGS = -std=c99
-  CXXFLAGS = -std=c++11
-
 R Package Installation
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -69,7 +35,7 @@ R packages are often not written entirely in R, but in low-level, compiled langu
   :scale: 100 %
   :alt: Rerror
 
-This describes the library that is missing. You can search for a module that provides the library by doing ``$ module keyword harf`` or similar and then load the module that is found with ``$ module load xxxxxx`` where ``xxxxxx`` is the module name (e.g. harfbuzz/4.2.1/gcc). Note that in this example there are 2 libraries needed - harfbuzz and fribidi. Both of the corresponding modules will need to be loaded **before** starting RStudio.
+This describes the library that is missing. You can search for a module that provides the library by doing ``$ module keyword harf`` or similar and then load the module that is found with ``$ module load xxxxxx`` where ``xxxxxx`` is the module name (e.g. harfbuzz/4.2.1/gcc). Note that in this example there are 2 libraries needed - harfbuzz and fribidi. Both of the corresponding modules will need to be loaded **before** starting RStudio. Generally, once the package has been installed, you will not need to load these modules for subsequent sessions.
 
 Bioconductor
 ~~~~~~~~~~~~
