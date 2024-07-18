@@ -16,6 +16,7 @@ Data Managers are responsible for:
 .. note::
    When Data Managers (and users) connect to a remote desktop session, this uses a node (or cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed). It is unlikely that you will "block" other SRCP users unless you request a large number of cores (e.g. 10) for long periods. For simple tasks like bring data in or out you will only need 1 core. Some data checking could be more resource intensive and require more cores.
 
+::_dm-prereq
 Prerequisites
 -------------
 
