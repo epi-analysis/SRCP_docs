@@ -55,7 +55,7 @@ You will also need to specify the Account, Partition, Hours and Cores:
 +------------+--------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-   **Data Managers** should use Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
+   **Data Managers** should use the project ID that corresponds to the user whose data is being worked on
 
 .. figure:: ../../images/remote-desktop-dialogue.png
   :scale: 80 %
