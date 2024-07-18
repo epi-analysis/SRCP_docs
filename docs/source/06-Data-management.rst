@@ -23,7 +23,7 @@ Prerequisites
 To perform the data management tasks, the Data Manager needs to:
 
 1. Understand how to :ref:`log into SRCP<login-later>`
-2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
+2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use the project ID that corresponds to the user whose data is being worked on
 3. Set up an :ref:`SFTP client<SFTP-client>`
 
 Bringing study data into SRCP
