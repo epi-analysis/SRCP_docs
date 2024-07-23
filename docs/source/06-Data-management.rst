@@ -111,7 +111,7 @@ Example of uploading a data release using WinSCP
   :scale: 50 %
   :alt: WinSCP file upload
 
-7.  Switch to a browser, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
+7.  Switch to a browser, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, use the project ID that corresponds to the user whose data is being worked on
 
 8.  Copy (not move) the data from your ``triage/<yourusername>/upload`` folder to the user’s project ``data`` subfolder:
 
@@ -134,7 +134,7 @@ Example of uploading a data release using WinSCP
 Process for users wishing to bring files into SRCP
 --------------------------------------------------
 
-Users may ask Data Managers to allow them to upload files to SRCP. This might be to bring in extra data sets or bespoke code that they cannot download from the standard repositories available in SRCP.
+Users may ask Data Managers to allow them to upload files to SRCP. This might be to bring in extra data sets or bespoke code that they cannot download from the standard repositories available in SRCP. If data are being brought in, checks should be made that the user has permission to use the data in this way.
 
 A summary of the process for users wishing to bring supplementary data or code into SRCP is:
 
@@ -152,7 +152,7 @@ Example of enabling a user to bring files into SRCP using WinSCP
 
 1. After receiving a request to make a user’s uploaded files available, you will need to download the files yourself to check them. The initial step is to copy the files from the user’s “upload” folder to your own “download” folder. Alternatively, you can take local copies on SRCP and examine the files there.
 
-2. If downloading the files, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
+2. If downloading the files, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, use the project ID that corresponds to the user whose data is being worked on
 
 3. Navigate to the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` either on the command line or in File Manager
 
@@ -164,7 +164,7 @@ Example of enabling a user to bring files into SRCP using WinSCP
   :scale: 50 %
   :alt: WinSCRP file download
 
-6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (might need to download).
+6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (might need to download). A virus scanner can also be run on the files.
 
 .. note::
    If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit.
@@ -180,27 +180,26 @@ Users will ask Data Managers to allow them to download files from SRCP. This is 
 
 A summary of the process for users wishing to download files from SRCP is:
 
-1. The user copies the files to their “download” triage folder on SRCP.
-2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names they wish to download and their location.
-3. The Data Manager copies the files to their “download” triage folder on SRCP **OR** accesses the files directly on SRCP.
-4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
-5. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules:
+1. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names they wish to download and their location.
+2. The Data Manager copies the files to their “download” triage folder on SRCP **OR** accesses the files directly on SRCP.
+3. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
+4. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules:
 
-   -  provide a description of what the file contains, how it was generated and its relevance to the research question
+   -  a description of what the file contains, how it was generated and its relevance to the research question is provided
    -  files should only contain aggregated, summary results
    -  results are clearly labelled
    -  files should not have any participant or sample IDs
    -  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
 
-7. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user.
-8. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
+5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user.
+6. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
 
 Example of enabling a user to download files from SRCP using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. After receiving a request from a user to make some of their files available for download, you will need to download the files yourself to check them. The initial step is to copy the files from the location specified by the user (e.g. the analysis subfolder in their project folder) to your own “download” folder. Alternatively, you can take local copies on SRCP and examine the files there.
 
-2. If downloading the files, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, using Account = 9nshgh9hk4z and Partition = 9nshgh9hk4z-cpu
+2. If downloading the files, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, use the project ID that corresponds to the user whose data is being worked on
 
 3. Navigate to the location specified by the user (e.g. the analysis subfolder in their project folder) either on the command line or in File Manager
 
