@@ -83,7 +83,7 @@ Example of setting up WinSCP
 5. You will see a warning about the server key not being found in the cache:
 
 .. figure:: ../../images/unknown-server.png
-  :scale: 100 %
+  :scale: 50 %
   :alt: Unknown server
 
 Check that the key is ``SHA-256:  GG1jAY2PnPo34qXhGZOHXqQ9rEXQxC5r9W91/0UNXBM=``. If it is not, then click Cancel and contact srcp@mrc-epid.cam.ac.uk
