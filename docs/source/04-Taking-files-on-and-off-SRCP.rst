@@ -59,7 +59,8 @@ To connect, an `SFTP client <https://www.sftp.net/clients>`__ is required such a
 -  `rsync <https://linux.die.net/man/1/rsync>`__
 -  `sftp <https://linux.die.net/man/1/sftp>`__
 
-When setting up the Client, check that the host key matches ``SHA-256:  GG1jAY2PnPo34qXhGZOHXqQ9rEXQxC5r9W91/0UNXBM=``. If your client ever warns that the host key has changed, please check that it matches this key before proceeding.
+.. note::
+   When setting up the Client, check that the host key matches ``SHA-256:  GG1jAY2PnPo34qXhGZOHXqQ9rEXQxC5r9W91/0UNXBM=``. If your client ever warns that the host key has changed, please check that it matches this key before proceeding.
 
 Example of setting up WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
