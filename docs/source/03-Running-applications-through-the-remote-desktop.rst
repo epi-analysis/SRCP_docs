@@ -42,28 +42,48 @@ Bioconductor
 
 Bioconductor can be installed in the usual way as the necessary repositories have been whitelisted. You may need to set the default CRAN in your options as described above.
 
+Python
+------
+The SRCP provides a central installation of Python 3. Some of the most common packages used for scientific computation and data analysis (e.g. pandas) are available as modules. To view the packages available as modules, search for the keyword "python" ``$ module keyword python`` and load the module required as usual.
+
+If additional packages are required, it is recommended that this is done through Conda environments. While ``venv`` is available to provide environments and ``pip`` to install packages, access to the pypi repository is currently disabled.
+
 Conda
------
+~~~~~
 
 1. Find the full miniconda module name: ``$ module avail`` or ``$ module keyword conda`` and load it with ``$ module load xxxxxx``
 2. While general access to the internet is not available, it is possible install packages from the ``conda-forge`` channel
-3. If you require a package that is not available on ``conda-forge``, then please contact support
+3. If you require a package that is not available on ``conda-forge``, then please contact support.
 
-**todo** do we need Python virtualenv too?
+Jupyter Notebooks for Python
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Jupyter
--------
+Several options exist for running Jupyter notebooks on the SRCP:
 
-1. Find the full gcc module name: ``$ module avail`` and load it with ``$ module load xxxxxx``:
+1. Load Jupyter as a module, along with other packages required
+2. Create a Conda environment, and install Jupyter packages alongside other packages required in that environment
+3. Load Jupyter as a module, create a kernel for the Conda environment, install other packages required in the environment
 
-.. figure:: ../../images/gcc-module.png
-  :scale: 100 %
-  :alt: gcc module
-
-2. Find the **py-jupyterlab-server** module:
+Jupyter notebook as a module (no virtual environment)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Find the **py-jupyterlab** module:
    ``$ module keyword jupyter`` and load it with
    ``$ module load xxxxxx``
-3. Start a jupyter notebook: ``$ jupyter notebook`` - a browser window should open
+2. Load other modules required (e.g. pandas):
+    ``$ module load py-pandas/1.5.3
+3. Start a jupyter notebook: ``$ jupyter lab`` - a browser window should open
+
+Jupyter notebook in a Conda environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Create a Conda environment: ``$ conda create -n my-conda-env``
+2. Activate the environment: ``$ conda activate my-conda-env``
+3. Install jupyter in the environment: ``$ conda install jupyter``
+4. Install other packages as required
+5. Start notebook: ``$ jupyter notebook``
+
+Jupyter notebook as a module with Conda environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To do
 
 Stata
 -----
