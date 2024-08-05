@@ -59,12 +59,14 @@ To connect, an `SFTP client <https://www.sftp.net/clients>`__ is required such a
 -  `rsync <https://linux.die.net/man/1/rsync>`__
 -  `sftp <https://linux.die.net/man/1/sftp>`__
 
+When setting up the Client, check that the host key matches ``SHA-256:  GG1jAY2PnPo34qXhGZOHXqQ9rEXQxC5r9W91/0UNXBM=``. If your client ever warns that the host key has changed, please check that it matches this key before proceeding.
+
 Example of setting up WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Connect to the Cambridge VPN (or use a computer that is connected to the Cambridge Network)
 
-2. Start WinSCPand where you will be presented with the Login dialogue
+2. Start WinSCP where you will be presented with the Login dialogue
 
 .. figure:: ../../images/winscp-login.png
   :scale: 50 %
@@ -77,6 +79,14 @@ Example of setting up WinSCP
   :alt: WinSCP login settings
 
 4. Click Save and then click OK to save the session as a site. This will allow you to reconnected more easily in the future.
+
+5. You will see a warning about the server key not being found in the cache:
+
+.. figure:: ../../images/unknown-server.png
+  :scale: 100 %
+  :alt: Unknown server
+
+Check that the key is ``SHA-256:  GG1jAY2PnPo34qXhGZOHXqQ9rEXQxC5r9W91/0UNXBM=``. If it is not, then click Cancel and contact srcp@mrc-epid.cam.ac.uk
 
 .. _SFTP-upload:
 Example of uploading files using WinSCP
