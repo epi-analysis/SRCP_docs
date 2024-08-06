@@ -18,7 +18,7 @@ RStudio
 
 Set default CRAN
 ~~~~~~~~~~~~~~~~
-For easier package installation, set your default CRAN to ``www.stats.bris.ac.uk/R`` in the Tools -> Global Options menu (only needs to be done once):
+For easier package installation, set your default CRAN to ``https://www.stats.bris.ac.uk/R`` in the Tools -> Global Options menu (only needs to be done once):
 
 .. figure:: ../../images/rstudio-global-options.png
   :scale: 70 %
