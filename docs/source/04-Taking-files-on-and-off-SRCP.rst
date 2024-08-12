@@ -25,7 +25,7 @@ Process for downloading files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. A user wishes to download some results from SRCP
-2. They notify a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file name, location (e.g. their project folder) and a statement of how it meets the Disclosure Control Rules (see above)
+2. They notify a Data Manager (srcpdata@mrc-epid.cam.ac.uk) of the file name, location (e.g. their project folder) and a statement of how it meets the Disclosure Control Rules (see above)
 3. The Data Manager inspects the file and confirms that it contains results, not any individual level data
 4. The Data Manager copies the file from the user’s project folder to their “download” triage folder and notifies the user
 5. The user connects to their “download” triage folder using SFTP and downloads the file
@@ -35,7 +35,7 @@ Process for uploading files
 
 1. A user wishes to upload some supplementary data to SRCP
 2. The user connects to their “upload” triage folder using SFTP and uploads the file
-3. They notify a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file name, location (their “upload” triage folder) and a statement that permission has been granted for the data to be used in this research (data) or that the code is from a reputable source (code)
+3. They notify a Data Manager (srcpdata@mrc-epid.cam.ac.uk) of the file name, location (their “upload” triage folder) and a statement that permission has been granted for the data to be used in this research (data) or that the code is from a reputable source (code)
 4. The Data Manager inspects the file and confirms that it contains appropriate data/code
 5. The Data Manager copies the file from the user’s “upload” triage folder to the user’s project folder and notifies the user
 6. The user uses the file that is now available in their project folder
@@ -121,7 +121,7 @@ Example of uploading files using WinSCP
   :scale: 50 %
   :alt: WinSCP file upload
 
-7. Contact a Data Manager (datasharing@mrc-epid.cam.ac.uk) and let them know that you need files copies from your “upload” folder to your project folder. They will check the files, copy them to your project folder if all is OK and notify you that the files are available or advise what changes are needed.
+7. Contact a Data Manager (srcpdata@mrc-epid.cam.ac.uk) and let them know that you need files copies from your “upload” folder to your project folder. They will check the files, copy them to your project folder if all is OK and notify you that the files are available or advise what changes are needed.
 
 .. _SFTP-download:
 Example of downloading files using WinSCP
@@ -130,7 +130,7 @@ Example of downloading files using WinSCP
 0. **TO DO - make sure permissions are set so that DM can read the
    file**
 
-1. Contact a Data Manager (datasharing@mrc-epid.cam.ac.uk) and let them know that you need files copied from your project folder to your “download” folder. Provide a statement of how the files meet the Disclosure Control Rules (see above). They will check the files, copy them to your download folder if all is OK and notify you that they are available for download or advise what changes are needed.
+1. Contact a Data Manager (srcpdata@mrc-epid.cam.ac.uk) and let them know that you need files copied from your project folder to your “download” folder. Provide a statement of how the files meet the Disclosure Control Rules (see above). They will check the files, copy them to your download folder if all is OK and notify you that they are available for download or advise what changes are needed.
 
 2. When you have received notification from the Data Manager that the files are ready for you to download, connect to the Cambridge VPN.
 
