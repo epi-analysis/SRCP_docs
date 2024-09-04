@@ -139,7 +139,7 @@ Users may ask Data Managers to allow them to upload files to SRCP. This might be
 A summary of the process for users wishing to bring supplementary data or code into SRCP is:
 
 1. The user connects to their “upload” triage folder using SFTP and uploads the files.
-2. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for :ref:`uploading a file via STFP<SFTP-upload>`
+2. The user notifies a Data Manager (srcpdata@mrc-epid.cam.ac.uk) of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for :ref:`uploading a file via STFP<SFTP-upload>`
 3. The Data Manager copies the files to their “download” triage folder on SRCP
 4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine.
 5. The Data Manager inspects the files and confirms that they contain appropriate data/code.
@@ -177,7 +177,7 @@ Users will ask Data Managers to allow them to download files from SRCP. This is 
 
 A summary of the process for users wishing to download files from SRCP is:
 
-1. The user notifies a Data Manager (datasharing@mrc-epid.cam.ac.uk) of the file names they wish to download and their location.
+1. The user notifies a Data Manager (srcpdata@mrc-epid.cam.ac.uk) of the file names they wish to download and their location.
 2. The Data Manager copies the files to their “download” triage folder on SRCP **OR** accesses the files directly on SRCP.
 3. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
 4. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules:
