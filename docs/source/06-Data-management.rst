@@ -14,7 +14,7 @@ Data Managers are responsible for:
 4. Checking data/code that is brought in or out of SRCP to make sure it does not contain anything it shouldn't
 
 .. note::
-   When Data Managers (and users) connect to a remote desktop session, this uses a node (or cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed). It is unlikely that you will "block" other SRCP users unless you request a large number of cores (e.g. 10) for long periods. For simple tasks like bring data in or out you will only need 1 core. Some data checking could be more resource intensive and require more cores.
+   When Data Managers (and users) connect to a remote desktop session, this uses a node (or cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed). It is unlikely that you will "block" other SRCP users unless you request a large number of cores (e.g. 10) for long periods. For simple tasks like bringing data in or out you will only need 1 core. Some data checking could be more resource intensive and require more cores.
 
 Prerequisites
 -------------
@@ -188,7 +188,7 @@ A summary of the process for users wishing to download files from SRCP is:
    -  files should not have any participant or sample IDs
    -  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
 
-5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user.
+5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user. Check that the "read" permission is set for "everyone", otherwise the user won't be able to access the files.
 6. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
 
 Example of enabling a user to download files from SRCP using WinSCP
@@ -213,7 +213,7 @@ Example of enabling a user to download files from SRCP using WinSCP
 .. note::
    If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit. In R or Python you could write a script to search for participant IDs or report discrepancies in columns of data (for example, look for a sudden change in the structure of the data that might suggest something hidden).
 
-7. If the files are OK then on SRCP, copy (not move) the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. Notify the user that the files are ready for download.
+7. If the files are OK then on SRCP, copy (not move) the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. Check that the "read" permission is set for "everyone", otherwise the user won't be able to access the files. Notify the user that the files are ready for download.
 
 8. (If the files are large then delete them from both your own and the user’s triage folder to save space?  Or delete them from your local computer? Confirm with the user that they have downloaded the files to their local computer?)
 
