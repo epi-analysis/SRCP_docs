@@ -142,7 +142,7 @@ A summary of the process for users wishing to bring supplementary data or code i
 2. The user notifies a Data Manager (srcpdata@mrc-epid.cam.ac.uk) of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for :ref:`uploading a file via STFP<SFTP-upload>`
 3. The Data Manager copies the files to their “download” triage folder on SRCP
 4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine.
-5. The Data Manager inspects the files and confirms that they contain appropriate data/code.
+5. The Data Manager inspects the files and confirms that they contain appropriate data/code (see more details in the example below)
 6. On SRCP, the Data Manager copies (not moves) the files from the user’s “upload” triage folder to the user’s project data folder and notifies the user.
 7. The user uses the files that are now available in their project data folder (they may need to copy to their analysis folder to edit).
 8. Tidy up
@@ -164,7 +164,7 @@ Example of enabling a user to bring files into SRCP using WinSCP
   :scale: 50 %
   :alt: WinSCRP file download
 
-6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__). A virus scanner can also be run on the files.
+6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__). A virus scanner can also be run on the files. Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
 
 7. If the files are OK then on SRCP, copy (not move) the files from the user’s “upload” triage folder to the user’s project data folder either on the command line or in File Manager. Notify the user that the files are ready for use.
 
@@ -187,7 +187,7 @@ A summary of the process for users wishing to download files from SRCP is:
    -  results are clearly labelled
    -  files should not have any participant or sample IDs
    -  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
-
+And more details in the example below.
 5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user. Check that the "read" permission is set for "everyone", otherwise the user won't be able to access the files.
 6. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
 
@@ -208,7 +208,7 @@ Example of enabling a user to download files from SRCP using WinSCP
   :scale: 50 %
   :alt: WinSCRP file download
 
-6. Inspect the files. **TO CONFIRM** The files need to be checked to ensure that they do not contain study data, only summary results. See point 5 above which describes some broad Disclosure Control Rules. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed.
+6. Inspect the files. **TO CONFIRM** The files need to be checked to ensure that they do not contain study data, only summary results. See point 4 above which describes some broad Disclosure Control Rules. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed. Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
 
 .. note::
    If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit. In R or Python you could write a script to search for participant IDs or report discrepancies in columns of data (for example, look for a sudden change in the structure of the data that might suggest something hidden).
@@ -286,7 +286,9 @@ Often a more formal process is used where researchers have to submit a form with
 
 For data that is to be brought in, checks should be made about whether the user has permission to use this data and copied it to different locations. Some data sets might not be a concern, for example publicly available data on air pollution. Questions should be raised if a user is trying to bring in something sensitive like patient records.
 
-Users may want to bring in code or containers. This should be scanned (TO DO - recommend some tools) to check for security problems.
+Users may want to bring in code or containers. This should be scanned (TO DO - recommend some tools) to check for security problems.  A virus scanner can be run on the files. If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__).
+
+Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
 
 Notes on project permissions
 ----------------------------
