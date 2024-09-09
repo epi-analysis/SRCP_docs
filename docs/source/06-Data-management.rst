@@ -134,7 +134,7 @@ Example of uploading a data release using WinSCP
 Process for users wishing to bring files into SRCP
 --------------------------------------------------
 
-Users may ask Data Managers to allow them to upload files to SRCP. This might be to bring in extra data sets or bespoke code that they cannot download from the standard repositories available in SRCP. If data are being brought in, checks should be made that the user has permission to use the data in this way.
+Users may ask Data Managers to allow them to upload files to the SRCP. This might be to bring in extra data sets or bespoke code that they cannot download from the standard repositories available in the SRCP. If data are being brought in, checks should be made that the user has permission to use the data in this way.
 
 A summary of the process for users wishing to bring supplementary data or code into SRCP is:
 
@@ -217,6 +217,39 @@ Example of enabling a user to download files from SRCP using WinSCP
 
 8. (If the files are large then delete them from both your own and the user’s triage folder to save space?  Or delete them from your local computer? Confirm with the user that they have downloaded the files to their local computer?)
 
+Examining items to be taken in or out
+-------------------------------------
+
+Files that are to be taken out from the system should be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `here <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed.
+
+A standard check might be to look for participant IDs in the data export as this is clearly an indicator of individual level data. You could do this using a script in R or Python if the files are large. First create a list of the participant IDs from the data release, then search for these values in the data export.
+
+Often a more formal process is used where researchers have to submit a form with details about what the results are and how they relate to the project. There can be a service level agreement for the time taken to review requests.
+
+For data that is to be brought in, checks should be made about whether the user has permission to use this data and copied it to different locations. Some data sets might not be a concern, for example publicly available data on air pollution. Questions should be raised if a user is trying to bring in something sensitive like patient records.
+
+Users may want to bring in code or containers. This should be scanned (TO DO - recommend some tools) to check for security problems.  A virus scanner can be run on the files. If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__).
+
+Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
+
+Draft considerations for whitelisting sites
+-------------------------------------------
+
+Ideally users should not have access to any external locations outside of the SRCP to avoid the risk of data being taken out (either on purpose or accidentally) without it first undergoing checks to ensure it doesn't container personal information. Without these restrictions users could easily remove files, for example by uploading them to Google Drive. Other sites that could have a legitimate use can allow data to leave, for example Github. There is a route for bringing files in and out of the SRCP where they are checked by a Data Manager.
+
+However, a balance may be struck where access to certain locations may reduce the amount of checking (and hence increase speed of ingress) while not significantly increase the risk of data being removed from the SRCP without being checked. In these risk-assessed cases, we refer to the location being white-listed. A specific example is the CRAN (Comprehensive R Archive Network) hosted by Bristol University. The CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R. Access to the CRAN allows users to install a vast range of statistical packages that are frequently used in science. Therefore it is convenient to allow users to install R packages from the CRAN themselves, rather than having to wait for a Data Manager to import a package archive and having a more complicated installation. CRAN sites don't host the mechanism for submitting new packages, thus there is no route to be able to push data to the CRAN. New packages are created by submitting code for peer review, which also reduces the chances of malicious content appearing on the CRAN.
+
+Conversely, pypi.org, which hosts Python packages that can be downloaded with Pip, allows users to upload new packages. Therefore even though this location might be useful for users, it is blocked to avoid data being taken out in packages.
+
+Note that the blocking is done by IP address rather than domain name.
+
+A set of considerations might include:
+
+1. How many users need access to the location? If it is a small number for a finite project, access could be given for the duration of the project and then removed.
+2. Can you find a way to upload data? Note that often APIs offer an upload method, but this actual returns a separate cloud storage location (e.g. on AWS) where the file should be uploaded to. Thus since AWS blocked, an upload is not actually possible.
+3. 
+
+
 Work in progress
 ----------------
 
@@ -275,20 +308,6 @@ Once the remote desktop session is running, the following steps can be followed 
 6. If the file looks OK, copy the file requested by the user to the location required (for example, the user’s project folder) ``/srv/projects/<projectname>`` where ``<projectname>`` is the user’s project
 7. Either notify the user that the file was copied and tell them the location, or explain what needs to be changed for the file to be acceptable for upload.
 
-Examining items to be taken in or out
--------------------------------------
-
-Files that are to be taken out from the system should be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `here <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed.
-
-A standard check might be to look for participant IDs in the data export as this is clearly an indicator of individual level data. You could do this using a script in R or Python if the files are large. First create a list of the participant IDs from the data release, then search for these values in the data export.
-
-Often a more formal process is used where researchers have to submit a form with details about what the results are and how they relate to the project. There can be a service level agreement for the time taken to review requests.
-
-For data that is to be brought in, checks should be made about whether the user has permission to use this data and copied it to different locations. Some data sets might not be a concern, for example publicly available data on air pollution. Questions should be raised if a user is trying to bring in something sensitive like patient records.
-
-Users may want to bring in code or containers. This should be scanned (TO DO - recommend some tools) to check for security problems.  A virus scanner can be run on the files. If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__).
-
-Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
 
 Notes on project permissions
 ----------------------------
