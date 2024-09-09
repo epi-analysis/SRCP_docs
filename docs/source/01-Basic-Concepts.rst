@@ -109,10 +109,12 @@ There are 4 main folders in the main ``/srv/`` folder:
    │       ├── licenses subfolder
 
 
--  ``home`` - each user has a folder with 50GB of space, the name of the folder corresponds to their username e.g. bb123
+-  ``home`` - each user has a folder with 50GB of space for personal files, the name of the folder corresponds to their username e.g. bb123
 -  ``projects`` - you will only have access to your project, and the Data Management Team will confirm the name of your folder. The data you requested should be found in the read-only **data** folder. You can keep code and copies of the data in the **analysis** subfolder. There is 1TB of space available.
 -  ``data-manager`` - used by Data Managers to transfer data in and out of SRCP - not accessible to users
 -  ``shared`` - contains license files (and in the future helpful code snippets)
+
+Users should store their code and copies of data in their **home** and **project** folders only.
 
 All data is backed up across 2 sites and lost files can be recovered in the event of a disaster or accidental deletion.
 
