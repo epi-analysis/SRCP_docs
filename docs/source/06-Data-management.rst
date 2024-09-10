@@ -8,13 +8,32 @@ Overview
 
 Data Managers are responsible for:
 
-1. Initially bringing study data requested by the user into SRCP
+1. Initially bringing study data requested by the user into the SRCP
 2. Creating folders within the project and setting permissions for the study data
 3. Moving data between the “upload” and “download” triage folders and a user’s project folder (e.g. bringing code in or results out)
-4. Checking data/code that is brought in or out of SRCP to make sure it does not contain anything it shouldn't
+4. Checking data/code that is brought in or out of the SRCP to make sure it does not contain anything it shouldn't
 
-.. note::
-   When Data Managers (and users) connect to a remote desktop session, this uses a node (or cores on a node) which is paid for on an annual basis. Therefore there is currently no hourly charge for using SRCP (although this may be reviewed). It is unlikely that you will "block" other SRCP users unless you request a large number of cores (e.g. 10) for long periods. For simple tasks like bringing data in or out you will only need 1 core. Some data checking could be more resource intensive and require more cores.
+Resource utilisation
+-----------------------------
+The SRCP is made up of nodes. CPU nodes have 20 cores available. GPU nodes have 24 CPU cores and 1 A100 GPU, and are more expensive. Nodes are paid for on a pro-rated annual basis, and we are not operating a hourly charge model like CSD3. When a project is set up we can create a queue for it on a node and set a limit on the maximum number of cores that can be used by that project. For a single user it might be appropriate to set a limit of 2 cores, for example. The limit depends on the project requirements and additional costs can be passed on to the user. RCS support can change the core limits on a queue. The nodes are over allocated in that the sum of the core limits of queues assigned to a node are greater than 20. This is because current experience suggests that it is unlikely that all users will be requesting their maximum at once. Finding the appropriate level of over allocation is more of an art than science, and is work in progress! If the full allocation of cores for a project is already in use (for example if there are 2 users using a queue with a 2 core limit and one user is using both cores) then a request to start a remote desktop session will be queued until a core becomes available. Alternatively, the queue core limit may not be reached but all the cores on a nodes might be in uses. Again, the request will be queued until a core is available.
+
+The current guidance is for Data Managers to use the project's queue to work on data for that project, although in the future there may be a Data Manager queue to avoid blocking users. For simple tasks like bringing data in or out you will only need 1 core. Some data checking could be more resource intensive and require more cores.
+
+The queueing system is provided by SLURM, and the following commands may be useful. They can be found in `/srv/shared/scripts/slurm.txt`
+
+::
+
+#Command to show jobs by user, showing which queue, node and how manys cpus they are using
+
+$ squeue -o "%.7i %.9P %.8j %.8u %.2t %.10M %N %C"
+
+#Information about the nodes - how many CPUs are available and how many are being used
+
+$ sinfo -o "%n %e %m %a %c %C"
+
+#Show total usage by user
+
+$ sreport user top start=2023-01-01
 
 Prerequisites
 -------------
@@ -208,7 +227,7 @@ Example of enabling a user to download files from SRCP using WinSCP
   :scale: 50 %
   :alt: WinSCRP file download
 
-6. Inspect the files. **TO CONFIRM** The files need to be checked to ensure that they do not contain study data, only summary results. See point 4 above which describes some broad Disclosure Control Rules. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed. Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
+6. Inspect the files. The files need to be checked to ensure that they do not contain study data, only summary results. See point 4 above which describes some broad Disclosure Control Rules. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed. Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
 
 .. note::
    If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit. In R or Python you could write a script to search for participant IDs or report discrepancies in columns of data (for example, look for a sudden change in the structure of the data that might suggest something hidden).
@@ -220,9 +239,9 @@ Example of enabling a user to download files from SRCP using WinSCP
 Examining items to be taken in or out
 -------------------------------------
 
-Files that are to be taken out from the system should be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `here <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed.
+Files that are to be taken out from the system should be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `here <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed. It can be challenging to check large numbers of files, or files that are very large. Often it is necessary to have some understanding of the research area that the results relate to, which can be difficult for a Data Manager who cannot be expected to be experts in every relevant area of research.
 
-A standard check might be to look for participant IDs in the data export as this is clearly an indicator of individual level data. You could do this using a script in R or Python if the files are large. First create a list of the participant IDs from the data release, then search for these values in the data export.
+A standard check might be to look for participant IDs in the data export as this is clearly an indicator of individual level data. This prevents the scenario where a user simply asks for the data to be taken out. Sometimes they have misunderstood the purpose of the SRCP and think that this is an appropriate request. You could do this using a script in R or Python if the files are large. First create a list of the participant IDs from the data release, then search for these values in the data export. A more malicious user would possibly not use the participant IDs if there were trying to remove data without being detected.
 
 Often a more formal process is used where researchers have to submit a form with details about what the results are and how they relate to the project. There can be a service level agreement for the time taken to review requests.
 
@@ -239,16 +258,69 @@ Ideally users should not have access to any external locations outside of the SR
 
 However, a balance may be struck where access to certain locations may reduce the amount of checking (and hence increase speed of ingress) while not significantly increase the risk of data being removed from the SRCP without being checked. In these risk-assessed cases, we refer to the location being white-listed. A specific example is the CRAN (Comprehensive R Archive Network) hosted by Bristol University. The CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R. Access to the CRAN allows users to install a vast range of statistical packages that are frequently used in science. Therefore it is convenient to allow users to install R packages from the CRAN themselves, rather than having to wait for a Data Manager to import a package archive and having a more complicated installation. CRAN sites don't host the mechanism for submitting new packages, thus there is no route to be able to push data to the CRAN. New packages are created by submitting code for peer review, which also reduces the chances of malicious content appearing on the CRAN.
 
-Conversely, pypi.org, which hosts Python packages that can be downloaded with Pip, allows users to upload new packages. Therefore even though this location might be useful for users, it is blocked to avoid data being taken out in packages.
+Conversely, pypi.org, which hosts Python packages that can be downloaded with Pip, allows users to upload new packages. Therefore even though this location might be useful for users wanting to download packages themselves, it is blocked to avoid data being taken out in packages. Often Python packages can be obtained via Conda, which does provide the ability to upload.
 
-Note that the blocking is done by IP address rather than domain name.
+If users have complex software requirements but a location can't be whitelisted, an option is for them to build their environment in a container outside of the SRCP. For example, they may require a package that has a large number of dependencies, making it impractial for a Data Manager to bring them in manually. This gives the flexibility to install whatever is required, before the container is scanned and brought into the SRCP. 
 
-A set of considerations might include:
+Note that the whitelisting is done by IP address rather than domain name. Care is needed because if two domains point to the same IP address, if one domain is whitelisted, the IP address can be accessed (this was the case with pypi.org and pythonhosted.org).
 
-1. How many users need access to the location? If it is a small number for a finite project, access could be given for the duration of the project and then removed.
-2. Can you find a way to upload data? Note that often APIs offer an upload method, but this actual returns a separate cloud storage location (e.g. on AWS) where the file should be uploaded to. Thus since AWS blocked, an upload is not actually possible.
-3. 
+A set of considerations for whether a location should be whitelisted might include:
 
+1. How many users need access to the location? If it is a small number for a finite project, access could be given for the duration of the project and then removed. Equally if only a few users require it, a manual approach might be possible.
+2. Can you find a way to upload data to the location? For example if you can submit your own package. Note that often APIs offer an upload method, but this actual returns a separate cloud storage location (e.g. on AWS) where the file should be uploaded to. Thus since AWS blocked, an upload is not actually possible.
+3. Could the environment be built in a container and brought into SRCP after scanning?
+4. How trustworthy is the location? If it hosts packages, do they undergo peer review which would give some reassurance that malicious code might not be hidden in a package?
+
+Email templates
+---------------
+After completing VW process - apply for SRCP account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hi <<name>>,
+
+Thank you for your application to access EPIC Norfolk data. The next step is to apply for access to the Secure Research Computing Platform (SRCP) where you will be able to work with the data. Please complete this form:
+
+https://www.hpc.cam.ac.uk/srcp-request-user-access
+
+You will be asked to log in with Raven, this requires your CRSid (<<CRSid>>) and associated password.
+
+On the form, enter the following
+
+   1. **User’s vHPC Level of Access** = Project User
+   2. **Project Unique ID** = <<project-id>> (NOTE - this project ID is also needed to start sessions on SRCP so please retain it)
+   
+If you are using a computer connected to the Cambridge University Network then this next step can be skipped. If you are accessing SRCP from an external computer, you can follow these instructions to prepare a connection to the Cambridge VPN while you wait for your SRCP account:
+
+https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
+
+Please do get in touch if you need assistance with setting up the VPN.
+   
+Best wishes
+<<sender-name>>
+
+SRCP account set up - next steps
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The SRCP Data Managers will receive an email from the SRCP support team informing them that an account has been set up for a user. This email is sent to the user's "@cam.ac.uk" address so they probably won't know that their account is ready. Therefore we can forward on the email with the following additional information:
+
+Hi <<name>>,
+
+Your SRCP account is ready. There is a brief introductory video and overview of SRCP on the documentation homepage: https://srcp-docs.readthedocs.io/
+
+If you feel you would like me to demonstrate the basic functionality of SRCP (logging in, starting a remote desktop, running applications etc) I am happy to set up a meeting with you. Otherwise, to use SRCP you will need to either use a computer connected to the Cambridge University Network, or the Cambridge University VPN.  Instructions for connecting to the VPN are here:
+
+https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
+
+Then you can proceed with the “Logging in for the first time section” in the documentation:
+
+https://srcp-docs.readthedocs.io/en/latest/00-Logging-in-for-the-First-Time.html
+
+The following details are needed:
+
+* CRSid = <<CRSid>>
+* Project identifier = <<project-id>>
+* Project folder name = <<project-folder-name>>
+
+Best wishes
+<<sender-name>>
 
 Work in progress
 ----------------
@@ -316,11 +388,7 @@ The platform manager group can rwx on folders and files created in project folde
 
 When the platform manager creates the data/analysis folders, they apply ACL permissions to these which are inherited by the items created in these folders.
 
-Checking resource utilisation
------------------------------
-To view usage, the following command can be used:
 
-``$ sreport user top start=2023-01-01``
 
 Permission commands for read only data in restricted shared folder
 ------------------------------------------------------------------
@@ -331,58 +399,5 @@ The objective is to have a folder in the shared area that is only accessible for
 3. ``nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" srv/shared/<sharedproject>``
 4. These commands will mean that new files and folders added will also have the correct permissions. However they also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``find srv/shared/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
 5. Variations of this command can also be used to revoke the permission at the end of a group's access, because the ``find`` command acts recursively
-
-Email templates
----------------
-After completing VW process - apply for SRCP account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hi <<name>>,
-
-Thank you for your application to access EPIC Norfolk data. The next step is to apply for access to the Secure Research Computing Platform (SRCP) where you will be able to work with the data. Please complete this form:
-
-https://www.hpc.cam.ac.uk/srcp-request-user-access
-
-You will be asked to log in with Raven, this requires your CRSid (<<CRSid>>) and associated password.
-
-On the form, enter the following
-
-   1. **User’s vHPC Level of Access** = Project User
-   2. **Project Unique ID** = <<project-id>> (NOTE - this project ID is also needed to start sessions on SRCP so please retain it)
-   
-If you are using a computer connected to the Cambridge University Network then this next step can be skipped. If you are accessing SRCP from an external computer, you can follow these instructions to prepare a connection to the Cambridge VPN while you wait for your SRCP account:
-
-https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
-
-Please do get in touch if you need assistance with setting up the VPN.
-   
-Best wishes
-<<sender-name>>
-
-SRCP account set up - next steps
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The SRCP Data Managers will receive an email from the SRCP support team informing them that an account has been set up for a user. This email is sent to the user's "@cam.ac.uk" address so they probably won't know that their account is ready. Therefore we can forward on the email with the following additional information:
-
-Hi <<name>>,
-
-Your SRCP account is ready. There is a brief introductory video and overview of SRCP on the documentation homepage: https://srcp-docs.readthedocs.io/
-
-If you feel you would like me to demonstrate the basic functionality of SRCP (logging in, starting a remote desktop, running applications etc) I am happy to set up a meeting with you. Otherwise, to use SRCP you will need to either use a computer connected to the Cambridge University Network, or the Cambridge University VPN.  Instructions for connecting to the VPN are here:
-
-https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
-
-Then you can proceed with the “Logging in for the first time section” in the documentation:
-
-https://srcp-docs.readthedocs.io/en/latest/00-Logging-in-for-the-First-Time.html
-
-The following details are needed:
-
-* CRSid = <<CRSid>>
-* Project identifier = <<project-id>>
-* Project folder name = <<project-folder-name>>
-
-Best wishes
-<<sender-name>>
-
-
 
 
