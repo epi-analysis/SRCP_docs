@@ -24,15 +24,12 @@ The queueing system is provided by SLURM, and the following commands may be usef
 ::
 
 #Command to show jobs by user, showing which queue, node and how manys cpus they are using
-
 $ squeue -o "%.7i %.9P %.8j %.8u %.2t %.10M %N %C"
-
+#
 #Information about the nodes - how many CPUs are available and how many are being used
-
 $ sinfo -o "%n %e %m %a %c %C"
-
+#
 #Show total usage by user
-
 $ sreport user top start=2023-01-01
 
 Prerequisites
