@@ -1,7 +1,7 @@
 Data management (internal MRC Epidemiology Unit only)
 =====================================================
 
-This section is for **MRC Epidemiology Data Managers**, not for collaborators using SRCP for their analyses.
+This section is for **MRC Epidemiology Data Managers**, not for collaborators using the SRCP for their analyses.
 
 Overview
 --------
@@ -37,16 +37,16 @@ Prerequisites
 
 To perform the data management tasks, the Data Manager needs to:
 
-1. Understand how to :ref:`log into SRCP<login-later>`
+1. Understand how to :ref:`log into the SRCP<login-later>`
 2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use the project ID that corresponds to the user whose data is being worked on
 3. Set up an :ref:`SFTP client<SFTP-client>`
 
-Bringing study data into SRCP
------------------------------
+Bringing study data into the SRCP
+---------------------------------
 
-As summary of the process for bringing study data into SRCP is:
+As summary of the process for bringing study data into the SRCP is:
 
-1. Set up the SFTP connection to SRCP
+1. Set up the SFTP connection to the SRCP
 2. Navigate to the “upload” triage folder and upload the files
 3. Log in to the SRCP web interface
 4. Start a remote desktop session
@@ -101,7 +101,7 @@ Example of uploading a data release using WinSCP
 
 1.  Connect to the Cambridge VPN or use a computer connected to the Cambridge network
 
-2.  Start WinSCP and where you will be presented with the Login dialogue. Select the session for SRCP that you :ref:`saved previously<SFTP-client>`, or enter the details if you have not already done this - **data-epi-analysis.srcp.hpc.cam.ac.uk** on port 22 and your CRSid as the username (i.e. the same username you use to log into the SRCP web interface).
+2.  Start WinSCP and where you will be presented with the Login dialogue. Select the session for the SRCP that you :ref:`saved previously<SFTP-client>`, or enter the details if you have not already done this - **data-epi-analysis.srcp.hpc.cam.ac.uk** on port 22 and your CRSid as the username (i.e. the same username you use to log into the SRCP web interface).
 
 .. figure:: ../../images/winscp-prev-login.png
   :scale: 50 %
@@ -121,13 +121,13 @@ Example of uploading a data release using WinSCP
   :scale: 50 %
   :alt: WinSCP landing
 
-6.  Locate the data release on your local machine (left side) that you wish to upload. Drag and drop it into the upload folder on SRCP (right side)
+6.  Locate the data release on your local machine (left side) that you wish to upload. Drag and drop it into the upload folder on the SRCP (right side)
 
 .. figure:: ../../images/winscp-upload.png
   :scale: 50 %
   :alt: WinSCP file upload
 
-7.  Switch to a browser, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, use the project ID that corresponds to the user whose data is being worked on
+7.  Switch to a browser, log into the SRCP and :ref:`start a remote desktop session<remote-desktop>`, use the project ID that corresponds to the user whose data is being worked on
 
 8.  Copy (not move) the data from your ``triage/<yourusername>/upload`` folder to the user’s project ``data`` subfolder:
 
@@ -147,32 +147,32 @@ Example of uploading a data release using WinSCP
 
 10. If the data are large and a copy is stored elsewhere, delete any copies of the data from your triage folder to save storage space.
 
-Process for users wishing to bring files into SRCP
---------------------------------------------------
+Process for users wishing to bring files into the SRCP
+------------------------------------------------------
 
 Users may ask Data Managers to allow them to upload files to the SRCP. This might be to bring in extra data sets or bespoke code that they cannot download from the standard repositories available in the SRCP. If data are being brought in, checks should be made that the user has permission to use the data in this way.
 
-A summary of the process for users wishing to bring supplementary data or code into SRCP is:
+A summary of the process for users wishing to bring supplementary data or code into the SRCP is:
 
 1. The user connects to their “upload” triage folder using SFTP and uploads the files.
 2. The user notifies a Data Manager (srcpdata@mrc-epid.cam.ac.uk) of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for :ref:`uploading a file via STFP<SFTP-upload>`
-3. The Data Manager copies the files to their “download” triage folder on SRCP
-4. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine.
+3. The Data Manager copies the files to their “download” triage folder on the SRCP
+4. The Data Manager connects to the SRCP via SFTP and downloads the files to their local machine.
 5. The Data Manager inspects the files and confirms that they contain appropriate data/code (see more details in the example below)
-6. On SRCP, the Data Manager copies (not moves) the files from the user’s “upload” triage folder to the user’s project data folder and notifies the user.
+6. On the SRCP, the Data Manager copies (not moves) the files from the user’s “upload” triage folder to the user’s project data folder and notifies the user.
 7. The user uses the files that are now available in their project data folder (they may need to copy to their analysis folder to edit).
 8. Tidy up
 
-Example of enabling a user to bring files into SRCP using WinSCP
+Example of enabling a user to bring files into the SRCP using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. After receiving a request to make a user’s uploaded files available, you will need to download the files yourself to check them. The initial step is to copy the files from the user’s “upload” folder to your own “download” folder. Alternatively, you can take local copies on SRCP and examine the files there.
+1. After receiving a request to make a user’s uploaded files available, you will need to download the files yourself to check them. The initial step is to copy the files from the user’s “upload” folder to your own “download” folder. Alternatively, you can take local copies on the SRCP and examine the files there.
 
-2. If downloading the files, log into SRCP and :ref:`start a remote desktop session<remote-desktop>`, use the project ID that corresponds to the user whose data is being worked on
+2. If downloading the files, log into the SRCP and :ref:`start a remote desktop session<remote-desktop>`, use the project ID that corresponds to the user whose data is being worked on
 
 3. Navigate to the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` either on the command line or in File Manager
 
-4. Copy the files from the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. **OR** leave the files where they are and inspect them directly on SRCP.
+4. Copy the files from the user’s triage folder ``/srv/data-manager/triage/<username>/upload`` to your own download triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. **OR** leave the files where they are and inspect them directly on the SRCP.
 
 5. Start WinSCP and log in using the details :ref:`saved previously<SFTP-client>`. Navigate to your download folder and copy the files to a location accessible from your local machine.
 
@@ -182,14 +182,14 @@ Example of enabling a user to bring files into SRCP using WinSCP
 
 6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__). A virus scanner can also be run on the files. Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
 
-7. If the files are OK then on SRCP, copy (not move) the files from the user’s “upload” triage folder to the user’s project data folder either on the command line or in File Manager. Notify the user that the files are ready for use.
+7. If the files are OK then on the SRCP, copy (not move) the files from the user’s “upload” triage folder to the user’s project data folder either on the command line or in File Manager. Notify the user that the files are ready for use.
 
 8. (If the files are large then delete them from both your own and the user’s triage folder to save space? Or delete them from your local computer? Assume user has a back up on their local computer?)
 
-Process for users wishing to take files off SRCP
-------------------------------------------------
+Process for users wishing to take files off the SRCP
+----------------------------------------------------
 
-Users will ask Data Managers to allow them to download files from SRCP. This is so that they can remove summary results for their research, not for removing data from SRCP.
+Users will ask Data Managers to allow them to download files from the SRCP. This is so that they can remove summary results for their research, not for removing data from the SRCP.
 
 A summary of the process for users wishing to download files from SRCP is:
 
@@ -300,9 +300,9 @@ The SRCP Data Managers will receive an email from the SRCP support team informin
 
 Hi <<name>>,
 
-Your SRCP account is ready. There is a brief introductory video and overview of SRCP on the documentation homepage: https://srcp-docs.readthedocs.io/
+Your SRCP account is ready. There is a brief introductory video and overview of the SRCP on the documentation homepage: https://srcp-docs.readthedocs.io/ along with more detailed documentation.
 
-If you feel you would like me to demonstrate the basic functionality of SRCP (logging in, starting a remote desktop, running applications etc) I am happy to set up a meeting with you. Otherwise, to use SRCP you will need to either use a computer connected to the Cambridge University Network, or the Cambridge University VPN.  Instructions for connecting to the VPN are here:
+If you feel you would like me to demonstrate the basic functionality of the SRCP (logging in, starting a remote desktop, running applications etc) I am happy to set up a meeting with you. Otherwise, to use the SRCP you will need to either use a computer connected to the Cambridge University Network, or the Cambridge University VPN.  Instructions for connecting to the VPN are here:
 
 https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
 
