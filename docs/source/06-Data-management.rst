@@ -258,9 +258,12 @@ Another key feature of the SRCP that reduces the scope of bad actors to cause pr
 
 If a user were to run a container that unintentionally damaged (or encrypted for ransom) their own files (e.g. analysis code) then this could be restored from off site snapshots that are taken of the SRCP storage.
 
-Although these features help ensure that running containers won't cause serious issues, here we consider what other precautions are possible.
+Although these features help ensure that running containers won't cause serious issues, here we consider what other precautions are possible. There are 2 areas that can be checked:
 
-. If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__).
+1. Check for CVEs (Common Vulnerabilities and Exposures), a list of publicly disclosed computer security flaws in libraries, packages and software. These might be found in the software in the container image.
+2. Detecting unexpected behaviour, configuration changes, and attacks when the container is running
+
+The first of these can be checked with a scanner like `Grype <https://github.com/anchore/grype>`__ . The challenge here is to deal with the output of often hundreds of vulnerabilities. Checking all of them is impractical and they might not be relevant if the container is running in an isolated environment. We need to agree an approach.  For checking at run time we can use a tool like Falco.
 
 Draft considerations for whitelisting sites
 -------------------------------------------
