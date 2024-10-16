@@ -9,6 +9,12 @@ Basic file editing
 ------------------
 From the command line, ``vim`` can be used to edit files, but can be rather challenging to use. An alternative is to use ``gedit`` from the command line which will load the file into `gedit <https://help.gnome.org/users/gedit/stable/>`__ which is a more user-friendly interface.
 
+Unzipping files
+---------------
+The `7za` application is provided for zipping and unzipping files. For example, to unzip a file from the command line:
+
+``$ 7za x myfile.zip``
+
 RStudio
 -------
 
