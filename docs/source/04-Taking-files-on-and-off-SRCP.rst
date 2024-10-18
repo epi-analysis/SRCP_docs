@@ -44,7 +44,7 @@ Process for uploading files
 Connecting to epi-analysis SRCP with SFTP
 -----------------------------------------
 
-The **address** of the epi-analysis SFTP site is `data-epi-analysis.srcp.hpc.cam.ac.uk <data-epi-analysis.srcp.hpc.cam.ac.uk>`__.
+The **address** of the epi-analysis SFTP site is ``data-epi-analysis.srcp.hpc.cam.ac.uk``.
 
 The **username**, **password** and **2 factor authentication device** are the same as those used to log into the web interface.
 
