@@ -1,12 +1,12 @@
 .. _data-transfer:
 
-Taking files on and off SRCP
-============================
+Taking files on and off the SRCP
+================================
 
-Explanation of file transfers on SRCP
--------------------------------------
+Explanation of file transfers on the SRCP
+-----------------------------------------
 
-An important feature of the SRCP Platform is the strict control and auditing over the upload and download of files. Users cannot access their project folder from outside SRCP. This prevents data from being removed from or brought onto the system without permission. Before any file is released from the system, it is checked by a Data Manager to ensure that it meets the **Disclosure Control Rules**:
+An important feature of the SRCP Platform is the strict control and auditing over the upload and download of files. Users cannot access their project folder from outside the SRCP. This prevents data from being removed from or brought onto the system without permission. Before any file is released from the system, it is checked by a Data Manager to ensure that it meets the **Disclosure Control Rules**:
 
 -  provide a description of what the file contains, how it was generated
    and its relevance to the research question
@@ -15,7 +15,7 @@ An important feature of the SRCP Platform is the strict control and auditing ove
 -  files should not have any participant or sample IDs
 -  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
 
-Data brought onto the system should be cleared for use on the research question. Code that is being brought in should be sourced from a reputable location so that it does not contain malware. In SRCP the transfer process is managed by using a triage location for each user that is only accessible to the user from outside SRCP. They can use SFTP to transfer files to and from the triage location. Only a Data Manager can copy files between a user’s project folder and the triage folder after inspecting them. It is the responsibility of the users to notify a Data Manager that files are awaiting approval so they can authorise and copy them. Once the copy is complete, the files are available to the user immediately.
+Data brought onto the system should be cleared for use on the research question. Code that is being brought in should be sourced from a reputable location so that it does not contain malware. In the SRCP the transfer process is managed by using a triage location for each user that is only accessible to the user from outside the SRCP. They can use SFTP to transfer files to and from the triage location. Only a Data Manager can copy files between a user’s project folder and the triage folder after inspecting them. It is the responsibility of the users to notify a Data Manager that files are awaiting approval so they can authorise and copy them. Once the copy is complete, the files are available to the user immediately.
 
 .. figure:: ../../images/file-triage.png
   :scale: 70 %
@@ -24,7 +24,7 @@ Data brought onto the system should be cleared for use on the research question.
 Process for downloading files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. A user wishes to download some results from SRCP
+1. A user wishes to download some results from the SRCP
 2. They notify a Data Manager (srcpdata@mrc-epid.cam.ac.uk) of the file name, location (e.g. their project folder) and a statement of how it meets the Disclosure Control Rules (see above)
 3. The Data Manager inspects the file and confirms that it contains results, not any individual level data
 4. The Data Manager copies the file from the user’s project folder to their “download” triage folder and notifies the user
@@ -95,7 +95,7 @@ Example of uploading files using WinSCP
 
 1. Connect to the Cambridge VPN  (or use a computer that is connected to the Cambridge Network)
 
-2. Start WinSCPand where you will be presented with the Login dialogue. Select the session for SRCP that you saved previously
+2. Start WinSCP where you will be presented with the Login dialogue. Select the session for the SRCP that you saved previously
 
 .. figure:: ../../images/winscp-prev-login.png
   :scale: 50 %
@@ -109,13 +109,13 @@ Example of uploading files using WinSCP
   :scale: 50 %
   :alt: WinSCP TOTP log in
 
-5. You should now be connected. The triage upload and download folders on SRCP are shown on the right, and your local machine’s folders on the left. You can transfer files between these locations.
+5. You should now be connected. The triage upload and download folders on the SRCP are shown on the right, and your local machine’s folders on the left. You can transfer files between these locations.
 
 .. figure:: ../../images/winscp-landing.png
   :scale: 50 %
   :alt: WinSCP landing page
 
-6. Locate the file on your local machine (left side) that you wish to upload. Drag and drop it into the upload folder on SRCP (right side)
+6. Locate the file on your local machine (left side) that you wish to upload. Drag and drop it into the upload folder on the SRCP (right side)
 
 .. figure:: ../../images/winscp-upload.png
   :scale: 50 %
@@ -134,7 +134,7 @@ Example of downloading files using WinSCP
 
 2. When you have received notification from the Data Manager that the files are ready for you to download, connect to the Cambridge VPN.
 
-3. Start WinSCP where you will be presented with the Login dialogue. Select the session for SRCP that you saved previously
+3. Start WinSCP where you will be presented with the Login dialogue. Select the session for the SRCP that you saved previously
 
 .. figure:: ../../images/winscp-prev-login.png
   :scale: 50 %
@@ -148,13 +148,13 @@ Example of downloading files using WinSCP
   :scale: 50 %
   :alt: WinSCRP TOTP login
 
-6. You should now be connected. The triage upload and download folders on SRCP are shown on the right, and your local machine’s folders on the left. You can transfer files between these locations.
+6. You should now be connected. The triage upload and download folders on the SRCP are shown on the right, and your local machine’s folders on the left. You can transfer files between these locations.
 
 .. figure:: ../../images/winscp-landing.png
   :scale: 50 %
   :alt: WinSCRP saved login
 
-7. Locate the file on SRCP (right side) that you wish to download. Drag and drop it to the required folder on your local machine (left side)
+7. Locate the file on the SRCP (right side) that you wish to download. Drag and drop it to the required folder on your local machine (left side)
 
 .. figure:: ../../images/winscp-download.png
   :scale: 50 %
