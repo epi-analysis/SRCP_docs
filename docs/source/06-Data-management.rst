@@ -7,6 +7,7 @@ Overview
 --------
 
 Data Managers are responsible for:
+
 1. Setting up projects (if needed) for a data request. A project provides a folder in the `/srv/projects` folder and a resource account/partition which defines what computation resources are available
 2. Setting up SRCP accounts for users.
 3. Bringing study data requested by the user into the SRCP
