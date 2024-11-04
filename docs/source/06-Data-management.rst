@@ -7,17 +7,62 @@ Overview
 --------
 
 Data Managers are responsible for:
+1. Setting up projects (if needed) for a data request. A project provides a folder in the `/srv/projects` folder and a resource account/partition which defines what computation resources are available
+2. Setting up SRCP accounts for users.
+3. Bringing study data requested by the user into the SRCP
+4. Creating folders within the project and setting permissions for the study data
+5. Moving data between the “upload” and “download” triage folders and a user’s project folder (e.g. bringing code in or results out)
+6. Checking data/code that is brought in or out of the SRCP to make sure it does not contain anything it shouldn't
 
-1. Initially bringing study data requested by the user into the SRCP
-2. Creating folders within the project and setting permissions for the study data
-3. Moving data between the “upload” and “download” triage folders and a user’s project folder (e.g. bringing code in or results out)
-4. Checking data/code that is brought in or out of the SRCP to make sure it does not contain anything it shouldn't
+Setting up projects
+-------------------
+To set up a project on the SRCP, the following information is needed:
+
+1. The approved data request (e.g. for EPIC Norfolk this is the EPIC Norfolk Data Request Form) and associated reference number
+2. Folder name in the format year_month_initials_ENDRnumber e.g. 2024_10_TB_ENDR123_2024
+3. Hardware requirements for the core limit and storage for the project
+4. Which node should the project be assigned to
+
+Specifying the hardware needs some judgement. During the Visiting Worker process the user can specify any requirements for more resources such as additional cores for work with large genetic data sets. As standard we offer 2 cores and 200GB of storage, and this can be changed later if required. Extra hardware is charged for to cover the costs. The project is assigned to a particular node, and again this requires some judgement. Current assignments are captured on the Hardware tab in the coreLimitProject column of this `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ . Note that a core limit is the maxmimum that can be used by a project rather than per user. GPU nodes have to be set up on a case by case basis and are very expensive - the RCS team can supply more information. Storage is relatively cheap, around £115 per TB per year, so it is probably not necessary to charge extra unless whole Terrabytes are requested. The overall allocation is tracked on the same spreadsheet as above, under the Theoretical Max column. Again, most projects use well under their allocation so we don't actually have enough storage to accommodate the theoretical maximum.
+
+To request a new project, an email needs to be sent to srcp@hpc.cam.ac.uk and Victoria Hollamby (vph20@medschl.cam.ac.uk) who is the Clinical School Research Governance Advisor. The following email template can be used:
+
+Hi Jonathan and Victoria,
+
+We would like to request a new project, please, with the attached approved data request.
+
+Project folder name = <<year_month_initials_ENDRnumber>>
+
+XXX core limit - <<slurm-compute-YYY>> (where YYY is the node number)
+
+ZZZGB storage
+
+Thank you
+
+<<your_name>>
+
+Setting up users
+----------------
+Before a user can be set up, their project has to be set up first as the project details are needed for the application form. To set up a user on the SRCP:
+
+1. The user completes a request form which gets sent to the RCS support team
+2. The RCS support team send an email to the MRC Epidemiology Platform Managers asking for the account to be approved
+3. The MRC Epidemiology Platform Managers check the request and approve or deny as appropriate
+4. The RCS team create the account and send the details to the account owner and MRC Epidemiology Platform Managers
+5. Since most users do not check their @cam.ac.uk email account, a follow up email with an offer of extra support is needed
+
+The first email that needs to be sent directs the user to fill in the request form, and can be found in the Email Templates section below. When the user has completed this, the MRC Epidemiology Platform Managers receive an email describing the request. The following things need to be checked before approving:
+
+1. The name and CRSid should match the project id and data request number to make sure the user is being given access to the correct project and data. This can be checked in the `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ in the Users tab.
+2. The requested role should be Project User, so that the correct permissions are given. For example, the user cannot move files out of the triage area.
+
+If these items match up, then the request can be approved. The RCS team will then set up the account and notification will be given that it has been set up. When this has been received, the second email in the Email Templates section below can be sent.
 
 Resource utilisation
------------------------------
-The SRCP is made up of nodes. The CPU nodes we use have 20 cores available, and we currently have 2 nodes (compute-0 and compute-1). GPU nodes have 24 CPU cores and 1 A100 GPU, and are more expensive. Nodes are paid for on a pro-rated annual basis, and we are not operating a hourly charge model like CSD3. When a project is set up we can create a queue for it on a node and set a limit on the maximum number of cores that can be used by that project. For a single user it might be appropriate to set a limit of 2 cores, for example. The limit depends on the project requirements and additional costs can be passed on to the user. RCS support can change the core limits on a queue. The nodes are over allocated in that the sum of the core limits of queues assigned to a node are greater than 20. This is because current experience suggests that it is unlikely that all users will be requesting their maximum at once. Finding the appropriate level of over allocation is more of an art than science, and is work in progress! If the full allocation of cores for a project is already in use (for example if there are 2 users using a queue with a 2 core limit and one user is using both cores) then a request to start a remote desktop session will be queued until a core becomes available. Alternatively, the queue core limit may not be reached but all the cores on a nodes might be in uses. Again, the request will be queued until a core is available.
+---------------------
+The SRCP is made up of nodes. The CPU nodes we use have 20 cores available, and we currently have 2 nodes (compute-0 and compute-1). GPU nodes have 24 CPU cores and 1 A100 GPU, and are more expensive. Nodes are paid for on a pro-rated annual basis, and we are not operating a hourly charge model like CSD3. When a project is set up we set a limit on the maximum number of cores that can be used by that project. For a single user it might be appropriate to set a limit of 2 cores, for example. The limit depends on the project requirements and additional costs can be passed on to the user. RCS support can change the core limits on a queue. The nodes are over allocated in that the sum of the core limits of projects assigned to a node are greater than 20. This is because current experience suggests that it is unlikely that all users will be requesting their maximum at once. Finding the appropriate level of over allocation is more of an art than science, and is work in progress! If the full allocation of cores for a project is already in use (for example if there are 2 users using a queue with a 2 core limit and one user is using both cores) then a request to start a remote desktop session will be queued until a core becomes available. Alternatively, the project core limit may not be reached but all the cores on a nodes might be in uses. Again, the request will be queued until a core is available.
 
-The current guidance is for Data Managers to use the project's queue to work on data for that project, although in the future there may be a Data Manager queue to avoid blocking users. For simple tasks like bringing data in or out you will only need 1 core. Some data checking could be more resource intensive and require more cores.
+Data Managers can use a specific queue to avoid blocking usersby specifying the root account and managers partition. For simple tasks like bringing data in or out you will only need 1 core. Some data checking could be more resource intensive and require more cores. If the session does not start immediately then we can request to increase the core limit.
 
 The queueing system is provided by SLURM, and the following commands may be useful. They can be found in `/srv/shared/scripts/slurm.txt`
 
@@ -38,7 +83,7 @@ Prerequisites
 To perform the data management tasks, the Data Manager needs to:
 
 1. Understand how to :ref:`log into the SRCP<login-later>`
-2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use the project ID that corresponds to the user whose data is being worked on
+2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use the root account and managers partition
 3. Set up an :ref:`SFTP client<SFTP-client>`
 
 Bringing study data into the SRCP
@@ -321,7 +366,7 @@ Hi <<name>>,
 
 Your SRCP account is ready. There is a brief introductory video and overview of the SRCP on the documentation homepage: https://srcp-docs.readthedocs.io/ along with more detailed documentation.
 
-If you feel you would like me to demonstrate the basic functionality of the SRCP (logging in, starting a remote desktop, running applications etc) I am happy to set up a meeting with you. Otherwise, to use the SRCP you will need to either use a computer connected to the Cambridge University Network, or the Cambridge University VPN.  Instructions for connecting to the VPN are here:
+If you feel you would like a demonstration of the basic functionality of the SRCP (logging in, starting a remote desktop, running applications etc) we can set up a meeting with you. Otherwise, to use the SRCP you will need to either use a computer connected to the Cambridge University Network, or the Cambridge University VPN.  Instructions for connecting to the VPN are here:
 
 https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn
 
