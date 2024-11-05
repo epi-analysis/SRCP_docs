@@ -15,6 +15,12 @@ The `7za` application is provided for zipping and unzipping files. For example, 
 
 ``$ 7za x myfile.zip``
 
+Viewing Images
+---------------
+Use the ristretto application which can be launched by double clicking an image file from File Manager or from the command line:
+
+``$ ristretto``
+
 RStudio
 -------
 
