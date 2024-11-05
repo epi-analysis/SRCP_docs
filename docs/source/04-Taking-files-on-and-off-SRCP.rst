@@ -60,7 +60,7 @@ To connect, an `SFTP client <https://www.sftp.net/clients>`__ is required such a
 -  `sftp <https://linux.die.net/man/1/sftp>`__
 
 .. note::
-   When setting up the Client, check that the host key matches ``SHA-256:  GG1jAY2PnPo34qXhGZOHXqQ9rEXQxC5r9W91/0UNXBM=``. If your client ever warns that the host key has changed, and it does not match this key then do not proceed and contact srcpdata@mrc-epid.cam.ac.uk
+   When setting up the Client, check that the host key matches ``SHA256:adCe50mCH97ui49A9zEpq1uitolpLoCGawLMnLTBPOk``. If your client ever warns that the host key has changed, and it does not match this key then do not proceed and contact srcpdata@mrc-epid.cam.ac.uk
 
 Example of setting up WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
