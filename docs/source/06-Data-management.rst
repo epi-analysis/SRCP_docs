@@ -17,8 +17,9 @@ Data Managers are responsible for:
 
 Summary of set up process
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-The following diagram gives an overview of what needs to be done to get a user up and running on the SRCP. Many of the tasks can happen in parallel, hence the interdependencies between
-.. figure:: ../../images/project-id.png
+The following diagram gives an overview of what needs to be done to get a user up and running on the SRCP.
+
+.. figure:: ../../images/setup-process.png
    :scale: 70 %
    :alt: Finding a project ID
 
