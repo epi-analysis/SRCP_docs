@@ -15,6 +15,13 @@ Data Managers are responsible for:
 5. Moving data between the “upload” and “download” triage folders and a user’s project folder (e.g. bringing code in or results out)
 6. Checking data/code that is brought in or out of the SRCP to make sure it does not contain anything it shouldn't
 
+Summary of set up process
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following diagram gives an overview of what needs to be done to get a user up and running on the SRCP. Many of the tasks can happen in parallel, hence the interdependencies between
+.. figure:: ../../images/project-id.png
+   :scale: 70 %
+   :alt: Finding a project ID
+
 Setting up projects
 -------------------
 To set up a project on the SRCP, the following information is needed:
