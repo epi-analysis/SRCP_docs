@@ -364,8 +364,8 @@ You will be asked to log in with Raven, this requires your CRSid (<<CRSid>>) and
 
 On the form, enter the following
 
-   1. **User’s vHPC Level of Access** = Project User
-   2. **Project Unique ID** = <<project-id>> (NOTE - this project ID is also needed to start sessions on SRCP so please retain it)
+   1. **Requested Role** = Project User
+   2. **Project ID** = <<project-id>> (NOTE - this project ID is also needed to start sessions on SRCP so please retain it)
    
 If you are using a computer connected to the Cambridge University Network then this next step can be skipped. If you are accessing SRCP from an external computer, you can follow these instructions to prepare a connection to the Cambridge VPN while you wait for your SRCP account:
 
