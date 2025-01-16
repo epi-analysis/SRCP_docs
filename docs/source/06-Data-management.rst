@@ -473,10 +473,13 @@ Permission commands for read only data in restricted shared folder
 ------------------------------------------------------------------
 The objective is to have a folder in the shared area that is only accessible for users on particular projects
 
-1. Create the folder in /srv/shared/restricted
-2. ``nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" srv/shared/<sharedproject>``
-3. ``nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" srv/shared/<sharedproject>``
-4. These commands will mean that new files and folders added will also have the correct permissions. However they also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``find srv/shared/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
-5. Variations of this command can also be used to revoke the permission at the end of a group's access, because the ``find`` command acts recursively
+1. Create the folder in /srv/shared/data-management
+2. ``nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" srv/shared/data-management/<sharedproject>``
+3. ``nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" srv/shared/data-management/<sharedproject>``
+4. These commands will mean that new files and folders added will also have the correct permissions. However in most cases the files and folders will already exist and the commands also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``find srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
 
+To remove the permissions for the group when the project is finished:
+1. Remove directory permissions for file inheritence **note the 'd'**: ``find srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:fg:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
+2. Remove directory permissions for directory inheritence **note the 'd'**: ``find srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:dg:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
+3. Remove file permissions for file inheritence **note the 'f'**: ``find srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
 
