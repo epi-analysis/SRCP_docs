@@ -87,7 +87,7 @@ Example of setting up WinSCP
   :scale: 50 %
   :alt: Unknown server
 
-Check that the key is ``SHA-256:  GG1jAY2PnPo34qXhGZOHXqQ9rEXQxC5r9W91/0UNXBM=``. If it is not, then click Cancel and contact srcp@mrc-epid.cam.ac.uk
+Check that the key is ``SHA-256:  adCe50mCH97ui49A9zEpq1uitolpLoCGawLMnLTBPOk``. If it is not, then click Cancel and contact srcpdata@mrc-epid.cam.ac.uk
 
 .. _SFTP-upload:
 Example of uploading files using WinSCP
