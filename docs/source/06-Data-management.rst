@@ -262,10 +262,10 @@ A summary of the process for users wishing to download files from SRCP is:
 4. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules:
 
    -  a description of what the file contains, how it was generated and its relevance to the research question is provided
-   -  files should only contain aggregated, summary results
+   -  files should only contain aggregated, summary results, not individual values
    -  results are clearly labelled
    -  files should not have any participant or sample IDs
-   -  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
+   -  mask phenotype counts lower than 10 (e.g. if the results show 3 people have lung cancer, this should be masked)
 And more details in the example below.
 5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user. Check that the "read" permission is set for "everyone", otherwise the user won't be able to access the files.
 6. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
