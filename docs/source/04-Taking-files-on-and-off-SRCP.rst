@@ -10,10 +10,10 @@ An important feature of the SRCP Platform is the strict control and auditing ove
 
 -  provide a description of what the file contains, how it was generated
    and its relevance to the research question
--  files should only contain aggregated, summary results
+-  files should only contain aggregated, summary results, not individual values
 -  results are clearly labelled
 -  files should not have any participant or sample IDs
--  mask phenotype counts lower than 5 (e.g. if the results show 3 people have lung cancer, this should be masked)
+-  mask phenotype counts lower than 10 (e.g. if the results show 3 people have lung cancer, this should be masked)
 
 Data brought onto the system should be cleared for use on the research question. Code that is being brought in should be sourced from a reputable location so that it does not contain malware. In the SRCP the transfer process is managed by using a triage location for each user that is only accessible to the user from outside the SRCP. They can use SFTP to transfer files to and from the triage location. Only a Data Manager can copy files between a user’s project folder and the triage folder after inspecting them. It is the responsibility of the users to notify a Data Manager that files are awaiting approval so they can authorise and copy them. Once the copy is complete, the files are available to the user immediately.
 
