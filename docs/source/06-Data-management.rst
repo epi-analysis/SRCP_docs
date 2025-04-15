@@ -267,7 +267,7 @@ A summary of the process for users wishing to download files from SRCP is:
    -  files should not have any participant or sample IDs
    -  mask phenotype counts lower than 10 (e.g. if the results show 3 people have lung cancer, this should be masked)
 And more details in the example below.
-5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user. Check that the "read" permission is set for "everyone", otherwise the user won't be able to access the files.
+5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user. Check that the "read" permission is set for "others", otherwise the user won't be able to access the files.
 6. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
 
 Example of enabling a user to download files from SRCP using WinSCP
@@ -292,7 +292,7 @@ Example of enabling a user to download files from SRCP using WinSCP
 .. note::
    If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), R and Python. For a visual check you might use gedit. In R or Python you could write a script to search for participant IDs or report discrepancies in columns of data (for example, look for a sudden change in the structure of the data that might suggest something hidden).
 
-7. If the files are OK then on SRCP, copy (not move) the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. Check that the "read" permission is set for "everyone", otherwise the user won't be able to access the files. Notify the user that the files are ready for download.
+7. If the files are OK then on SRCP, copy (not move) the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<yourusername>/download`` either on the command line or in File Manager. Check that the "read" permission is set for "others", otherwise the user won't be able to access the files. Notify the user that the files are ready for download.
 
 8. (If the files are large then delete them from both your own and the user’s triage folder to save space?  Or delete them from your local computer? Confirm with the user that they have downloaded the files to their local computer?)
 
