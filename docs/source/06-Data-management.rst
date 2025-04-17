@@ -23,6 +23,15 @@ The following diagram gives an overview of what needs to be done to get a user u
    :scale: 70 %
    :alt: Finding a project ID
 
+Prerequisites
+-------------
+
+To perform the data management tasks, the Data Manager needs to:
+
+1. Understand how to :ref:`log into the SRCP<login-later>`
+2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use the root account and managers partition
+3. Set up an :ref:`SFTP client<SFTP-client>`
+
 Setting up projects
 -------------------
 To set up a project on the SRCP, the following information is needed:
@@ -32,7 +41,7 @@ To set up a project on the SRCP, the following information is needed:
 3. Hardware requirements for the core limit and storage for the project
 4. Which node should the project be assigned to
 
-Specifying the hardware needs some judgement. During the Visiting Worker process the user can specify any requirements for more resources such as additional cores for work with large genetic data sets. As standard we offer 2 cores per user and a total of 200GB of storage, and this can be changed later if required. Extra hardware has additional charges to cover our costs. The project is assigned to a particular node, which is a piece of hardware, with the objective of trying to keep a balanced allocation of projects across nodes. Current assignments can be seen with the following command:
+Specifying the hardware needs some judgement. During the Visiting Worker process the user can specify any requirements for more resources such as additional cores for work with large genetic data sets. As standard we offer 3 cores per user and a total of 200GB of storage, and this can be changed later if required. Extra hardware has additional charges to cover our costs. The project is assigned to a particular node, which is a piece of hardware, with the objective of trying to keep a balanced allocation of projects across nodes. Current assignments can be seen with the following command:
 
 .. code-block:: console
 
@@ -40,21 +49,77 @@ Specifying the hardware needs some judgement. During the Visiting Worker process
 
 This code snippet is available in ``/srv/shared/scripts/slurm.txt`` (to save having to retype it). Alternatively these allocations are captured on the Hardware tab in the coreLimitProject column of this `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ . Note that a core limit is the maxmimum that can be used by a project rather than per user. GPU nodes have to be set up on a case by case basis and are very expensive - the RCS team can supply more information. Storage is relatively cheap, around £115 per TB per year, so it is probably not necessary to charge extra unless whole Terrabytes are requested. The overall allocation is tracked on the same spreadsheet as above, under the Theoretical Max column. Again, most projects use well under their allocation so we don't actually have enough storage to accommodate the theoretical maximum.
 
-To request a new project, an email needs to be sent to srcp@hpc.cam.ac.uk and Victoria Hollamby (vph20@medschl.cam.ac.uk) who is the Clinical School Research Governance Advisor. The following email template can be used:
+To request a new project, `this form <https://www.hpc.cam.ac.uk/form/srcp-resource-request>`__ needs to be completed. The following responses are suggested for standard EPIC Norfolk projects but could be changed if needed:
 
-Hi Jonathan and Victoria,
+1. Section 1 – SRCP Platform. Select "New project" and "vHPC" (or "Windows"). For vHPC the platform id is b864dfnfpqj
+2. Section 5 – Create a Project. The project name is will be the folder name, the suggested format is ``year_month_initials_ENDRnumber`` where initials are for the person doing the research. The description can be taken from the ENDR form.
+3. Section 6 – Project Managers. Select "Yes".
+4. Section 7 – Software Requirements. Enter "N/A".
+5. Section 8 – vHPC Infrastructure Specification. Leave blank or enter "N/A".
+6. Section 10.  Select "Yes".
+7. Section 11 – Data Compliance. Enter "N/A - uses data from the existing EPIC Norfolk study.".
+8. Section 12 – Data Provider Details. Enter "N/A" for all sections.
 
-We would like to request a new project, please, with the attached approved data request.
+Additionally a copy of the data request form is required by Victoria Hollamby (vph20@medschl.cam.ac.uk) who is the Clinical School Research Governance Advisor. At the time of writing, the submitted form is passed to her, and the data request has to be sent to her via email.
 
-Project folder name = <<year_month_initials_ENDRnumber>>
+Setting up the project folder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-XXX core limit - <<slurm-compute-YYY>> (where YYY is the node number)
+Before bringing in the data, it is recommended that some additional subfolders are created in the project folder (e.g. ``2023_06_20_Smith_ENDR023_2020``). The project folder can be written to by members of the ``platform-b864dfnfpqj-managers`` group, i.e. Data Managers, but users cannot write to this folder. The data should be stored in a read-only location so that it cannot be changed accidentally - the ``data`` subfolder. This can be created with the command ``$ mkdir data`` and will automatically have the correct read-only permissions for users. Any subfolders or files created in the ``data`` subfolder will also inherit the correct permissions. Users will also need a location to do their work and save results - the ``analysis`` subfolder. The suggested folder structure looks like this:
 
-ZZZGB storage
+::
 
-Thank you
+   ├── 2023_06_20_Smith_ENDR023_2020
+   │   ├── data
+   │   │   ├── files and subfolders in data folder
+   │   └── analysis
+   │       ├── files and subfolders in analysis folder
 
-<<your_name>>
+
+The user needs permission to **read, write and execute** in the ``analysis`` folder, which is not set up automatically. The best way to achieve this is with this command:
+
+.. code-block:: console
+
+   $ nfs4_setfacl -a "A:fdg:project-<project-id>-users@hpc.cam.ac.uk:RWX" /srv/projects/<userproject>/analysis
+
+where **<project-id>** is the 11 character alphanumeric identifier (e.g. ck5gh6d3se) and **<userproject>** is the folder name (e.g. ``2023_06_20_Smith_ENDR023_2020``). You can find a template for these permission commands in this location: ``/srv/shared/scripts/permission_setup.txt``. Display it on the screen using ``$ cat /srv/shared/scripts/permission_setup.txt``. Once these permissions are set, subfolders and files created in the ``analysis`` subfolder will inherit the read, write and execute permissions.
+
+.. note::
+   If you list the project folder contents (``$ ls -l``) the **<project-id>** is available for copying and pasting - see the image below:
+
+.. figure:: ../../images/project-id.png
+   :scale: 70 %
+   :alt: Finding a project ID
+
+To check that the permissions have been set correctly, use the following command:
+
+.. code-block:: console
+
+   $ nfs4_getfacl /srv/projects/<userproject>/analysis
+
+and the top (most recent) line should look like this:
+
+.. code-block:: console
+
+   A:fdg:project-<project-id>-users@hpc.cam.ac.uk:rwaDdxtTnNcCoy
+
+Providing users with a copy of large, shared datasets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some large datasets are held in a shared area that is only accessible for users who need access to it. The intention is to reduce the number of copies of large datasets that have to be brought onto the SRCP. To give users access to these datasets we modify the permissions on the folder and its contents to give read access to a user in a project group.
+
+1. Create the folder in /srv/shared/data-management
+2. ``nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" srv/shared/data-management/<sharedproject>``
+3. ``nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" srv/shared/data-management/<sharedproject>``
+4. These commands will mean that new files and folders added will also have the correct permissions. However in most cases the files and folders will already exist and the commands also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``find srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
+
+To help the user find the data, a symlink can be created in their home folder: ``$ ln -s /srv/shared/data-management/<data_folder> /srv/home/<user>``
+If you need to remove the symlink user the following command: ``$ rm -i /srv/home/<user>/<symlink>``
+
+To remove the permissions for the group when the project is finished:
+1. Remove directory permissions for file inheritence **note the '-type d'**: ``find srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:fg:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
+2. Remove directory permissions for directory inheritence **note the '-type d'**: ``find srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:dg:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
+3. Remove file permissions for file inheritence **note the '-type f'**: ``find srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
 
 Setting up users
 ----------------
@@ -95,15 +160,6 @@ The queueing system is provided by SLURM, and the following commands may be usef
    #Show total usage by user
    $ sreport user top start=2023-01-01
 
-Prerequisites
--------------
-
-To perform the data management tasks, the Data Manager needs to:
-
-1. Understand how to :ref:`log into the SRCP<login-later>`
-2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use the root account and managers partition
-3. Set up an :ref:`SFTP client<SFTP-client>`
-
 Bringing study data into the SRCP
 ---------------------------------
 
@@ -117,47 +173,6 @@ As summary of the process for bringing study data into the SRCP is:
 6. Confirm that an analysis folder has been set up and permissions are set correctly in the project
 7. Notify the user
 8. Tidy up
-
-Prerequisite - setting up the project folder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Before bringing in the data, it is recommended that some additional subfolders are created in the project folder (e.g. ``2023_06_20_Smith_ENDR023_2020``). The project folder can be written to by members of the ``platform-b864dfnfpqj-managers`` group, i.e. Data Managers, but users cannot write to this folder. The data should be stored in a read-only location so that it cannot be changed accidentally - the ``data`` subfolder. This can be created with the command ``$ mkdir data`` and will automatically have the correct read-only permissions for users. Any subfolders or files created in the ``data`` subfolder will also inherit the correct permissions. Users will also need a location to do their work and save results - the ``analysis`` subfolder. The suggested folder structure looks like this:
-
-::
-
-   ├── 2023_06_20_Smith_ENDR023_2020
-   │   ├── data
-   │   │   ├── files and subfolders in data folder
-   │   └── analysis
-   │       ├── files and subfolders in analysis folder
-
-
-The user needs permission to **read, write and execute** in the ``analysis`` folder, which is not set up automatically. The best way to achieve this is with this command:
-
-.. code-block:: console
-
-   $ nfs4_setfacl -a "A:fdg:project-<project-id>-users@hpc.cam.ac.uk:RWX" /srv/projects/<userproject>/analysis
-
-where **<project-id>** is the 11 character alphanumeric identifier (e.g. ck5gh6d3se) and **<userproject>** is the folder name (e.g. ``2023_06_20_Smith_ENDR023_2020``). You can find a template for these permission commands in this location: ``/srv/shared/scripts/permission_setup.txt``. Display it on the screen using ``$ cat /srv/shared/scripts/permission_setup.txt``. Once these permissions are set, subfolders and files created in the ``analysis`` subfolder will inherit the read, write and execute permissions.
-
-.. note::
-   If you list the project folder contents (``$ ls -l``) the **<project-id>** is available for copying and pasting - see the image below:
-
-.. figure:: ../../images/project-id.png
-   :scale: 70 %
-   :alt: Finding a project ID
-
-To check that the permissions have been set correctly, use the following command:
-
-.. code-block:: console
-
-   $ nfs4_getfacl /srv/projects/<userproject>/analysis
-
-and the top (most recent) line should look like this:
-
-.. code-block:: console
-
-   A:fdg:project-<project-id>-users@hpc.cam.ac.uk:rwaDdxtTnNcCoy
 
 Example of uploading a data release using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -330,25 +345,12 @@ The first of these can be checked with a scanner like `Grype <https://github.com
 
 For checking suspicious behaviour, `Falco <https://falco.org/>`__ can be started before starting the container to be checked. Then Falco will flag up any activity that might indicate something that is not right.
 
-Draft considerations for whitelisting sites
--------------------------------------------
+End of life for projects
+------------------------
+In this section we will detail what to do at the end of a project.
+To some extent we will have captured results as they are taken off the SRCP. The code can be given to the user.
+There are questions about what to do with large datasets that are hard to regenerate. In some cases, if they do not contain personal information they can be removed and given to the user to look after.
 
-Ideally users should not have access to any external locations outside of the SRCP to avoid the risk of data being taken out (either on purpose or accidentally) without it first undergoing checks to ensure it doesn't container personal information. Without these restrictions users could easily remove files, for example by uploading them to Google Drive. Other sites that could have a legitimate use can allow data to leave, for example Github. There is a route for bringing files in and out of the SRCP where they are checked by a Data Manager.
-
-However, a balance may be struck where access to certain locations may reduce the amount of checking (and hence increase speed of ingress) while not significantly increase the risk of data being removed from the SRCP without being checked. In these risk-assessed cases, we refer to the location being white-listed. A specific example is the CRAN (Comprehensive R Archive Network) hosted by Bristol University. The CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R. Access to the CRAN allows users to install a vast range of statistical packages that are frequently used in science. Therefore it is convenient to allow users to install R packages from the CRAN themselves, rather than having to wait for a Data Manager to import a package archive and having a more complicated installation. CRAN sites don't host the mechanism for submitting new packages, thus there is no route to be able to push data to the CRAN. New packages are created by submitting code for peer review, which also reduces the chances of malicious content appearing on the CRAN.
-
-Conversely, pypi.org, which hosts Python packages that can be downloaded with Pip, allows users to upload new packages. Therefore even though this location might be useful for users wanting to download packages themselves, it is blocked to avoid data being taken out in packages. Often Python packages can be obtained via Conda, which does provide the ability to upload.
-
-If users have complex software requirements but a location can't be whitelisted, an option is for them to build their environment in a container outside of the SRCP. For example, they may require a package that has a large number of dependencies, making it impractial for a Data Manager to bring them in manually. This gives the flexibility to install whatever is required, before the container is scanned and brought into the SRCP. 
-
-Note that the whitelisting is done by IP address rather than domain name. Care is needed because if two domains point to the same IP address, if one domain is whitelisted, the IP address can be accessed (this was the case with pypi.org and pythonhosted.org).
-
-A set of considerations for whether a location should be whitelisted might include:
-
-1. How many users need access to the location? If it is a small number for a finite project, access could be given for the duration of the project and then removed. Equally if only a few users require it, a manual approach might be possible.
-2. Can you find a way to upload data to the location? For example if you can submit your own package. Note that often APIs offer an upload method, but this actual returns a separate cloud storage location (e.g. on AWS) where the file should be uploaded to. Thus since AWS blocked, an upload is not actually possible.
-3. Could the environment be built in a container and brought into SRCP after scanning?
-4. How trustworthy is the location? If it hosts packages, do they undergo peer review which would give some reassurance that malicious code might not be hidden in a package?
 
 Email templates
 ---------------
@@ -467,21 +469,24 @@ The platform manager group can rwx on folders and files created in project folde
 
 When the platform manager creates the data/analysis folders, they apply ACL permissions to these which are inherited by the items created in these folders.
 
+Draft considerations for whitelisting sites
+-------------------------------------------
+
+Ideally users should not have access to any external locations outside of the SRCP to avoid the risk of data being taken out (either on purpose or accidentally) without it first undergoing checks to ensure it doesn't container personal information. Without these restrictions users could easily remove files, for example by uploading them to Google Drive. Other sites that could have a legitimate use can allow data to leave, for example Github. There is a route for bringing files in and out of the SRCP where they are checked by a Data Manager.
+
+However, a balance may be struck where access to certain locations may reduce the amount of checking (and hence increase speed of ingress) while not significantly increase the risk of data being removed from the SRCP without being checked. In these risk-assessed cases, we refer to the location being white-listed. A specific example is the CRAN (Comprehensive R Archive Network) hosted by Bristol University. The CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R. Access to the CRAN allows users to install a vast range of statistical packages that are frequently used in science. Therefore it is convenient to allow users to install R packages from the CRAN themselves, rather than having to wait for a Data Manager to import a package archive and having a more complicated installation. CRAN sites don't host the mechanism for submitting new packages, thus there is no route to be able to push data to the CRAN. New packages are created by submitting code for peer review, which also reduces the chances of malicious content appearing on the CRAN.
+
+Conversely, pypi.org, which hosts Python packages that can be downloaded with Pip, allows users to upload new packages. Therefore even though this location might be useful for users wanting to download packages themselves, it is blocked to avoid data being taken out in packages. Often Python packages can be obtained via Conda, which does provide the ability to upload.
+
+If users have complex software requirements but a location can't be whitelisted, an option is for them to build their environment in a container outside of the SRCP. For example, they may require a package that has a large number of dependencies, making it impractial for a Data Manager to bring them in manually. This gives the flexibility to install whatever is required, before the container is scanned and brought into the SRCP. 
+
+Note that the whitelisting is done by IP address rather than domain name. Care is needed because if two domains point to the same IP address, if one domain is whitelisted, the IP address can be accessed (this was the case with pypi.org and pythonhosted.org).
+
+A set of considerations for whether a location should be whitelisted might include:
+
+1. How many users need access to the location? If it is a small number for a finite project, access could be given for the duration of the project and then removed. Equally if only a few users require it, a manual approach might be possible.
+2. Can you find a way to upload data to the location? For example if you can submit your own package. Note that often APIs offer an upload method, but this actual returns a separate cloud storage location (e.g. on AWS) where the file should be uploaded to. Thus since AWS blocked, an upload is not actually possible.
+3. Could the environment be built in a container and brought into SRCP after scanning?
+4. How trustworthy is the location? If it hosts packages, do they undergo peer review which would give some reassurance that malicious code might not be hidden in a package?
 
 
-Permission commands & symlinks for read only data in restricted shared folder
------------------------------------------------------------------------------
-The objective is to have a folder in the shared area that is only accessible for users on particular projects. We then modify the permissions on the folder and its contents to give read access to a user in a project group.
-
-1. Create the folder in /srv/shared/data-management
-2. ``nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" srv/shared/data-management/<sharedproject>``
-3. ``nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" srv/shared/data-management/<sharedproject>``
-4. These commands will mean that new files and folders added will also have the correct permissions. However in most cases the files and folders will already exist and the commands also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``find srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
-
-To help the user find the data, a symlink can be created in their home folder: ``$ ln -s /srv/shared/data-management/<data_folder> /srv/home/<user>``
-If you need to remove the symlink user the following command: ``$ rm -i /srv/home/<user>/<symlink>``
-
-To remove the permissions for the group when the project is finished:
-1. Remove directory permissions for file inheritence **note the '-type d'**: ``find srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:fg:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
-2. Remove directory permissions for directory inheritence **note the '-type d'**: ``find srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:dg:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
-3. Remove file permissions for file inheritence **note the '-type f'**: ``find srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
