@@ -76,12 +76,12 @@ The page has a barcode on it, which can be scanned by a Two Factor Authenticatio
 
 |Android|
 
-Recovering from a lost token or device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What to do if you have lost or have a new device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If a user loses their Time-based one-time password (TOTP) codes or mobile device, they will be unable to access the platform until they have raised a support request with the SRCP Support Team, who at that point are the only people who can regenerate the user’s TOTP codes. Before doing this however, the SRCP Support Team must go through a process to establish the real identity of this user. This involves confirming the reset with the MRC Epidemiology Unit team.
 
-If you have lost your mobile device or token please submit a support request to the `SRCP helpdesk <mailto:support@hpc.cam.ac.uk>`__. The user must also notify the ` MRC Epidemiology Unit team<mailto:srcp@mrc-epid.cam.ac.uk>`__ with whom the SRCP helpdesk contacts for approval. This must happen before the SRCP helpdesk can issue a replacement token.
+If you have lost your mobile device or have a new device and need to set it up please submit a support request to the `SRCP helpdesk <mailto:srcp@hpc.cam.ac.uk>`__. The user must also notify the `MRC Epidemiology Unit team <mailto:srcpdata@mrc-epid.cam.ac.uk>`__ whom the SRCP helpdesk contacts for approval. This must happen before the SRCP helpdesk can issue a replacement token.
 
 Once the MRC Epidemiology Unit has approved the token reset request and the user has demonstrated ownership of their password the Helpdesk will issue a new private token.
 
