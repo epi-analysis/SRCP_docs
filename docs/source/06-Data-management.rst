@@ -276,15 +276,16 @@ A summary of the process for users wishing to download files from SRCP is:
 1. The user notifies a Data Manager (srcpdata@mrc-epid.cam.ac.uk) of the file names they wish to download and their location.
 2. The Data Manager copies the files to their “download” triage folder on SRCP **OR** accesses the files directly on SRCP.
 3. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
-4. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules:
+4. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules (more details in the example below):
 
    -  a description of what the file contains, how it was generated and its relevance to the research question is provided
    -  files should only contain aggregated, summary results, not individual values
    -  results are clearly labelled
    -  files should not have any participant or sample IDs
    -  mask phenotype counts lower than 10 (e.g. if the results show 3 people have lung cancer, this should be masked)
-And more details in the example below.
-5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user. You will need to use the option ``--preserve=xattr`` with the ``$ cp``, otherwise the user won't be able to access the files (this copies the NFS permissions too). An example would be ``$ cp -r --preserve=xattr /srv/projects/<project>/<folder> /srv/data-manager/triage/<user>/download``. 
+
+5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user. You will need to use the option ``--preserve=xattr`` with the ``$ cp``, otherwise the user won't be able to access the files (this copies the NFS permissions too). An example would be ``$ cp -r --preserve=xattr /srv/projects/<project>/<folder> /srv/data-manager/triage/<user>/download``.
+
 6. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
 
 Example of enabling a user to download files from SRCP using WinSCP
