@@ -39,7 +39,7 @@ For easier package installation, set your default CRAN to ``https://www.stats.br
 R Package Installation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors at Bristol and Imperial using a command like ``> install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``. If you have set the default CRAN (as described above), the ``repo=`` part can be left out. If you require a package that is not available on CRAN, then please contact us (srcp@mrc-epid.cam.ac.uk)
+While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors at Bristol and Imperial using a command like ``> install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``. If you have set the default CRAN (as described above), the ``repo=`` part can be left out. If you require a package that is not available on CRAN, then please contact us (srcpdata@mrc-epid.cam.ac.uk)
 
 R packages are often not written entirely in R, but in low-level, compiled languages, most typically C++ and Fortran, for speed. This requires various compilers, headers and libraries for the packages to compile properly. On SRCP, these might have to be loaded as separate modules before you start R. For example, you might see an error like this:
 
