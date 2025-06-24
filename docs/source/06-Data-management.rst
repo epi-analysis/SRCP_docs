@@ -217,6 +217,7 @@ Some large datasets are held in a shared area that is only accessible for users 
 3. ``$ nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" srv/shared/data-management/<sharedproject>``
 4. The commands above will mean that new files and folders added will also have the correct permissions. Now you can copy the data into the subfolder create in #1.
 5. If files and folders already exist, then the commands in #2 and #3 also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``$ find srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
+6. While it is a low risk of these data being misused, you can ask a colleague to check the permissions on the files and folders if you are unsure that the permissions are correct.
 
 To help the user find the data, a symlink can be created in their home folder: ``$ ln -s /srv/shared/data-management/<data_folder> /srv/home/<user>``
 If you need to remove the symlink user the following command: ``$ rm -i /srv/home/<user>/<symlink>``
