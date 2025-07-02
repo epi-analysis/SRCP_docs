@@ -78,9 +78,9 @@ The page has a barcode on it, which can be scanned by a Two Factor Authenticatio
 
 What to do if you have lost or have a new device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you have lost your mobile device or have a new device and need to set it up please submit a support request to the `SRCP helpdesk <mailto:srcp@hpc.cam.ac.uk>`__. Please also notify the `MRC Epidemiology Unit team <mailto:srcpdata@mrc-epid.cam.ac.uk>`__ whom the SRCP helpdesk contacts for approval. The SRCP helpdesk will set up a video call to confirm the identity of the user.
+If you have lost your mobile device or have a new device and need to set it up please submit a support request to the `SRCP helpdesk <mailto:srcp@hpc.cam.ac.uk>`__. Please also notify the `Epidemiology Unit team <mailto:srcpdata@mrc-epid.cam.ac.uk>`__ whom the SRCP helpdesk contacts for approval. The SRCP helpdesk will set up a video call to confirm the identity of the user.
 
-Once the MRC Epidemiology Unit has approved the token reset request and the user has demonstrated ownership of their password the Helpdesk will issue a new private token.
+Once the Epidemiology Unit has approved the token reset request and the user has demonstrated ownership of their password the Helpdesk will issue a new private token.
 
 .. |android| image:: https://user-images.githubusercontent.com/8521654/234272219-f6e9bbb7-4e54-44b3-b1cd-f1f4bfd3d8de.png
    :target: https://player.vimeo.com/video/374700786
