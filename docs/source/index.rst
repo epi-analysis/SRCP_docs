@@ -1,7 +1,7 @@
 Overview
 ========
 
-This wiki provides a guide for the users of the MRC Epidemiology Secure Research Computing Platform (SRCP).
+This wiki provides a guide for the users of the Epidemiology Secure Research Computing Platform (SRCP).
 
 SRCP is a platform provided by the University of Cambridge `Research Computing Service <https://docs.hpc.cam.ac.uk/srcp/index.html>`__. It allows researchers to access valuable datasets for research, similar to a secure reference library. Rather than extracts of individual level data being ‘released,’ SRCP provides access to a secure analytics environment so researchers bring analysis to the data. Results are checked before being removed from the platform to make sure sensitive data is not being removed.
 
