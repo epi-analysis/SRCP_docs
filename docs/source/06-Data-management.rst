@@ -1,7 +1,7 @@
-Data management (internal MRC Epidemiology Unit only)
+Data management (internal Epidemiology Unit only)
 =====================================================
 
-This section is for **MRC Epidemiology Data Managers**, not for collaborators using the SRCP for their analyses.
+This section is for **Epidemiology Data Managers**, not for collaborators using the SRCP for their analyses.
 
 Overview
 --------
@@ -108,12 +108,12 @@ Setting up users
 Before a user can be set up, their project has to be set up first as the project details are needed for the application form. To set up a user on the SRCP:
 
 1. The user completes a request form which gets sent to the RCS support team
-2. The RCS support team send an email to the MRC Epidemiology Platform Managers asking for the account to be approved
-3. The MRC Epidemiology Platform Managers check the request and approve or deny as appropriate
-4. The RCS team create the account and send the details to the account owner and MRC Epidemiology Platform Managers
+2. The RCS support team send an email to the Epidemiology Platform Managers asking for the account to be approved
+3. The Epidemiology Platform Managers check the request and approve or deny as appropriate
+4. The RCS team create the account and send the details to the account owner and Epidemiology Platform Managers
 5. Since most users do not check their @cam.ac.uk email account, a follow up email with an offer of extra support is needed
 
-The first email that needs to be sent directs the user to fill in the request form, and can be found in the Email Templates section below. When the user has completed this, the MRC Epidemiology Platform Managers receive an email describing the request. The following things need to be checked before approving:
+The first email that needs to be sent directs the user to fill in the request form, and can be found in the Email Templates section below. When the user has completed this, the Epidemiology Platform Managers receive an email describing the request. The following things need to be checked before approving:
 
 1. The name and CRSid should match the project id and data request number to make sure the user is being given access to the correct project and data. This can be checked in the `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ in the Users tab.
 2. The requested role should be Project User, so that the correct permissions are given. For example, the user cannot move files out of the triage area.
