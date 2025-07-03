@@ -220,7 +220,7 @@ Some large datasets are held in a shared area that is only accessible for users 
 6. While it is a low risk of these data being misused, you can ask a colleague to check the permissions on the files and folders if you are unsure that the permissions are correct.
 
 To help the user find the data, a symlink can be created in their home folder: ``$ ln -s /srv/shared/data-management/<data_folder> /srv/home/<user>``
-If you need to remove the symlink user the following command: ``$ rm -i /srv/home/<user>/<symlink>``
+If you need to remove the symlink use the following command: ``$ rm -i /srv/home/<user>/<symlink>``
 
 To remove the permissions for the group when the project is finished:
 
