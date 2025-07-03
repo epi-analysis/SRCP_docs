@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'MRC Epidemiology SRCP'
+project = 'Epidemiology Unit SRCP'
 copyright = '2023, University of Cambridge'
 author = 'Tom Bishop'
 
