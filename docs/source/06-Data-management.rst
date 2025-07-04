@@ -231,7 +231,7 @@ To remove the permissions for the group when the project is finished:
 Process for users wishing to bring files into the SRCP
 ------------------------------------------------------
 
-Users may ask Data Managers to allow them to upload files to the SRCP. This might be to bring in extra data sets or bespoke code that they cannot download from the standard repositories available in the SRCP. If data are being brought in, checks should be made that the user has permission to use the data in this way.
+Users may ask Data Managers to allow them to upload files to the SRCP. This might be to bring in extra data sets or bespoke code that they cannot download from the standard repositories available in the SRCP. If data are being brought in, checks should be made that the user has permission to use the data (if it is not from a public source, for example another study).
 
 A summary of the process for users wishing to bring supplementary data or code into the SRCP is:
 
