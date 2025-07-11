@@ -63,7 +63,7 @@ If additional packages are required, it is recommended that this is done through
 Conda
 ~~~~~
 
-1. Find the full miniconda module name: ``$ module avail`` or ``$ module keyword conda`` and load it with ``$ module load xxxxxx``
+1. Find the full miniforge module name: ``$ module avail`` or ``$ module keyword conda`` and load it with ``$ module load xxxxxx``
 2. While general access to the internet is not available, it is possible install packages from the ``conda-forge`` channel
 3. If you require a package that is not available on ``conda-forge``, then please contact support.
 
