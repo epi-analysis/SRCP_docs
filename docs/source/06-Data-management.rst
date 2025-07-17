@@ -210,7 +210,7 @@ Example of uploading a data release using WinSCP
 Providing users with a copy of large, shared datasets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Some large datasets are held in a shared area that is only accessible for users who need access to them. The intention is to reduce the number of copies of large datasets that have to be brought onto the SRCP. To give users access to these datasets we modify the permissions on the folder and its contents to give read access to a user in a project group. All of these commands can be found in `/srv/shared/scripts/shared_folder_permissions.txt` to reduce the amount oftyping needed.
+Some large datasets are held in a shared area that is only accessible for users who need access to them. The intention is to reduce the number of copies of large datasets that have to be brought onto the SRCP. To give users access to these datasets we modify the permissions on the folder and its contents to give read access to a user in a project group. All of these commands can be found in `/srv/shared/scripts/shared_folder_permissions.txt` to reduce the amount of typing needed since copy and paste is not available.
 
 1. Create a new subfolder in ``/srv/shared/data-management`` (but do not copy the data in at this stage)
 2. ``$ nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" srv/shared/data-management/<sharedproject>``
