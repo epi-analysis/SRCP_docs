@@ -6,8 +6,8 @@ project = 'Epidemiology Unit SRCP'
 copyright = '2023, University of Cambridge'
 author = 'Tom Bishop'
 
-release = '0.1'
-version = '0.1.0'
+release = '1.0'
+version = '1.0.0'
 
 # -- General configuration
 
