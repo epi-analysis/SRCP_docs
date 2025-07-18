@@ -1,7 +1,7 @@
 Running applications through the remote desktop
 ===============================================
 
-The remote desktop provides an interactive session for users. This allows the use of applications such as RStudio and Jupyter.
+The remote desktop provides an interactive session for users. This allows the use of applications such as RStudio and Jupyter. Please `open a support ticket <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__ if the software you need is not available.
 
 **NOTE** The SRCP platform is isolated from the internet to prevent data from being removed. Common package repositories such as *CRAN* and *conda forge* have been whitelisted so that packages can be installed by the user from these locations. If you require code that is held in **GitHub**, this will need to be brought into SRCP via the Data Transfer process as a zip file (see :ref:`data-transfer`). Similarly, Docker containers will need to be brought in and run through Singularity/Apptainer. The reason for this is that we cannot allow direct access to GitHub and DockerHub as this would give users the ability to remove data without permission by pushing to these locations.
 
@@ -39,7 +39,7 @@ For easier package installation, set your default CRAN to ``https://www.stats.br
 R Package Installation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors at Bristol and Imperial using a command like ``> install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``. If you have set the default CRAN (as described above), the ``repo=`` part can be left out. If you require a package that is not available on CRAN, then please contact us (srcpdata@mrc-epid.cam.ac.uk)
+While general access to the internet is not available, it is possible install R packages from the UK CRAN mirrors at Bristol and Imperial using a command like ``> install.packages("my_package", repo = "www.stats.bris.ac.uk/R")``. If you have set the default CRAN (as described above), the ``repo=`` part can be left out. If you require a package that is not available on CRAN, then please `open a support ticket <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__.
 
 R packages are often not written entirely in R, but in low-level, compiled languages, most typically C++ and Fortran, for speed. This requires various compilers, headers and libraries for the packages to compile properly. On SRCP, these might have to be loaded as separate modules before you start R. For example, you might see an error like this:
 
@@ -58,14 +58,14 @@ Python
 ------
 The SRCP provides a central installation of Python 3. Some of the most common packages used for scientific computation and data analysis (e.g. pandas) are available as modules. To view the packages available as modules, search for the keyword "python" ``$ module keyword python`` and load the module required as usual.
 
-If additional packages are required, it is recommended that this is done through Conda environments. While ``venv`` is available to provide environments and ``pip`` to install packages, access to the pypi repository is currently disabled.
+If additional packages are required, it is recommended that this is done through Conda environments. While ``venv`` is available to provide environments and ``pip`` to install packages, access to the pypi repository is currently disabled. If you need to install packages from pypi, please `open a support ticket <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__. It is likely that these can be made available as modules.
 
 Conda
 ~~~~~
 
 1. Find the full miniforge module name: ``$ module avail`` or ``$ module keyword conda`` and load it with ``$ module load xxxxxx``
 2. While general access to the internet is not available, it is possible install packages from the ``conda-forge`` channel
-3. If you require a package that is not available on ``conda-forge``, then please contact support.
+3. If you require a package that is not available on ``conda-forge``, then please `open a support ticket <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__.
 
 Jupyter Notebooks for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
