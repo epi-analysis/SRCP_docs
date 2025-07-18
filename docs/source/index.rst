@@ -24,9 +24,9 @@ Contents
 
    00-Logging-in-for-the-First-Time
    01-Basic-Concepts
-   02-Modules-Environment
-   03-Running-applications-through-the-remote-desktop
-   04-Taking-files-on-and-off-SRCP
+   02-Running-applications-through-the-remote-desktop
+   03-Taking-files-on-and-off-SRCP
+   04-Modules-Environment
    05-Running-compute-jobs
    06-Data-management
 
