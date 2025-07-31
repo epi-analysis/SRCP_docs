@@ -212,21 +212,33 @@ Providing users with a copy of large, shared datasets
 
 Some large datasets are held in a shared area that is only accessible for users who need access to them. The intention is to reduce the number of copies of large datasets that have to be brought onto the SRCP. To give users access to these datasets we modify the permissions on the folder and its contents to give read access to a user in a project group. All of these commands can be found in `/srv/shared/scripts/shared_folder_permissions.txt` to reduce the amount of typing needed since copy and paste is not available.
 
-1. Create a new subfolder in ``/srv/shared/data-management`` (but do not copy the data in at this stage)
-2. ``$ nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" srv/shared/data-management/<sharedproject>``
-3. ``$ nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" srv/shared/data-management/<sharedproject>``
-4. The commands above will mean that new files and folders added will also have the correct permissions. Now you can copy the data into the subfolder create in #1.
-5. If files and folders already exist, then the commands in #2 and #3 also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``$ find srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
-6. While it is a low risk of these data being misused, you can ask a colleague to check the permissions on the files and folders if you are unsure that the permissions are correct.
+Adding new datasets
+^^^^^^^^^^^^^^^^^^^
 
-To help the user find the data, a symlink can be created in their home folder: ``$ ln -s /srv/shared/data-management/<data_folder> /srv/home/<user>``
-If you need to remove the symlink use the following command: ``$ rm -i /srv/home/<user>/<symlink>``
+1. Create a new subfolder in ``/srv/shared/data-management`` and copy the data in
+2. At this point, only data managers (members of the ``platform-b864dfnfpqj-managers`` group have access as these permissions are inherited from the parent folder
+3. Follow the steps below to give users permission to access the data
 
-To remove the permissions for the group when the project is finished:
+Giving access to existing datasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Use the following steps to give access to an existing dataset to all users in a project group:
 
-1. Remove directory permissions for file inheritence **note the '-type d'**: ``$ find srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:fg:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
-2. Remove directory permissions for directory inheritence **note the '-type d'**: ``$ find srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:dg:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
-3. Remove file permissions for file inheritence **note the '-type f'**: ``$ find srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
+1. Find the project id for the user's project and the name of the shared folder you wish to give them access to
+2. ``$ nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" /srv/shared/data-management/<sharedproject>``
+3. ``$ nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" /srv/shared/data-management/<sharedproject>``
+4. The commands above also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``$ find /srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
+5. While it is a low risk of these data being misused, you can ask a colleague to check the permissions on the files and folders if you are unsure that the permissions are correct.
+6. To help the user find the data, a symlink can be created in their project data folder: ``$ ln -s /srv/shared/data-management/<data_folder> /srv/projects/<project-folder>/data``
+If you need to remove the symlink use the following command: ``$ rm -i /srv/projects/<project-folder>/data/<symlink>``
+
+Removing access to existing datasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To remove the permissions for the group when the project is finished (the -x flag is to remove an entry):
+
+1. Remove directory permissions for file inheritence **note the '-type d'**: ``$ find /srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:fg:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
+2. Remove directory permissions for directory inheritence **note the '-type d'**: ``$ find /srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:dg:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
+3. Remove file permissions for file inheritence **note the '-type f'**: ``$ find /srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
 
 Process for users wishing to bring files into the SRCP
 ------------------------------------------------------
