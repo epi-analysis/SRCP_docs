@@ -224,8 +224,8 @@ Giving access to existing datasets
 Use the following steps to give access to an existing dataset to all users in a project group:
 
 1. Find the project id for the user's project and the name of the shared folder you wish to give them access to
-2. ``$ nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" /srv/shared/data-management/<sharedproject>``
-3. ``$ nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" /srv/shared/data-management/<sharedproject>``
+2. Set recursive, inherrited read and execute permissions for directories: ``$ nfs4_setfacl -R -a "A:dg:project-<project-id>-users@hpc.cam.ac.uk:RX" /srv/shared/data-management/<sharedproject>``
+3. Set recursive, inherrited read permissions for files: ``$ nfs4_setfacl -R -a "A:fg:project-<project-id>-users@hpc.cam.ac.uk:R" /srv/shared/data-management/<sharedproject>``
 4. The commands above also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``$ find /srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
 5. While it is a low risk of these data being misused, you can ask a colleague to check the permissions on the files and folders if you are unsure that the permissions are correct.
 6. To help the user find the data, a symlink can be created in their project data folder: ``$ ln -s /srv/shared/data-management/<data_folder> /srv/projects/<project-folder>/data``
@@ -273,7 +273,7 @@ Example of enabling a user to bring files into the SRCP using WinSCP
   :scale: 50 %
   :alt: WinSCRP file download
 
-6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__). A virus scanner can also be run on the files. Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
+6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__). A virus scanner can also be run on the files. Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model. See also the guidance on `Genomics England <https://re-docs.genomicsengland.co.uk/airlock_rules/>`__
 
 7. If the files are OK then on the SRCP, copy (not move) the files from the user’s “upload” triage folder to the user’s project data folder either on the command line or in File Manager. Notify the user that the files are ready for use.
 
