@@ -6,17 +6,26 @@ Taking files on and off the SRCP
 Explanation of file transfers on the SRCP
 -----------------------------------------
 
-An important feature of the SRCP Platform is the strict control and auditing over the upload and download of files. Users cannot access their project folder from outside the SRCP. This prevents data from being removed from or brought onto the system without permission. Before any file is released from the system, it is checked by a Data Manager to ensure that it meets the **Disclosure Control Rules**:
+The SRCP Platform enforces strict controls and comprehensive auditing of all file uploads and downloads to ensure the appropriate use of participant data and the protection of participant identities.  Users cannot access their project folder from outside the SRCP. This prevents data from being removed from or brought onto the system without permission.
 
+All data analysis and processing should be performed within the SRCP environment. Only summary-level (aggregate) data are eligible for export; individual-level data cannot be exported under any circumstances. Our policy is to minimise the amount of data that is taken off the SRCP — request only the minimum data necessary for your research. 
+
+Before any file is released from the system, it is checked by a Data Manager to ensure that it meets the **Disclosure Control Rules**:
+
+-  minimise the number of items to be checked, perhaps by only removing final results for publication. Requests to export large numbers of items will need to be revised to something more manageable.
 -  provide a description of what the file contains, how it was generated
    and its relevance to the research question
 -  files should only contain aggregated, summary results, not individual values
 -  results are clearly labelled
 -  files should not have any participant or sample IDs
 -  mask phenotype counts lower than 10 (e.g. if the results show 3 people have lung cancer, this should be masked)
--  minimise the number of items to be checked, perhaps by only removing final results for publication
 
-Data brought onto the system should be cleared for use on the research question. Code that is being brought in should be sourced from a reputable location so that it does not contain malware. In the SRCP the transfer process is managed by using a triage location for each user that is only accessible to the user from outside the SRCP. They can use SFTP to transfer files to and from the triage location. Only a Data Manager can copy files between a user’s project folder and the triage folder after inspecting them. It is the responsibility of the users to notify a Data Manager that files are awaiting approval so they can authorise and copy them. Once the copy is complete, the files are available to the user immediately.
+To maintain the security and integrity of the SRCP platform, it is essential to review all files before they are introduced into the system. This helps protect participant data, ensures compliance with research policies, and prevents the introduction of malicious software. Before any file is brought onto the system, it is checked by a Data Manager to ensure that:
+
+- Additional data brought onto the system should be approved for use on the research question if it is not publicly available
+- Code that is being brought in is relevant to the research question and sourced from a reputable location so that it does not contain malware
+
+Within the SRCP, each user is assigned a personal triage area that is accessible via SFTP from outside the platform. Users can upload files to and download files from this triage area, but cannot move files directly between their triage area and project folder. Only a Data Manager is authorised to transfer files between a user’s triage area and their project folder, following a thorough review. Users must inform a Data Manager when files are ready for inspection. Once approved and transferred, the files become immediately available to the user.
 
 .. figure:: ../../images/file-triage.png
   :scale: 70 %
@@ -34,9 +43,9 @@ Process for downloading files
 Process for uploading files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. A user wishes to upload some supplementary data to SRCP
+1. A user wishes to upload some supplementary data or code to the SRCP
 2. The user connects to their “upload” triage folder using SFTP and uploads the file
-3. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__  of the file name, location (their “upload” triage folder) and a statement that permission has been granted for the data to be used in this research (data) or that the code is from a reputable source (code)
+3. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__  of the file name, location (their “upload” triage folder) and a statement that permission has been granted for the data to be used in this research (data) or that the code is from a reputable source (code). Describe why the items are needed for the research.
 4. The Data Manager inspects the file and confirms that it contains appropriate data/code
 5. The Data Manager copies the file from the user’s “upload” triage folder to the user’s project folder and notifies the user
 6. The user uses the file that is now available in their project folder
