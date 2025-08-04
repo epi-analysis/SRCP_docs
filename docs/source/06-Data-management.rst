@@ -364,18 +364,19 @@ Containers (e.g. .sif files)
 - **Security Context:** Note that SRCP uses Apptainer and Podman (not Docker). Containers will run with restricted user privileges on the SRCP, reducing risk.
 - **Behaviour Monitoring:** Consider using `Falco <https://falco.org/>`__ to monitor for suspicious activity when running containers. However, this is quite a laborious process as you will need to run it on a virtual machine running Docker, and then start the container to see what happens (see the "Try Falco" option on the website)
 
-Files to be Exported (Taking Data Out)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Files to be Exported (Taking Data and Code Out)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Disclosure Control
 ^^^^^^^^^^^^^^^^^^
 - **Summary Data Only:** Exported files must not contain individual-level study data, only aggregate or summary results. Review `UK Data Service Report <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `Genomics England Airlock Rules <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__  for guidance.
 - **Participant Identifiers:** Scan for participant/sample IDs; use scripts if files are large.
+- **Check code for data:** Sometimes users annotate their code with intermediate results which can also be disclosive
 - **Malicious Export Attempts:** Be alert to attempts to evade checks, such as using obfuscated identifiers or exporting disguised data.
 - **Minimisation:** Users should request only the minimum necessary data for their research. If a user requests export of a very large number of results, ask them to revise and reduce the scope where possible. For ‘omics datasets or other inherently large result sets, refer to the Genomics England guidance and require users to minimise exported data as much as practical.
 
 Large or Complex Files
 ^^^^^^^^^^^^^^^^^^^^^^
-- **Practical Review:** For very large or numerous files, focus checks on high-risk or sensitive data.
+- **Practical Review:** For very large or numerous files, ask the user to minimise the amount of data that is exported. If detailed checking is impractical, focus checks on high-risk or sensitive data.
 - **Subject-Matter Expertise:** Clarify with researchers if you’re unsure about the content, especially for unfamiliar research areas.
 
 Machine Learning Models (e.g. .onnx files)
@@ -394,8 +395,6 @@ Additional Tips
 - **LLM Assistance:** Use Large Language Models (e.g., ChatGPT) to help interpret code, scripts, or complex outputs, especially when expertise is lacking.
 - **Communication:** Work closely with users to clarify file contents and expectations.
 - **Continuous Improvement:** Regularly review and update checking procedures as threats and research practices evolve.
-
-By following these structured guidelines, Data Managers can ensure data entering and leaving the SRCP is handled securely and in accordance with ethical and legal requirements, while keeping the process manageable and effective.
 
 Special Note on Containers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
