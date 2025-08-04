@@ -6,14 +6,14 @@ This section is for **Epidemiology Data Managers**, not for collaborators using 
 Overview
 --------
 
-Data Managers are responsible for:
+Epidemiology Data Managers are responsible for the following tasks:
 
-1. Setting up projects (if needed) for a data request. A project provides a folder in the `/srv/projects` folder and a resource account/partition which defines what computation resources are available
-2. Setting up SRCP accounts for users.
-3. Bringing study data requested by the user into the SRCP
-4. Creating folders within the project and setting permissions for the study data
-5. Moving data between the “upload” and “download” triage folders and a user’s project folder (e.g. bringing code in or results out)
-6. Checking data/code that is brought in or out of the SRCP to make sure it does not contain anything it shouldn't
+1. **Project Setup:** Creating new projects as needed in response to data requests. Each project includes a dedicated folder within ``/srv/projects`` and a resource account/partition specifying available computational resources.
+2. **User Account Management:** Setting up SRCP accounts for users.
+3. **Data Request Import:** Importing study data into the SRCP as requested by users.
+4. **Folder and Permissions Management:** Organising project folders and configuring appropriate permissions for study data.
+5. **Managing File Transfers:** Moving files between users’ triage (“upload” and “download”) folders and their project folders, such as importing code or exporting results.
+6. **Data and Code Review:** Reviewing all data and code entering or leaving the SRCP to ensure compliance and prevent unauthorised content.
 
 Summary of set up process
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +29,7 @@ Prerequisites
 To perform the data management tasks, the Data Manager needs to:
 
 1. Understand how to :ref:`log into the SRCP<login-later>`
-2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use the root account and managers partition
+2. Be able to start a :ref:`remote desktop session on SRCP<remote-desktop>` - Data Managers should use the **root** account and **managers** partition
 3. Set up an :ref:`SFTP client<SFTP-client>`
 
 Setting up projects
@@ -37,7 +37,7 @@ Setting up projects
 To set up a project on the SRCP, the following information is needed:
 
 1. The approved data request (e.g. for EPIC Norfolk this is the EPIC Norfolk Data Request Form) and associated reference number
-2. Folder name in the format year_month_initials_ENDRnumber e.g. 2024_10_TB_ENDR123_2024
+2. Folder name in the format ``year_month_initials_ENDRnumber`` e.g. 2024_10_TB_ENDR123_2024
 3. Hardware requirements for the core limit and storage for the project
 4. Which node should the project be assigned to
 
@@ -47,7 +47,7 @@ Specifying the hardware needs some judgement. During the Visiting Worker process
 
    $ sinfo -O Partition,MaxCPUsperNode,Nodelist --sort Nodelist
 
-This code snippet is available in ``/srv/shared/scripts/slurm.txt`` (to save having to retype it). Alternatively these allocations are captured on the Hardware tab in the coreLimitProject column of this `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ . Note that a core limit is the maxmimum that can be used by a project rather than per user. GPU nodes have to be set up on a case by case basis and are very expensive - the RCS team can supply more information. Storage is relatively cheap, around £115 per TB per year, so it is probably not necessary to charge extra unless whole Terrabytes are requested. The overall allocation is tracked on the same spreadsheet as above, under the Theoretical Max column. Again, most projects use well under their allocation so we don't actually have enough storage to accommodate the theoretical maximum.
+This code snippet is available in ``/srv/shared/scripts/slurm.txt`` (to save having to retype it - copy and paste is disabled). Alternatively these allocations are captured on the Hardware tab in the coreLimitProject column of this `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ . Note that a core limit is the maxmimum that can be used by a project rather than per user. GPU nodes have to be set up on a case by case basis and are very expensive - the RCS team can supply more information. Storage is relatively cheap, around £115 per TB per year, so it is probably not necessary to charge extra unless whole Terrabytes are requested. The overall allocation is tracked on the same spreadsheet as above, under the Theoretical Max column. Again, most projects use well under their allocation so we don't actually have enough storage to accommodate the theoretical maximum.
 
 To request a new project, `this form <https://www.hpc.cam.ac.uk/form/srcp-resource-request>`__ needs to be completed. The following responses are suggested for standard EPIC Norfolk projects but could be changed if needed:
 
@@ -122,7 +122,7 @@ If these items match up, then the request can be approved. The RCS team will the
 
 Resource utilisation
 ---------------------
-The SRCP is made up of nodes. The CPU nodes we use have 26 cores available, and we currently have 2 nodes (compute-0 and compute-1). GPU nodes have 24 CPU cores and 1 A100 GPU, and are more expensive. Nodes are paid for on a pro-rated annual basis, and we are not operating a hourly charge model like CSD3. When a project is set up we set a limit on the maximum number of cores that can be used by that project. For a single user it might be appropriate to set a limit of 2 cores, for example. The limit depends on the project requirements and additional costs can be passed on to the user. RCS support can change the core limits on a queue. The nodes are over allocated in that the sum of the core limits of projects assigned to a node are greater than 20. This is because current experience suggests that it is unlikely that all users will be requesting their maximum at once. Finding the appropriate level of over allocation is more of an art than science, and is work in progress! If the full allocation of cores for a project is already in use (for example if there are 2 users using a queue with a 2 core limit and one user is using both cores) then a request to start a remote desktop session will be queued until a core becomes available. Alternatively, the project core limit may not be reached but all the cores on a nodes might be in uses. Again, the request will be queued until a core is available.
+The SRCP is made up of nodes. The CPU nodes we use have 26 cores available, and we currently have 2 nodes (compute-0 and compute-1). GPU nodes have 24 CPU cores and 1 A100 GPU, and are more expensive. Nodes are paid for on a pro-rated annual basis, and we are not operating a hourly charge model like CSD3. When a project is set up we set a limit on the maximum number of cores that can be used by that project. For a single user it might be appropriate to set a limit of 3 cores, for example. The limit depends on the project requirements and additional costs can be passed on to the user. RCS support can change the core limits on a queue. The nodes are over allocated in that the sum of the core limits of projects assigned to a node are greater than 26. This is because current experience suggests that it is unlikely that all users will be requesting their maximum at once. Finding the appropriate level of over allocation is more of an art than science, and is work in progress! If the full allocation of cores for a project is already in use (for example if there are 2 users using a queue with a 3 core limit and one user is using both cores) then a request to start a remote desktop session will be queued until a core becomes available. Alternatively, the project core limit may not be reached but all the cores on a nodes might be in uses. Again, the request will be queued until a core is available.
 
 Account and partition for Data Managers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -251,7 +251,7 @@ A summary of the process for users wishing to bring supplementary data or code i
 2. The user `notifies a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__  of the file names. These should be in the user’s “upload” triage folder - the user should have followed the steps for :ref:`uploading a file via STFP<SFTP-upload>`
 3. The Data Manager copies the files to their “download” triage folder on the SRCP
 4. The Data Manager connects to the SRCP via SFTP and downloads the files to their local machine.
-5. The Data Manager inspects the files and confirms that they contain appropriate data/code (see more details in the example below)
+5. The Data Manager inspects the files and confirms that they contain appropriate data/code (see more details below)
 6. On the SRCP, the Data Manager copies (not moves) the files from the user’s “upload” triage folder to the user’s project data folder and notifies the user.
 7. The user uses the files that are now available in their project data folder (they may need to copy to their analysis folder to edit).
 8. Tidy up
@@ -273,7 +273,7 @@ Example of enabling a user to bring files into the SRCP using WinSCP
   :scale: 50 %
   :alt: WinSCRP file download
 
-6. Inspect the files. **TO CONFIRM** If they contain data confirm that the user has permission to use it (because we don’t want to be seen to enable analyses on data that is not being used correctly). If they are Singularity containers (.sif), run a scanner on them (for example `Grype <https://github.com/anchore/grype>`__). A virus scanner can also be run on the files. Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model. See also the guidance on `Genomics England <https://re-docs.genomicsengland.co.uk/airlock_rules/>`__
+6. Inspect the files - see details below
 
 7. If the files are OK then on the SRCP, copy (not move) the files from the user’s “upload” triage folder to the user’s project data folder either on the command line or in File Manager. Notify the user that the files are ready for use.
 
@@ -289,16 +289,8 @@ A summary of the process for users wishing to download files from SRCP is:
 1. The user `notifies a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__  of the file names they wish to download and their location.
 2. The Data Manager copies the files to their “download” triage folder on SRCP **OR** accesses the files directly on SRCP.
 3. The Data Manager connects to SRCP via SFTP and downloads the files to their local machine **OR** accesses the files directly on SRCP.
-4. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules (more details in the example below):
-
-   -  a description of what the file contains, how it was generated and its relevance to the research question is provided
-   -  files should only contain aggregated, summary results, not individual values
-   -  results are clearly labelled
-   -  files should not have any participant or sample IDs
-   -  mask phenotype counts lower than 10 (e.g. if the results show 3 people have lung cancer, this should be masked)
-
+4. The Data Manager inspects the files and confirms that they meet the Disclosure Control Rules (more details below)
 5. On SRCP, the Data Manager copies (not moves) the files to the user’s “download” triage folder and notifies the user. You will need to use the option ``--preserve=xattr`` with the ``$ cp``, otherwise the user won't be able to access the files (this copies the NFS permissions too). An example would be ``$ cp -r --preserve=xattr /srv/projects/<project>/<folder> /srv/data-manager/triage/<user>/download``.
-
 6. The user connects to their “download” triage folder using SFTP and :ref:`downloads the files<SFTP-download>`
 
 Example of enabling a user to download files from SRCP using WinSCP
@@ -318,11 +310,7 @@ Example of enabling a user to download files from SRCP using WinSCP
   :scale: 50 %
   :alt: WinSCRP file download
 
-6. Inspect the files. The files need to be checked to ensure that they do not contain study data, only summary results. See point 4 above which describes some broad Disclosure Control Rules. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed. Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
-
-.. note::
-   If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), RStudio (run as a module) and Python. For a visual check you might use gedit. In RStudio or Python you could write a script to search for participant IDs or report discrepancies in columns of data (for example, look for a sudden change in the structure of the data that might suggest something hidden).
-
+6. Inspect the files - see details below
 7. If the files are OK then on SRCP, copy (not move) the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<username>/download`` on the command line. To confirm which ``<username>`` is needed, you can use the `University Lookup Service <https://www.lookup.cam.ac.uk/>`__ .  You will need to use the command ``$ cp --preserve=xattr``, otherwise the user won't be able to access the files (this copies the NFS permissions too). Notify the user that the files are ready for download.
 
 8. (If the files are large then delete them from both your own and the user’s triage folder to save space?  Or delete them from your local computer? Confirm with the user that they have downloaded the files to their local computer?)
@@ -330,36 +318,90 @@ Example of enabling a user to download files from SRCP using WinSCP
 Examining items to be taken in or out
 -------------------------------------
 
-Files that are to be taken out from the system should be checked to ensure that they do not contain study data, only summary results. More detailed guidance can be found `here <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `here <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__. This guidance is very detailed, so a balance needs to be struck around what level of checking is needed. It can be challenging to check large numbers of files, or files that are very large. Often it is necessary to have some understanding of the research area that the results relate to, which can be difficult for a Data Manager who cannot be expected to be experts in every relevant area of research.
+Inspecting files that are brought into or exported from the SRCP is a critical responsibility for Data Managers. This process plays a key role in safeguarding participant data, maintaining compliance, and protecting the integrity of the research environment. However, it can be challenging to strike the right balance between performing thorough checks and managing the time and effort required.
 
-A standard check might be to look for participant IDs in the data export as this is clearly an indicator of individual level data. This prevents the scenario where a user simply asks for the data to be taken out. Sometimes they have misunderstood the purpose of the SRCP and think that this is an appropriate request. You could do this using a script in R or Python if the files are large. First create a list of the participant IDs from the data release, then search for these values in the data export. A more malicious user would possibly not use the participant IDs if there were trying to remove data without being detected.
+Some important considerations include:
 
-Often a more formal process is used where researchers have to submit a form with details about what the results are and how they relate to the project. There can be a service level agreement for the time taken to review requests.
+- **Due Diligence vs. Efficiency:** While it is essential to carefully review each file to ensure it does not contain sensitive information, malware, or unauthorised content, overly detailed inspections can cause unnecessary delays and increase workload.
+- **Risk Assessment:** Assess the level of risk associated with each file transfer. Files containing code or data from unfamiliar sources may require more scrutiny than those from well-known, reputable collaborators.
+- **Automation and Process Support:** Where possible, use available tools, scripts, and standardised checklists to support the inspection process and reduce manual effort, without compromising on quality.
+- **Communication:** Maintain clear communication with users to set expectations around timelines for file approvals and to clarify any uncertainties about file contents or sources.
 
-For data that is to be brought in, checks should be made about whether the user has permission to use this data and copied it to different locations. Some data sets might not be a concern, for example publicly available data on air pollution. Questions should be raised if a user is trying to bring in something sensitive like patient records.
+By keeping these points in mind, Data Managers can help ensure that the inspection process is both effective and efficient, supporting the safe and timely flow of data within the SRCP.
 
-Users may want to bring in code. This should be scanned to check for security problems.  A virus scanner can be run on the files by downloading to your local machine, right clicking and selecting "Scan for threats".
+.. note::
+   If you want to inspect the files without removing them from SRCP, then you can use tools such as gedit (``$ gedit``), RStudio (run as a module) and Python. For a visual check you might use gedit. In RStudio or Python you could write a script to search for participant IDs or report discrepancies in columns of data (for example, look for a sudden change in the structure of the data that might suggest something hidden).
 
-Neural network models in .onnx format can be checked with `Netron <https://netron.app/>`__ - i.e. check that the model loads to confirm it is actually a model.
+General Principles
+~~~~~~~~~~~~~~~~~~
 
-Containers
-~~~~~~~~~~
-Containers are a useful way of users being able to configure complex analysis environments outside of the SRCP, which can be easier than dealing with restrictions inside the SCRP over what repositories can be accessed in order to build the environment. A working container can then be brought into the SRCP via the triage mechanism. Naturally there is concern about whether this could be a route for malicious software to be run on the SRCP, potentially resulting in data loss, data leakage, ransomware, hijacking of resources or attackers gaining access to systems beyond the SRCP. However, these concerns are mitigated by the properties of the SRCP and the software that it provides for running containers.
+- All files entering or leaving the SRCP must be checked to prevent unauthorised transfer of sensitive data, code, or software.
+- The level of scrutiny should be proportionate to the data type, file size, and context.
+- Refer to detailed disclosure guidance such as the `UK Data Service Report <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `Genomics England Airlock Rules <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__ but be pragmatic about what can be checked in practice.
 
-Docker is a popular tool for running containers. The architecture of Docker means that if containers are not configured and constructed carefully, and are exposed to external users, there is a risk that they provide a way for gaining full control of a system. If this were to occur, a user could then perform the malicious actions described above. The SRCP does not provide Docker, and instead offers Apptainer and Podman for running containers. These are set up in a way so that the containers they run with the same privileges as the user, which are restricted on the SRCP. Therefore the container can only do things that the user could do anyway. For example, they could not access (and hence damage) data that they didn't already have access to, nor could they hijack all the resources on a node.
+Files to be Imported (Bringing Data, Code, and Software In)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data Files
+^^^^^^^^^^
+- **Permission Verification:** Confirm the user has the right to use and process the data. Public datasets (e.g. weather data) are usually low risk; sensitive datasets (e.g. patient records) require additional scrutiny and documentation.
+- **Appropriateness:** Ensure data is relevant to the approved research and does not violate project or platform policies.
 
-Another key feature of the SRCP that reduces the scope of bad actors to cause problems is the isolation from the internet. This prevents data from being taken out, because data are only able to leave via the triage system (which requires a data manager to move the data to an externally accessible location). Atackers are not able to connect to the container via a vulnerability because the container is not accessible from the internet. Finally, additional malicious content cannot be downloaded into the SRCP.
+Code and Scripts
+^^^^^^^^^^^^^^^^
+- **Security Scanning:** Scan code/scripts for malware or vulnerabilities. Use a virus scanner on a secure workstation before transfer.
+- **Source Verification:** Check that code comes from reputable repositories or collaborators.
+- **Code Understanding:** If you are unsure about the function or appropriateness of code, consider using a Large Language Model (LLM) such as ChatGPT to help interpret, summarise, or highlight potential issues in the code.
 
-If a user were to run a container that unintentionally damaged (or encrypted for ransom) their own files (e.g. analysis code) then these files could be restored from off site snapshots that are taken of the SRCP storage.
+Machine Learning Models (e.g. .onnx files)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Model Validation:** For neural network models, use a tool like `Netron <https://netron.app/>`__ to check the file loads correctly and is a valid model. Or you may need to recreate the user's software environment to load and check the model files
+- **Check for Embedded Data:** Ensure models do not contain embedded study data or identifiable information.
 
-Although these features help ensure that running containers won't cause serious issues, here we consider what other precautions are possible. There are 2 areas that can be checked:
+Containers (e.g. .sif files)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Vulnerability Scanning:** Use scanners like `Grype <https://github.com/anchore/grype>`__ to check for known issues. **note:** Grype will often produce a very large list of vulnerabilities, many of which may not be relevant in the SRCP’s isolated environment. For example, Grype highlights issues that would be critical for an internet-facing web application, but are low risk within the SRCP. Focus your attention on vulnerabilities that could realistically impact the security or functionality of the platform.
+- **Virus Scanning:** Optionally run a virus scanner before import.
+- **Security Context:** Note that SRCP uses Apptainer and Podman (not Docker). Containers will run with restricted user privileges on the SRCP, reducing risk.
+- **Behaviour Monitoring:** Consider using `Falco <https://falco.org/>`__ to monitor for suspicious activity when running containers. However, this is quite a laborious process as you will need to run it on a virtual machine running Docker, and then start the container to see what happens (see the "Try Falco" option on the website)
 
-1. Check for CVEs (Common Vulnerabilities and Exposures), a list of publicly disclosed computer security flaws in libraries, packages and software. These might be found in the software in the container image.
-2. Detecting unexpected behaviour, configuration changes, and attacks when the container is running
+Files to be Exported (Taking Data Out)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Disclosure Control
+^^^^^^^^^^^^^^^^^^
+- **Summary Data Only:** Exported files must not contain individual-level study data, only aggregate or summary results. Review `UK Data Service Report <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `Genomics England Airlock Rules <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__  for guidance.
+- **Participant Identifiers:** Scan for participant/sample IDs; use scripts if files are large.
+- **Malicious Export Attempts:** Be alert to attempts to evade checks, such as using obfuscated identifiers or exporting disguised data.
+- **Minimisation:** Users should request only the minimum necessary data for their research. If a user requests export of a very large number of results, ask them to revise and reduce the scope where possible. For ‘omics datasets or other inherently large result sets, refer to the Genomics England guidance and require users to minimise exported data as much as practical.
 
-The first of these can be checked with a scanner like `Grype <https://github.com/anchore/grype>`__ . The challenge here is to deal with the output of often hundreds of vulnerabilities. Checking all of them is impractical and they might not be relevant if the container is running in an isolated environment. Rather, if the container was running a key piece of software that is externally facing, then these vulnerabilities would be more important.
+Large or Complex Files
+^^^^^^^^^^^^^^^^^^^^^^
+- **Practical Review:** For very large or numerous files, focus checks on high-risk or sensitive data.
+- **Subject-Matter Expertise:** Clarify with researchers if you’re unsure about the content, especially for unfamiliar research areas.
 
-For checking suspicious behaviour, `Falco <https://falco.org/>`__ can be started before starting the container to be checked. Then Falco will flag up any activity that might indicate something that is not right.
+Machine Learning Models (e.g. .onnx files)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Model Validation:** If users wish to export trained models, check with [Netron](https://netron.app/) to confirm validity and ensure no embedded study data or identifiers.
+
+Documentation and Process
+^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Export Forms:** Require researchers to submit a form detailing the export’s content and relevance to the project.
+- **Managing Turnaround Times:** Strive to review export requests promptly to avoid unnecessary delays for users. However, recognise that workload from other responsibilities may impact response times. If a request may be delayed, communicate expected timeframes clearly to users, and set realistic expectations if there are competing priorities.
+
+Additional Tips
+~~~~~~~~~~~~~~~
+
+- **Scripted Checks:** Automate ID scans or repetitive checks for large-scale exports.
+- **LLM Assistance:** Use Large Language Models (e.g., ChatGPT) to help interpret code, scripts, or complex outputs, especially when expertise is lacking.
+- **Communication:** Work closely with users to clarify file contents and expectations.
+- **Continuous Improvement:** Regularly review and update checking procedures as threats and research practices evolve.
+
+By following these structured guidelines, Data Managers can ensure data entering and leaving the SRCP is handled securely and in accordance with ethical and legal requirements, while keeping the process manageable and effective.
+
+Special Note on Containers
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Containers allow users to set up complex analysis environments outside the SRCP and then import them for use within the platform. While containers could potentially introduce security risks, such as malware or data breaches, the SRCP mitigates these risks by only supporting Apptainer and Podman (not Docker). These tools ensure containers run with the same restricted privileges as the user, preventing access to unauthorised data or system resources. Additionally, SRCP’s isolation from the internet and the triage-based file transfer process further reduce security risks, as containers cannot download extra content or exfiltrate data. If a container accidentally corrupts a user’s files, these can be restored from offsite backups.
+
 
 End of life for projects
 ------------------------
