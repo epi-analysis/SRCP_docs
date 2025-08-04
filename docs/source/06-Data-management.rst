@@ -311,7 +311,7 @@ Example of enabling a user to download files from SRCP using WinSCP
   :alt: WinSCRP file download
 
 6. Inspect the files - see details below
-7. If the files are OK then on SRCP, copy (not move) the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<username>/download`` on the command line. To confirm which ``<username>`` is needed, you can use the `University Lookup Service <https://www.lookup.cam.ac.uk/>`__ .  You will need to use the command ``$ cp --preserve=xattr``, otherwise the user won't be able to access the files (this copies the NFS permissions too). Notify the user that the files are ready for download.
+7. If the files are OK then on SRCP, copy (not move) the files from the the location specified by the user to the user’s “download” triage folder ``/srv/data-manager/triage/<username>/download`` on the command line. To confirm which ``<username>`` is needed, you can use the `University Lookup Service <https://www.lookup.cam.ac.uk/>`__ .  You will need to use the command ``$ cp --preserve=xattr <source> <destination>``, otherwise the user won't be able to access the files (this copies the NFS permissions too). Notify the user that the files are ready for download.
 
 8. (If the files are large then delete them from both your own and the user’s triage folder to save space?  Or delete them from your local computer? Confirm with the user that they have downloaded the files to their local computer?)
 
