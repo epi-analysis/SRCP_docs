@@ -60,7 +60,7 @@ To request a new project, `this form <https://www.hpc.cam.ac.uk/form/srcp-resour
 7. Section 11 – Data Compliance. Enter "N/A - uses data from the existing EPIC Norfolk study.".
 8. Section 12 – Data Provider Details. Enter "N/A" for all sections.
 
-Additionally a copy of the data request form is required by Victoria Hollamby (vph20@medschl.cam.ac.uk) who is the Clinical School Research Governance Advisor. At the time of writing, the submitted form is passed to her, and the data request has to be sent to her via email.
+You should then receive a confirmation email titled **SRCP Resource Request**. Wait a few more minutes, and then you should get a **new ticket** from RCS support with a title like **HPCSSUP-123456 SRCP Resource Request**. Reply to this email with a copy of the data request form (required by Victoria Hollamby who is the Clinical School Research Governance Advisor).
 
 Setting up the project folder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
