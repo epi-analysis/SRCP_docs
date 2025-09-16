@@ -72,6 +72,9 @@ The remote desktop
 
 The remote desktop gives you the option of working with files and folders via a GUI rather than command line via the File Manager application (highlighted in blue). All other applications are launched from the Terminal (highlighted in green). A separate section in this wiki contains instructions for running commonly used applications such as RStudio.
 
+.. note::
+   In the Terminal, the command prompt is the dollar sign ($) 
+
 .. figure:: ../../images/remote-desktop-example.png
   :scale: 70 %
   :alt: SRCP remote desktop session example
