@@ -3,7 +3,8 @@ Running applications through the remote desktop
 
 The remote desktop provides an interactive session for users. This allows the use of applications such as RStudio and Jupyter. Please `open a support ticket <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__ if the software you need is not available.
 
-**NOTE** The SRCP platform is isolated from the internet to prevent data from being removed. Common package repositories such as *CRAN* and *conda forge* have been whitelisted so that packages can be installed by the user from these locations. If you require code that is held in **GitHub**, this will need to be brought into SRCP via the Data Transfer process as a zip file (see :ref:`data-transfer`). Similarly, Docker containers will need to be brought in and run through Singularity/Apptainer. The reason for this is that we cannot allow direct access to GitHub and DockerHub as this would give users the ability to remove data without permission by pushing to these locations.
+.. note::
+   The SRCP platform is isolated from the internet to prevent data from being removed. Common package repositories such as *CRAN* and *conda forge* have been whitelisted so that packages can be installed by the user from these locations. If you require code that is held in **GitHub**, this will need to be brought into SRCP via the Data Transfer process as a zip file (see :ref:`data-transfer`). Similarly, Docker containers will need to be brought in and run through Singularity/Apptainer. The reason for this is that we cannot allow direct access to GitHub and DockerHub as this would give users the ability to remove data without permission by pushing to these locations.
 
 Basic file editing
 ------------------
@@ -63,7 +64,7 @@ If additional packages are required, it is recommended that this is done through
 Conda
 ~~~~~
 
-1. Find the full miniforge module name: ``$ module avail`` or ``$ module keyword conda`` and load it with ``$ module load xxxxxx``
+1. Find the full miniforge module name: ``$ module avail`` or ``$ module keyword conda`` and load it with ``$ module load xxxxxx``  where ``xxxxxx`` is the full module name
 2. While general access to the internet is not available, it is possible install packages from the ``conda-forge`` channel
 3. If you require a package that is not available on ``conda-forge``, then please `open a support ticket <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__.
 
@@ -80,7 +81,7 @@ Jupyter notebook as a module (no virtual environment)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Find the **py-jupyterlab** module:
    ``$ module keyword jupyter`` and load it with
-   ``$ module load xxxxxx``
+   ``$ module load xxxxxx``  where ``xxxxxx`` is the full module name
 2. Load other modules required (e.g. pandas):
     ``$ module load py-pandas/1.5.3
 3. Start a jupyter notebook: ``$ jupyter lab`` - a browser window should open
@@ -100,7 +101,7 @@ To do
 Stata
 -----
 
-1. Find the full Stata module name: ``$ module keyword stata`` and load it with ``$ module load xxxxxx``
+1. Find the full Stata module name: ``$ module keyword stata`` and load it with ``$ module load xxxxxx``  where ``xxxxxx`` is the full module name
 2. Start Stata: ``$ xstata`` for the basic edition or ``$ xstata-mp`` for Stata/MP
 
 .. figure:: ../../images/stata.png
@@ -124,7 +125,7 @@ PLINK, vcftools and  bcftools
 These can all be loaded as modules. For example for PLINK:
 
 1. ``$ module keyword plink`` and load it with
-2. ``$ module load xxxxxx``
+2. ``$ module load xxxxxx`` where ``xxxxxx`` is the full module name
 
 Then PLINK can be run as normal
 
