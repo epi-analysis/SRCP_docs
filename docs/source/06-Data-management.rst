@@ -229,7 +229,7 @@ Use the following steps to give access to an existing dataset to all users in a 
 4. The commands above also give execute permissions on existing files which is not ideal. This command tidies this up by finding files and then removing the execute permission: ``$ find /srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
 5. While it is a low risk of these data being misused, you can ask a colleague to check the permissions on the files and folders if you are unsure that the permissions are correct.
 6. To help the user find the data, a symlink can be created in their project data folder: ``$ ln -s /srv/shared/data-management/<data_folder> /srv/projects/<project-folder>/data``
-If you need to remove the symlink use the following command: ``$ rm -i /srv/projects/<project-folder>/data/<symlink>``
+If you need to remove the symlink use the following command: ``$ rm -i /srv/projects/<project-folder>/data/<symlink>`` (**don't add a slash on the end or the command will not work**)
 
 Removing access to existing datasets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
