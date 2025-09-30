@@ -91,13 +91,7 @@ Example of setting up WinSCP
 
 4. Click Save and then click OK to save the session as a site. This will allow you to reconnected more easily in the future.
 
-5. You will see a warning about the server key not being found in the cache:
-
-.. figure:: ../../images/unknown-server.png
-  :scale: 50 %
-  :alt: Unknown server
-
-Check that the key is ``SHA-256:  rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI=``. If it is not, then click Cancel and contact srcpdata@mrc-epid.cam.ac.uk
+5. You will see a warning about the server key not being found in the cache. Check that the key is ``SHA-256:  rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI=``. If it is not, then click Cancel and contact srcpdata@mrc-epid.cam.ac.uk
 
 .. _SFTP-upload:
 Example of uploading files using WinSCP
