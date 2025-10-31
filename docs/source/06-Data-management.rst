@@ -51,7 +51,7 @@ This code snippet is available in ``/srv/shared/scripts/slurm.txt`` (to save hav
 
 To request a new project, `this form <https://www.hpc.cam.ac.uk/form/srcp-resource-request>`__ needs to be completed. The following responses are suggested for standard EPIC Norfolk projects but could be changed if needed:
 
-1. Section 1 – SRCP Platform. Select "New project" and "vHPC" (or "Windows"). For vHPC the platform id is b864dfnfpqj
+1. Section 1 – SRCP Platform. Select "New project" and "vHPC". For vHPC the platform id is b864dfnfpqj
 2. Section 5 – Create a Project. The project name is will be the folder name, the suggested format is ``year_month_initials_ENDRnumber`` where initials are for the person doing the research. The description can be taken from the ENDR form.
 3. Section 6 – Project Managers. Select "Yes".
 4. Section 7 – Software Requirements. Enter "N/A".
@@ -408,6 +408,71 @@ In this section we will detail what to do at the end of a project.
 To some extent we will have captured results as they are taken off the SRCP. The code can be given to the user.
 There are questions about what to do with large datasets that are hard to regenerate. In some cases, if they do not contain personal information they can be removed and given to the user to look after.
 
+Windows SRCP
+------------
+We are not the platform manager for the Windows SRCP as it is shared with the Clinical School.
+
+Setting up a Windows SRCP project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To request a new project, `this form <https://www.hpc.cam.ac.uk/form/srcp-resource-request>`__ needs to be completed. The following responses are suggested for standard EPIC Norfolk projects but could be changed if needed:
+
+1. Section 1 – SRCP Platform. Select "New project" and "Windows". The platform id is 6qdw8f4p9t5
+2. Section 5 – Create a Project. The project name is will be the folder name, the suggested format is ``year_month_initials_ENDRnumber`` where initials are for the person doing the research. The description can be taken from the ENDR form.
+3. Section 6 – Project Managers. Select "No". Although there are only 2 boxes, enter all the data managers here
+4. Section 7 – Software Requirements. Enter "RStudio, Python, RDS Farm".
+5. Section 10.  Select "Yes".
+6. Section 11 – Data Compliance. Enter "N/A - uses data from the existing EPIC Norfolk study.".
+7. Section 12 – Data Provider Details. Enter "N/A" for all sections.
+
+You should then receive a confirmation email titled **SRCP Resource Request**. Wait a few more minutes, and then you should get a **new ticket** from RCS support with a title like **HPCSSUP-123456 SRCP Resource Request**. Reply to this email with a copy of the data request form (required by Victoria Hollamby who is the Clinical School Research Governance Advisor). 
+
+After the project is set up
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create the data and analysis folders. Set the permissions (https://docs.hpc.cam.ac.uk/srcp/swd/faq.html#giving-access-to-project-users). Read access for data and Modify for analysis
+Copy the data over
+
+Instructions for accessing RStudio, Stata etc
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These instructions are for RStudio but the process is similar for Stata
+
+1. On the start menu, locate RDS Farm and click it:
+.. figure:: ../../images/RDS-start.png
+  :scale: 50 %
+  :alt: RDS-start
+
+2. A browser window should open. Enter your credentials, being sure to include BLUE\    in front of your CRSid, and press sign in:
+.. figure:: ../../images/RDS-log-in.png
+  :scale: 50 %
+  :alt: RDS-log in
+
+3. You should now see these short cuts. Click on RStudio
+.. figure:: ../../images/RDS-shortcuts.png
+  :scale: 50 %
+  :alt: RDS-shortcuts
+
+4. A download should appear. Click Open:
+.. figure:: ../../images/RDS-download.png
+  :scale: 50 %
+  :alt: RDS-download
+
+5. Click Keep:
+.. figure:: ../../images/RDS-keep.png
+  :scale: 50 %
+  :alt: RDS-keep
+
+6. Choose "Don't ask me again...." and click Connect
+.. figure:: ../../images/RDS-ask.png
+  :scale: 50 %
+  :alt: RDS-ask
+
+7. After a while, RStudio should start
+8. Accept the selected version of R to use:
+.. figure:: ../../images/RDS-version.png
+  :scale: 50 %
+  :alt: RDS-version
+
+**IMPORTANT** Be sure to save you work in X:/<your project folder>/secure-platform/analysis and nowhere else, or it will be lost when the session closes.
 
 Email templates
 ---------------
