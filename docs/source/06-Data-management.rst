@@ -434,45 +434,51 @@ Copy the data over
 Instructions for accessing RStudio, Stata etc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These instructions are for RStudio but the process is similar for Stata
+These instructions are for RStudio but the process is similar for Stata.
+**IMPORTANT** Be sure to save you work in X:/<your project folder>/secure-platform/analysis and nowhere else, or it will be lost when the session closes.
 
 1. On the start menu, locate RDS Farm and click it:
+
 .. figure:: ../../images/RDS-start.png
   :scale: 50 %
   :alt: RDS-start
 
-2. A browser window should open. Enter your credentials, being sure to include BLUE\    in front of your CRSid, and press sign in:
+2. A browser window should open. Enter your credentials, being sure to include BLUE\\ in front of your CRSid, and press sign in:
+
 .. figure:: ../../images/RDS-log-in.png
   :scale: 50 %
   :alt: RDS-log in
 
-3. You should now see these short cuts. Click on RStudio
+3. You should now see these short cuts. Click on RStudio:
+
 .. figure:: ../../images/RDS-shortcuts.png
   :scale: 50 %
   :alt: RDS-shortcuts
 
 4. A download should appear. Click Open:
+
 .. figure:: ../../images/RDS-download.png
   :scale: 50 %
   :alt: RDS-download
 
 5. Click Keep:
+
 .. figure:: ../../images/RDS-keep.png
   :scale: 50 %
   :alt: RDS-keep
 
-6. Choose "Don't ask me again...." and click Connect
+6. Choose "Don't ask me again...." and click Connect:
+
 .. figure:: ../../images/RDS-ask.png
   :scale: 50 %
   :alt: RDS-ask
 
-7. After a while, RStudio should start
+7. After a while, RStudio should start.
 8. Accept the selected version of R to use:
+
 .. figure:: ../../images/RDS-version.png
   :scale: 50 %
   :alt: RDS-version
-
-**IMPORTANT** Be sure to save you work in X:/<your project folder>/secure-platform/analysis and nowhere else, or it will be lost when the session closes.
 
 Email templates
 ---------------
