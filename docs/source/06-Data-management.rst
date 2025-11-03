@@ -428,8 +428,10 @@ You should then receive a confirmation email titled **SRCP Resource Request**. W
 
 After the project is set up
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Create the data and analysis folders. Set the permissions (https://docs.hpc.cam.ac.uk/srcp/swd/faq.html#giving-access-to-project-users). Read access for data and Modify for analysis
-Copy the data over
+1. Create the data and analysis folders.
+2. Set the permissions (https://docs.hpc.cam.ac.uk/srcp/swd/faq.html#giving-access-to-project-users). Note the pain of having to search for uis-project-<projectid> in a text box that is hard to find (right click properties->security->Add->(type search term) ->Check
+3. Read access for data and Modify for analysis
+4. Copy the data over
 
 Instructions for accessing RStudio, Stata etc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -479,6 +481,8 @@ These instructions are for RStudio but the process is similar for Stata.
 .. figure:: ../../images/RDS-version.png
   :scale: 100 %
   :alt: RDS-version
+
+9. Packages cannot be installed by users as the SRCP is isolated from the internet. Email srcp@hpc.cam.ac.uk with the subject "Windows SRCP - R Package request" to have packages installed OR TBC open a request to bring in a packages as a zip file via the airlock
 
 Email templates
 ---------------
