@@ -435,7 +435,7 @@ Instructions for accessing RStudio, Stata etc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These instructions are for RStudio but the process is similar for Stata.
-**IMPORTANT** Be sure to save you work in X:/<your project folder>/secure-platform/analysis and nowhere else, or it will be lost when the session closes.
+**IMPORTANT** Be sure to save you work in ``X:/<your project folder>/secure-platform/analysis`` and nowhere else, or it will be lost when the session closes.
 
 1. On the start menu, locate RDS Farm and click it:
 
