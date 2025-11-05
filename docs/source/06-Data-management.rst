@@ -438,6 +438,7 @@ After the project is set up
 2. Set the permissions (https://docs.hpc.cam.ac.uk/srcp/swd/faq.html#giving-access-to-project-users). Note the pain of having to search for uis-project-<projectid> in a text box that is hard to find (right click properties->security->Add->(type search term) ->Check
 3. Read access for data and Modify for analysis
 4. Copy the data over
+5. Probably request RDS farm access (TBC whether including this request in Section 7 of the project request form will work)
 
 Instructions for accessing RStudio, Stata etc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
