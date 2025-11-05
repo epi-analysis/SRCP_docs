@@ -87,7 +87,7 @@ Jupyter notebook as a module (no virtual environment)
    ``$ module keyword jupyter`` and load it with
    ``$ module load xxxxxx``  where ``xxxxxx`` is the full module name
 2. Load other modules required (e.g. pandas):
-    ``$ module load py-pandas/1.5.3
+    ``$ module load py-pandas/1.5.3``
 3. Start a jupyter notebook: ``$ jupyter lab`` - a browser window should open
 
 Jupyter notebook in a Conda environment
