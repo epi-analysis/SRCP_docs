@@ -70,7 +70,7 @@ To connect, an `SFTP client <https://www.sftp.net/clients>`__ is required such a
 -  `sftp <https://linux.die.net/man/1/sftp>`__
 
 .. note::
-   When setting up the Client, check that the host key matches ``SHA256:rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI=``. If your client ever warns that the host key has changed, and it does not match this key then do not proceed and contact srcpdata@mrc-epid.cam.ac.uk
+   When setting up the Client, check that the host key matches ``rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI``. If your client ever warns that the host key has changed, and it does not match this key then do not proceed and contact srcpdata@mrc-epid.cam.ac.uk
 
 Example of setting up WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,7 +91,7 @@ Example of setting up WinSCP
 
 4. Click Save and then click OK to save the session as a site. This will allow you to reconnected more easily in the future.
 
-5. You will see a warning about the server key not being found in the cache. Check that the key is ``SHA-256:  rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI=``. If it is not, then click Cancel and contact srcpdata@mrc-epid.cam.ac.uk
+5. You will see a warning about the server key not being found in the cache. Check that the key is ``rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI``. If it is not, then click Cancel and contact srcpdata@mrc-epid.cam.ac.uk
 
 .. _SFTP-upload:
 Example of uploading files using WinSCP
