@@ -69,14 +69,13 @@ To connect, an `SFTP client <https://www.sftp.net/clients>`__ is required such a
 -  `rsync <https://linux.die.net/man/1/rsync>`__
 -  `sftp <https://linux.die.net/man/1/sftp>`__
 
-.. note::
-   When setting up the Client, check that the host key matches:
+When setting up the Client, check that the host key matches:
 
-```
-SHA256:j1/yov0yGMla50k3KsPiSK7fVFcjAul7goglZXG7s1o (ECDSA)
-SHA256:rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI (ED25519)
-SHA256:Veb3XsMSZom7dng3FHUNvbMr6wBMcfCcZ//6pTmsWgk (RSA)
-```
+.. code-block:: console
+
+   SHA256:j1/yov0yGMla50k3KsPiSK7fVFcjAul7goglZXG7s1o (ECDSA)
+   SHA256:rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI (ED25519)
+   SHA256:Veb3XsMSZom7dng3FHUNvbMr6wBMcfCcZ//6pTmsWgk (RSA)
 
 If your client ever warns that the host key has changed, and it does not match one of these key then do not proceed and contact srcpdata@mrc-epid.cam.ac.uk
 
@@ -101,11 +100,12 @@ Example of setting up WinSCP
 
 5. You will see a warning about the server key not being found in the cache. Check that the key matches:
 
-```
-SHA256:j1/yov0yGMla50k3KsPiSK7fVFcjAul7goglZXG7s1o (ECDSA)
-SHA256:rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI (ED25519)
-SHA256:Veb3XsMSZom7dng3FHUNvbMr6wBMcfCcZ//6pTmsWgk (RSA)
-```
+.. code-block:: console
+
+   SHA256:j1/yov0yGMla50k3KsPiSK7fVFcjAul7goglZXG7s1o (ECDSA)
+   SHA256:rLA8ooUEnrbUBL7fPolOH6D2akF9PqZXp3EtWnhGWxI (ED25519)
+   SHA256:Veb3XsMSZom7dng3FHUNvbMr6wBMcfCcZ//6pTmsWgk (RSA)
+
 If it is not one of these keys, then click Cancel and contact srcpdata@mrc-epid.cam.ac.uk
 
 .. _SFTP-upload:
