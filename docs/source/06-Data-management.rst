@@ -365,6 +365,15 @@ Machine Learning Models (e.g. .onnx files)
 
 Containers (e.g. .sif files)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The SRCP supports using Apptainer to run containers, usually .sif files. The current best practice is to inspect the structure and contents of the container. The prerequitiste is having Apptainer installed on a VM (you only have to do this once). Then use the following steps:
+
+1.	Put the .sif container file onto the VM
+2.	``$ apptainer inspect -d my-container.sif``  - look at the definition file to see the components of the container
+3.	``%files`` section is where "data" are defined. It will describe how the container accesses folders on the host and the location of embedded data. We shell into the container by doing ``$ apptainer shell my-container.sif`` Then ``$ cd /location`` and we can look at the actual files bundled with the container.
+4.	``From:`` section describes the base image e.g. a plain install of Ubuntu.
+5.	 ``%post`` section is where packages are installed during the building of the container. For example it might tell Python to install some packages.
+6.	 An LLM might help to process long package lists and flag anything that looks strange.
+
 - **Vulnerability Scanning:** Use scanners like `Grype <https://github.com/anchore/grype>`__ to check for known issues. **note:** Grype will often produce a very large list of vulnerabilities, many of which may not be relevant in the SRCP’s isolated environment. For example, Grype highlights issues that would be critical for an internet-facing web application, but are low risk within the SRCP. Focus your attention on vulnerabilities that could realistically impact the security or functionality of the platform.
 - **Virus Scanning:** Optionally run a virus scanner before import.
 - **Security Context:** Note that SRCP uses Apptainer and Podman (not Docker). Containers will run with restricted user privileges on the SRCP, reducing risk.
@@ -374,11 +383,12 @@ Files to be Exported (Taking Data and Code Out)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Disclosure Control
 ^^^^^^^^^^^^^^^^^^
-- **Summary Data Only:** Exported files must not contain individual-level study data, only aggregate or summary results. Review `UK Data Service Report <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `Genomics England Airlock Rules <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__  for guidance.
+- **Summary Data Only:** Exported files must not contain individual-level study data, only aggregate or summary results. Researchers should mask phenotype counts lower than 10 (e.g. if the results show 3 people have lung cancer, this should be removed). Review `UK Data Service Report <https://ukdataservice.ac.uk/app/uploads/thf_datareport_aw_web.pdf>`__ and `Genomics England Airlock Rules <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__  for guidance.
 - **Participant Identifiers:** Scan for participant/sample IDs; use scripts if files are large.
 - **Check code for data:** Sometimes users annotate their code with intermediate results which can also be disclosive
 - **Malicious Export Attempts:** Be alert to attempts to evade checks, such as using obfuscated identifiers or exporting disguised data.
 - **Minimisation:** Users should request only the minimum necessary data for their research. If a user requests export of a very large number of results, ask them to revise and reduce the scope where possible. For ‘omics datasets or other inherently large result sets, refer to the Genomics England guidance and require users to minimise exported data as much as practical.
+- **Description** ask researchers to describe what the files are and why they are needed, with clear labels
 
 Large or Complex Files
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -399,8 +409,7 @@ Additional Tips
 
 - **Scripted Checks:** Automate ID scans or repetitive checks for large-scale exports.
 - **LLM Assistance:** Use Large Language Models (e.g., ChatGPT) to help interpret code, scripts, or complex outputs, especially when expertise is lacking.
-- **Communication:** Work closely with users to clarify file contents and expectations.
-- **Continuous Improvement:** Regularly review and update checking procedures as threats and research practices evolve.
+- **Communication:** Work closely with users to clarify file contents and expectations. They should help you reconstruct any environment needed to open and inspect files.
 
 Special Note on Containers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
