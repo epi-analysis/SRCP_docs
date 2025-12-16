@@ -77,9 +77,18 @@ JupyterLab for Python
 
 Several options exist for running JupyterLab (notebooks etc) on the SRCP:
 
-1. Load JupyterLab as a module, along with other packages required
-2. Create a Conda environment, and install JupyterLab packages alongside other packages required in that environment
+1. Create a Conda environment, and install JupyterLab packages alongside other packages required in that environment
+2. Load JupyterLab and other packages required as modules
 3. Load JupyterLab as a module, create a kernel for the Conda environment, install other packages required in the environment
+
+
+JupyterLab in a Conda environment (recommended)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Create a Conda environment: ``$ conda create -n my-conda-env``
+2. Activate the environment: ``$ conda activate my-conda-env``
+3. Install jupyter in the environment: ``$ conda install jupyterlab``
+4. Install other packages as required
+5. Start JupyterLab: ``$ jupyter lab``
 
 JupyterLab as a module (no virtual environment)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -89,14 +98,6 @@ JupyterLab as a module (no virtual environment)
 2. Load other modules required (e.g. pandas):
     ``$ module load py-pandas/1.5.3``
 3. Start JupyterLab: ``$ jupyter lab`` - a browser window should open
-
-JupyterLab in a Conda environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Create a Conda environment: ``$ conda create -n my-conda-env``
-2. Activate the environment: ``$ conda activate my-conda-env``
-3. Install jupyter in the environment: ``$ conda install jupyterlab``
-4. Install other packages as required
-5. Start JupyterLab: ``$ jupyter lab``
 
 JupyterLab as a module with Conda environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
