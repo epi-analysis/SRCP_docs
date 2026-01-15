@@ -500,6 +500,15 @@ These instructions are for RStudio but the process is similar for Stata.
 
 9. Packages cannot be installed by users as the SRCP is isolated from the internet. Email srcp@hpc.cam.ac.uk with the subject "Windows SRCP - R Package request" to have packages installed OR TBC open a request to bring in a packages as a zip file via the airlock
 
+Import and Export with Windows SRCP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Go to:
+https://transfer.srcp.hpc.cam.ac.uk/
+2. To log in, use your CRSid as the username along with the associated password. Unfortunately this service uses a separate one time passcode system, which you need to set up in the usual way by scanning the QR code with your phone. It is then listed as "Cerberus" in your OTP app for future reference.
+3. Once logged in, navigate to the Export or Import folder as appropriate. Then go into the folder for your project, and then the shared folder within that.
+4. For Export, select the files required, right click and choose download.
+5. For Import, use the green Add Files or Add Folder buttons at the bottom of the screen
+
 Email templates
 ---------------
 After completing VW process - apply for SRCP account
