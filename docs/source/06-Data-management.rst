@@ -395,9 +395,9 @@ Large or Complex Files
 - **Practical Review:** For very large or numerous files, ask the user to minimise the amount of data that is exported. If detailed checking is impractical, focus checks on high-risk or sensitive data.
 - **Subject-Matter Expertise:** Clarify with researchers if you’re unsure about the content, especially for unfamiliar research areas.
 
-Machine Learning Models (e.g. .onnx files)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- **Model Validation:** If users wish to export trained models, check with [Netron](https://netron.app/) to confirm validity and ensure no embedded study data or identifiers.
+Machine Learning Models
+^^^^^^^^^^^^^^^^^^^^^^^
+This is a complex area, with concerns that these types of models might encode data or make it easy to recreate data that was used for training. Guidance is in development, so as a general rule we should not export machine learning models.
 
 Documentation and Process
 ^^^^^^^^^^^^^^^^^^^^^^^^^
