@@ -1,38 +1,93 @@
 .. _data-transfer:
 
-Taking files on and off the SRCP
+Taking files in and out of the SRCP
 ================================
 
-Explanation of file transfers on the SRCP
------------------------------------------
+Overview
+--------
 
-The SRCP Platform enforces strict controls and comprehensive auditing of all file uploads and downloads to ensure the appropriate use of participant data and the protection of participant identities.  Users cannot access their project folder from outside the SRCP. This prevents data from being removed from or brought onto the system without permission.
+The SRCP platform enforces strict controls and full auditing of all files moved in and out to: 
 
-All data analysis and processing should be performed within the SRCP environment. Only summary-level (aggregate) data are eligible for export; individual-level data cannot be exported under any circumstances. Our policy is to minimise the amount of data that is taken off the SRCP — request only the minimum data necessary for your research. 
+- Protect participant confidentiality 
+- Prevent unauthorised data removal 
+- Prevent unauthorised or unsafe files entering the system 
 
-Before any file is released from the system, it is checked by a Data Manager to ensure that it meets the **Disclosure Control Rules**:
+Users **cannot access their project folders directly from outside the SRCP**. All file transfers must go through a controlled triage process handled by a Data Manager. All analysis must be conducted within the SRCP. Only **summary-level (aggregate) results** may be taken out. Individual-level data can never be removed under any circumstances. To strengthen these measures further, user should take out the minimum data necessary for research (e.g. writing up final results).
 
--  minimise the number of items to be checked, perhaps by only removing final results for publication. Requests to export large numbers of items will need to be revised to something more manageable.
--  provide a description of what the file contains, how it was generated
-   and its relevance to the research question
--  files should only contain aggregated, summary results, not individual values
--  results are clearly labelled
--  files should not have any participant or sample IDs
--  mask phenotype counts lower than 10 (e.g. if the results show 3 people have lung cancer, this should be masked)
+Files are moved in and out of the SRCP **using SFTP** (SSH File Transfer Protocol) and requires an SFTP client to be set up on your local computer - see below.
 
-To maintain the security and integrity of the SRCP platform, it is essential to review all files before they are introduced into the system. This helps protect participant data, ensures compliance with research policies, and prevents the introduction of malicious software. Before any file is brought onto the system, it is checked by a Data Manager to ensure that:
+Disclosure Control Rules (for taking files out)
+------------------------------------------------
 
-- Additional data brought onto the system should be approved for use on the research question if it is not publicly available
-- Code that is being brought in is relevant to the research question and sourced from a reputable location so that it does not contain malware
+Before any file is released from the SRCP, a Data Manager will review it to ensure it meets the Disclosure Control Rules. 
 
-Within the SRCP, each user is assigned a personal triage area that is accessible via SFTP from outside the platform. Users can upload files to and download files from this triage area, but cannot move files directly between their triage area and project folder. Only a Data Manager is authorised to transfer files between a user’s triage area and their project folder, following a thorough review. Users must inform a Data Manager when files are ready for inspection. Once approved and transferred, the files become immediately available to the user.
+Files to be taken out must: 
+
+- Contain **summary (aggregate) results only**
+- Contain **no individual-level data**
+- Contain **no participant or sample IDs** 
+- Clearly label all results 
+- Mask small counts (any count < 10 must be suppressed or masked) and prevent small counts from being derived 
+- Be limited to final results wherever possible (avoid exporting large numbers of intermediate files) 
+
+When requesting files to be taken out, you must provide: 
+
+- The file name and location (note files in your home folder are not accessible by Data Managers) 
+- A description of what the file contains 
+- How it was generated and if appropriate the code/environment required to load the file 
+- Why it is relevant to your research question 
+
+Large or unclear requests will be returned for revision. 
+
+Machine learning models
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+While developing machine learning (ML) models offers significant opportunities, removing trained models from the SRCP poses disclosure risks that are not yet fully addressed by existing guidance. Unlike conventional statistical outputs, ML models are a relatively new research output with less well-understood potential to reveal individual-level information, and there is limited consensus on how to assess and mitigate these risks once models leave the SRCP. As best practice continues to evolve in collaboration with external experts, our interim policy is to generally prohibit removing trained ML models from the SRCP unless there is compelling evidence that they do not present disclosure risk, although model performance metrics and hyperparameters may be released subject to standard output checking.
+
+Taking Files Into the SRCP
+----------------------------
+
+All files taken into the SRCP are reviewed before being moved into your project folder. This ensures: 
+
+- Participant data remains protected 
+- Research policy compliance 
+- No malicious software is introduced 
+
+For data files to be approved: 
+
+- The data must be approved for use in your research question (if not publicly available)
+- If a particular software environment is needed to open the file, this must be provided
+
+For code to be approved: 
+
+- The code must be relevant to your research 
+- The source must be reputable 
+- It must not contain malware 
+
+You must explain why the uploaded file is necessary for your research. 
+
+The SRCP Triage System
+----------------------
+
+Each user is assigned a personal **triage area**, accessible externally via SFTP. 
+
+There are two folders: 
+
+Upload folder – for approved files entering the SRCP 
+Download folder – for approved files leaving the SRCP 
+
+Important: 
+
+- You cannot move files directly between your triage area and your project folder. 
+- Only a Data Manager can transfer files between these areas. 
+- You must notify a Data Manager when files are ready for review. 
+- Once approved, files are transferred and immediately available. 
 
 .. figure:: ../../images/file-triage.png
   :scale: 70 %
   :alt: SRCP file triage process
 
-Process for downloading files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Summary of process for downloading files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. A user wishes to download some results from the SRCP
 2. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__ of the file name, location (e.g. their project folder) and a statement of how it meets the Disclosure Control Rules (see above)
@@ -40,8 +95,8 @@ Process for downloading files
 4. The Data Manager copies the file from the user’s project folder to their “download” triage folder and notifies the user
 5. The user connects to their “download” triage folder using SFTP and downloads the file
 
-Process for uploading files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Summary of process for uploading files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. A user wishes to upload some supplementary data or code to the SRCP
 2. The user connects to their “upload” triage folder using SFTP and uploads the file
@@ -56,7 +111,7 @@ Connecting to epi-analysis SRCP with SFTP
 
 The **address** of the epi-analysis SFTP site is ``data-epi-analysis.srcp.hpc.cam.ac.uk``.
 
-The **username**, **password** and **2 factor authentication device** are the same as those used to log into the web interface.
+The **username**, **password** and **2 factor authentication device** are the same as those used to log into the web interface. A connection to the Cambridge VPN is required.
 
 SFTP Clients
 ~~~~~~~~~~~~
@@ -145,9 +200,6 @@ Example of uploading files using WinSCP
 .. _SFTP-download:
 Example of downloading files using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-0. **TO DO - make sure permissions are set so that DM can read the
-   file**
 
 1. `Notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__  and let them know that you need files copied from your project folder to your “download” folder. Provide a statement of how the files meet the Disclosure Control Rules (see above). They will check the files, copy them to your download folder if all is OK and notify you that they are available for download or advise what changes are needed.
 
