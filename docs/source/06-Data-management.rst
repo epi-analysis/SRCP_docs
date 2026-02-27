@@ -321,6 +321,122 @@ Example of enabling a user to download files from SRCP using WinSCP
 
 8. (If the files are large then delete them from both your own and the user’s triage folder to save space?  Or delete them from your local computer? Confirm with the user that they have downloaded the files to their local computer?)
 
+Output and input disclosure control
+-------------------------------------
+High level steps
+~~~~~~~~~~~~~~~~
+Outputs:
+
+1. Do you understand what you are being asked to check? This might be because the user hasn't provided enough information (so you need to go back to them), or you might need support from a colleague who has see this type of thing before.
+2. Do the files being requested to be taken out of the SRCP align with the research goals of the project?
+3. General areas to check - are you being asked to review a reasonable number of files that are final, possibly for use in a publication? Do the files contain IDs or obviously contain individual level data? Does the file contain hidden data or allow derivation of inappropriate results (Examples include, but are not limited to, .rhistory, .Rdata, .rproject, excel, html)?  Be alert to attempts to evade checks, such as using obfuscated identifiers or exporting disguised data.
+4. Broadly what type of files are you being asked to check? Standard statistics (tables, regression coefficients, graphs), code, 'omics results, containers, binary files (e.g. pkl or joblib), machine learning results or machine learning models? This will determine the types of check to do.
+
+Inputs:
+
+1. Do you understand what you are being asked to check? This might be because the user hasn't provided enough information (so you need to go back to them), or you might need support from a colleague who has see this type of thing before.
+2. Do the items being requested to be brought into the SRCP align with the research goals of the project?
+3. Does the user have permission to use the files in the research? This would apply to code and data
+4. Broadly what type of files are you being asked to check? Standard data, code, containers or binary files (e.g. pkl or joblib)? This will determine the types of check to do.
+
+Files to be taken out
+~~~~~~~~~~~~~~~~~~~~~
+
+After passing the high level check above, in the following subsections we describe how to check the specific types of output.
+
+Standard results
+^^^^^^^^^^^^^^^^^^
+Standard results include things like tables, regression coefficients, graphs. These can be assessed using the `SACRO guide to output checking <https://zenodo.org/records/10282526>`__ which has a comprehensive guide to almost all types of standard analaysis output in section 7. This goes beyond more general statement like "Are there any cells that contain a value less than 10, or are any derivable?"
+
+Code
+^^^^
+- Check for results in comments or stored in notebooks
+- While detailed understanding is not necessary, if you are unsure about the function or appropriateness of code, consider using a Large Language Model (LLM) such as ChatGPT to help interpret, summarise, or highlight potential issues in the code.
+
+'omics results
+^^^^^^^^^^^^^^
+We make use of the guidance on `Genomics England Airlock Rules <https://re-docs.genomicsengland.co.uk/airlock_rules/#>`__ 
+
+Do GWAS results follow the standard filters (those being minimum Allele Count 20 and minimum Allele Frequency 0.005 for all variants)? These filters will also be applied to bulk exports of variant data with associated counts for use cases similar to GWAS. 
+
+Some kinds of graphs and figures showing individual level data are described by Genomics England as potentially be safe for taking out. This is where the data has been categorised as non-identifying and summarised, despite being individual level, provided that minimal or no phenotypic data is included for the individuals. These are as follows at present: Circos plots, IGV screenshots, Oncoplots, graphs showing "genetic summary statistics": stats like tumour mutational burden, mutational signatures, or similar.
+
+Containers
+^^^^^^^^^^
+The SRCP supports using Apptainer to run containers, usually .sif files. The current best practice is to inspect the structure and contents of the container. The prerequitiste is having Apptainer installed on a VM (you only have to do this once) or you can do this on the SRCP itself. Then use the following steps:
+
+1.	Put the .sif container file onto the VM
+2.	``$ apptainer inspect -d my-container.sif``  - look at the definition file to see the components of the container
+3.	``%files`` section is where "data" are defined. It will describe how the container accesses folders on the host and the location of embedded data. We shell into the container by doing ``$ apptainer shell my-container.sif`` Then ``$ cd /location`` and we can look at the actual files bundled with the container.
+4.	``From:`` section describes the base image e.g. a plain install of Ubuntu.
+5.	 ``%post`` section is where packages are installed during the building of the container. For example it might tell Python to install some packages.
+6.	 An AI tool like ChatGPT might help to process long package lists and flag anything that looks strange.
+
+If you are very concerned about a container, these more challenging steps can be done:
+- **Vulnerability Scanning:** Use scanners like `Grype <https://github.com/anchore/grype>`__ to check for known issues. **note:** Grype will often produce a very large list of vulnerabilities, many of which may not be relevant in the SRCP’s isolated environment. For example, Grype highlights issues that would be critical for an internet-facing web application, but are low risk within the SRCP. Focus your attention on vulnerabilities that could realistically impact the security or functionality of the platform.
+- **Virus Scanning:** Optionally run a virus scanner before import.
+- **Security Context:** Note that SRCP uses Apptainer and Podman (not Docker). Containers will run with restricted user privileges on the SRCP, reducing risk.
+- **Behaviour Monitoring:** Consider using `Falco <https://falco.org/>`__ to monitor for suspicious activity when running containers. However, this is quite a laborious process as you will need to run it on a virtual machine running Docker, and then start the container to see what happens (see the "Try Falco" option on the website)
+
+Binary files (e.g. pkl, joblib)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+joblib and pkl files are used to store data but are not human-readable. Therefore if a user asks to take these types of files in or out of the SRCP they need to provide the environment configuration that allows the files to be opened. Once they are opened it is slightly subjective as to how extensive checks can be on the resulting object. We are more concerned about things going out than going in.
+
+Ask the user for the details of how to reproduce the environment and some code that gives context to the joblib/pkl
+The environment could be recreated on the SRCP or on a VM. SRCP is probably less effort, but is limited to conda (not Python venv which uses requirements.txt) and so an environment.yml is required.
+Assuming SRCP – import the environment.yml file
+Create the environment $ conda env create –f environment.yml
+The environment name is specified in the yml file
+Activate the environment: $ conda activate my_new_env
+Install Jupyter Lab to allow you to interact with the code etc: $ conda install jupyterlab
+Start Jupyter Lab. $ jupyter lab
+With the user’s code as reference, load the joblib/pkl and investigate it to judge whether it can be brought in or out
+
+With “things going out”, we are not just looking for data, as models themselves are a disclosure risk. Certainly data in dataframe cannot be removed, but also machine learning models should not be taken out under our general policy. This is more complex and we are still working on the risk assessment that may allow machine learning models to be taken out.
+
+Machine Learning Results
+^^^^^^^^^^^^^^^^^^^^^^^^
+This scenario is where a machine learning model has been developed on the SRCP and results generated about its performance. These might include (1) Area Under the Curve; (2) Accuracy; (3) Recall (Sensitivity); (4) Specificity; (5) Precision
+
+Generally speaking these types of results should be safe to allow out.
+
+Machine Learning Models
+^^^^^^^^^^^^^^^^^^^^^^^
+This is a complex area, with concerns that these types of models might encode data or make it easy to recreate data that was used for training. Guidance is in development, so as a general rule we should not export machine learning models.
+
+
+
+Files to be taken in
+~~~~~~~~~~~~~~~~~~~~~
+
+After passing the high level check above, in the following subsections we describe how to check the specific types of output.
+
+Standard data
+^^^^^^^^^^^^^
+Standard results include things like tables, regression coefficients, graphs. These can be assessed using the `SACRO guide to output checking <https://zenodo.org/records/10282526>`__ which has a comprehensive guide to almost all types of standard analaysis output in section 7. This goes beyond more general statement like "Are there any cells that contain a value less than 10, or are any derivable?"
+
+Code
+^^^^
+- **Security Scanning:** Scan code/scripts for malware or vulnerabilities. Use a virus scanner on a secure workstation before transfer.
+- **Source Verification:** Check that code comes from reputable repositories or collaborators.
+- **Code Understanding:** If you are unsure about the function or appropriateness of code, consider using a Large Language Model (LLM) such as ChatGPT to help interpret, summarise, or highlight potential issues in the code.
+
+Containers
+^^^^^^^^^^
+
+See the section above for getting a container running to inspect it.
+
+Sometimes concerns are raised about allowing containers in. Containers allow users to set up complex analysis environments outside the SRCP and then import them for use within the platform. While containers could potentially introduce security risks, such as malware or data breaches, the SRCP mitigates these risks by only supporting Apptainer and Podman (not Docker). These tools ensure containers run with the same restricted privileges as the user, preventing access to unauthorised data or system resources. Docker allows the container to run as a super user and this is not permitted on the SRCP. Additionally, SRCP’s isolation from the internet and the triage-based file transfer process further reduce security risks, as containers cannot download extra content or exfiltrate data. If a container accidentally corrupts a user’s files, these can be restored from offsite backups.
+
+Binary files (e.g. pkl, joblib)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+See the section above for getting an environment set up to open the file
+
+With “things going in” the main check is to verify that the joblib or pkl contents is not just some data, which the user may not have proper permission to use. In this case we probably don’t want to get into too much detail about whether the data are hidden somewhere in the structure of a model, or if a model has somehow retained “knowledge” of the data it was trained on. It is probably enough to confirm that it is a model and not a dataframe of data.
+
+ 
+
+
 Examining items to be taken in or out
 -------------------------------------
 
