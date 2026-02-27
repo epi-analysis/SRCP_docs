@@ -386,7 +386,7 @@ After passing the high level check above, the following sections describe additi
 
 Standard results
 ^^^^^^^^^^^^^^^^^^
-Standard results include tables, regression coefficients and graphs. These should be assessed using section 7 of the `SACRO guide to output checking <https://zenodo.org/records/10282526>`__ which provides detailed guidance beyond general rules such as minimum cell counts or non-derivability.
+Standard results include tables, regression coefficients and graphs. These should be assessed using section 7 of the `SACRO guide to output checking <https://zenodo.org/records/10282526>`__ which provides detailed guidance beyond general rules such as minimum cell counts or non-derivability. The guide doesn't actually specify a minimum cell count as this can vary between institutions. We will continue to use 10.
 
 The SACRO tool is being investigated to assist with checking standard results.
 
