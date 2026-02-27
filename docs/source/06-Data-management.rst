@@ -417,7 +417,7 @@ The SRCP supports Apptainer containers (``.sif`` files). The current best practi
 2.	``%files`` section is where "data" are defined. It will describe how the container accesses folders on the host and the location of embedded data. We shell into the container by doing ``$ apptainer shell my-container.sif`` Then ``$ cd /location`` and we can look at the actual files bundled with the container.
 3.	``From:`` section describes the base image e.g. a plain install of Ubuntu.
 4.	``%post`` section is where packages are installed during the building of the container. For example it might tell Python to install some packages.
-5. Shell into the container to check embedded files by doing $ apptainer shell my-container.sif
+5. Shell into the container to check embedded files by doing ``$ apptainer shell my-container.sif``
 6.	An AI tool like ChatGPT might help to process long package lists and flag anything that looks strange.
 
 Binary files (e.g. pkl, joblib)
