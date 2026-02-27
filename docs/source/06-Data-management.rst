@@ -592,6 +592,16 @@ Email templates
 ---------------
 After completing VW process - apply for SRCP account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This template has actually been automated. In Jira:
+
+1. Go into the **Completed** Request New Project on SRCP subtask 
+2. Click the lightning bolt 
+3. Click "Request account email button"
+4. Check the audit log to see that the email went
+5. A service desk email will open a new ticket. Unfortunately it doesn't seem to add the person as the reporter....
+
+
 Hi <<name>>,
 
 Thank you for your application to access EPIC Norfolk data. The next step is to apply for access to the Secure Research Computing Platform (SRCP) where you will be able to work with the data. Please complete this form:
