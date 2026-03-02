@@ -37,7 +37,7 @@ When requesting files to be taken out, you must provide:
 - How it was generated and if appropriate the code/environment required to load the file 
 - Why it is relevant to your research question 
 
-Large or unclear requests will be returned for revision. 
+This information can be provided when opening a new request `here <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__
 
 Machine learning models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,7 +63,7 @@ For code to be approved:
 - The source must be reputable 
 - It must not contain malware 
 
-You must explain why the uploaded file is necessary for your research. 
+You must explain why the uploaded file is necessary for your research and complete the form `here <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__ 
 
 The SRCP Triage System
 ----------------------
@@ -90,7 +90,7 @@ Summary of process for downloading files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. A user wishes to download some results from the SRCP
-2. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__ of the file name, location (e.g. their project folder) and a statement of how it meets the Disclosure Control Rules (see above)
+2. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__ of the file name, location (e.g. their project folder) and a statement of how it meets the Disclosure Control Rules (see above)
 3. The Data Manager inspects the file and confirms that it contains results, not any individual level data
 4. The Data Manager copies the file from the user’s project folder to their “download” triage folder and notifies the user
 5. The user connects to their “download” triage folder using SFTP and downloads the file
@@ -100,7 +100,7 @@ Summary of process for uploading files
 
 1. A user wishes to upload some supplementary data or code to the SRCP
 2. The user connects to their “upload” triage folder using SFTP and uploads the file
-3. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__  of the file name, location (their “upload” triage folder) and a statement that permission has been granted for the data to be used in this research (data) or that the code is from a reputable source (code). Describe why the items are needed for the research.
+3. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__  of the file name, location (their “upload” triage folder) and a statement that permission has been granted for the data to be used in this research (data) or that the code is from a reputable source (code). Describe why the items are needed for the research.
 4. The Data Manager inspects the file and confirms that it contains appropriate data/code
 5. The Data Manager copies the file from the user’s “upload” triage folder to the user’s project folder and notifies the user
 6. The user uses the file that is now available in their project folder
@@ -195,13 +195,13 @@ Example of uploading files using WinSCP
   :scale: 50 %
   :alt: WinSCP file upload
 
-7. `Notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__  and let them know that you need files copies from your “upload” folder to your project folder. They will check the files, copy them to your project folder if all is OK and notify you that the files are available or advise what changes are needed.
+7. `Notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__  and let them know that you need files copies from your “upload” folder to your project folder. They will check the files, copy them to your project folder if all is OK and notify you that the files are available or advise what changes are needed.
 
 .. _SFTP-download:
 Example of downloading files using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. `Notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__  and let them know that you need files copied from your project folder to your “download” folder. Provide a statement of how the files meet the Disclosure Control Rules (see above). They will check the files, copy them to your download folder if all is OK and notify you that they are available for download or advise what changes are needed.
+1. `Notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__  and let them know that you need files copied from your project folder to your “download” folder. Provide a statement of how the files meet the Disclosure Control Rules (see above). They will check the files, copy them to your download folder if all is OK and notify you that they are available for download or advise what changes are needed.
 
 2. When you have received notification from the Data Manager that the files are ready for you to download, connect to the Cambridge VPN.
 
