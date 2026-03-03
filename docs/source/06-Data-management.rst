@@ -402,10 +402,10 @@ Follow the `Genomics England Airlock Rules <https://re-docs.genomicsengland.co.u
 
 For GWAS results:
 
-- Minimum Allele Count: 20
-- Minimum Allele Frequency: 0.005
+- Minimum Allele Count (MAC): 20
+- Minimum Allele Frequency (MAF): 0.005
 
-These thresholds also apply to bulk exports of variant-level data for similar use cases. 
+The Minor Allele Count (MAC) sets an absolute minimum number of observed minor alleles, ensuring that results are not driven by very small numbers of individuals and reducing small-cell disclosure risk. However, in large studies a variant may meet a MAC threshold while still being extremely rare in relative terms. Such variants can remain potentially identifying or vulnerable to inference attacks. Therefore, a minimum Minor Allele Frequency (MAF) threshold is also applied, to prevent release of results for variants that are rare in the study population even if their absolute count exceeds the MAC limit.
 
 Some kinds of graphs and figures showing individual level data are described by Genomics England as potentially be safe for taking out. This is where the data has been categorised as non-identifying and summarised, despite being individual level, provided that minimal or no phenotypic data is included for the individuals. These are as follows at present: Circos plots, IGV screenshots, Oncoplots, graphs showing "genetic summary statistics": stats like tumour mutational burden, mutational signatures, or similar.
 
