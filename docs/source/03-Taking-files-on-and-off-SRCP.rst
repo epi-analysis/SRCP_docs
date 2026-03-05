@@ -16,20 +16,23 @@ Users **cannot access their project folders directly from outside the SRCP**. Al
 
 Files are moved in and out of the SRCP **using SFTP** (SSH File Transfer Protocol) and requires an SFTP client to be set up on your local computer - see below.
 
-Disclosure Control Rules (for taking files out)
-------------------------------------------------
-
-Before any file is released from the SRCP, a Data Manager will review it to ensure it meets the Disclosure Control Rules. 
+Taking files off the SRCP
+-------------------------
+Requirements for files to be taken out
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Before any file is released from the SRCP, a Data Manager will review it to ensure it meets the **Disclosure Control Rules**. 
 
 Files to be taken out must: 
 
 - Contain **summary (aggregate) results only**
 - Contain **no individual-level data**
 - Contain **no participant or sample IDs** 
-- Clearly label all results 
+- Have clear labels/descriptions for all results 
 - Mask small counts (any count < 10 must be suppressed or masked) and prevent small counts from being derived 
 - Be limited to final results wherever possible (avoid exporting large numbers of intermediate files) 
 
+Information required for files to be taken out
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When requesting files to be taken out, you must provide: 
 
 - The file name and location (note files in your home folder are not accessible by Data Managers) 
@@ -37,23 +40,29 @@ When requesting files to be taken out, you must provide:
 - How it was generated and if appropriate the code/environment required to load the file 
 - Why it is relevant to your research question 
 
+How to request files to be taken out
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This information can be provided when opening a new request `here <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__
 
-Machine learning models
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+A note on machine learning models
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 While developing machine learning (ML) models offers significant opportunities, removing trained models from the SRCP poses disclosure risks that are not yet fully addressed by existing guidance. Unlike conventional statistical outputs, ML models are a relatively new research output with less well-understood potential to reveal individual-level information, and there is limited consensus on how to assess and mitigate these risks once models leave the SRCP. As best practice continues to evolve in collaboration with external experts, our interim policy is to generally prohibit removing trained ML models from the SRCP unless there is compelling evidence that they do not present disclosure risk, although model performance metrics and hyperparameters may be released subject to standard output checking.
 
 Taking Files Into the SRCP
 ----------------------------
-
+Requirements for files to be taken in
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 All files taken into the SRCP are reviewed before being moved into your project folder. This ensures: 
 
 - Participant data remains protected 
 - Research policy compliance 
 - No malicious software is introduced 
 
+Information required for files to be taken in
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For data files to be approved: 
 
+- The data must be relevant to your research 
 - The data must be approved for use in your research question (if not publicly available)
 - If a particular software environment is needed to open the file, this must be provided
 
@@ -63,7 +72,9 @@ For code to be approved:
 - The source must be reputable 
 - It must not contain malware 
 
-You must explain why the uploaded file is necessary for your research and complete the form `here <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__ 
+How to request files to be taken in
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This information can be provided when opening a new request `here <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__ 
 
 The SRCP Triage System
 ----------------------
@@ -86,22 +97,22 @@ Important:
   :scale: 70 %
   :alt: SRCP file triage process
 
-Summary of process for downloading files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Summary of process for downloading (taking out) files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. A user wishes to download some results from the SRCP
-2. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__ of the file name, location (e.g. their project folder) and a statement of how it meets the Disclosure Control Rules (see above)
-3. The Data Manager inspects the file and confirms that it contains results, not any individual level data
+1. A user wishes to take out some files from the SRCP
+2. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__ with the information required (see above)
+3. The Data Manager inspects the file(s) and confirms that it meets the requirements
 4. The Data Manager copies the file from the user’s project folder to their “download” triage folder and notifies the user
 5. The user connects to their “download” triage folder using SFTP and downloads the file
 
-Summary of process for uploading files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Summary of process for uploading (bringing in) files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. A user wishes to upload some supplementary data or code to the SRCP
+1. A user wishes to bring some files into the SRCP
 2. The user connects to their “upload” triage folder using SFTP and uploads the file
-3. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__  of the file name, location (their “upload” triage folder) and a statement that permission has been granted for the data to be used in this research (data) or that the code is from a reputable source (code). Describe why the items are needed for the research.
-4. The Data Manager inspects the file and confirms that it contains appropriate data/code
+3. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__  with the information required (see above)
+4. The Data Manager inspects the file and confirms that it meets the requirements
 5. The Data Manager copies the file from the user’s “upload” triage folder to the user’s project folder and notifies the user
 6. The user uses the file that is now available in their project folder
 
@@ -195,13 +206,13 @@ Example of uploading files using WinSCP
   :scale: 50 %
   :alt: WinSCP file upload
 
-7. `Notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__  and let them know that you need files copies from your “upload” folder to your project folder. They will check the files, copy them to your project folder if all is OK and notify you that the files are available or advise what changes are needed.
+7. `Notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__  with the information required (see above)
 
 .. _SFTP-download:
 Example of downloading files using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. `Notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__  and let them know that you need files copied from your project folder to your “download” folder. Provide a statement of how the files meet the Disclosure Control Rules (see above). They will check the files, copy them to your download folder if all is OK and notify you that they are available for download or advise what changes are needed.
+1. `Notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__  with the information required (see above)
 
 2. When you have received notification from the Data Manager that the files are ready for you to download, connect to the Cambridge VPN.
 
