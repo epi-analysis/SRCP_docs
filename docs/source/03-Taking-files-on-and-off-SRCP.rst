@@ -31,6 +31,7 @@ Files to be taken out must:
 - Mask small counts (any count < 10 must be suppressed or masked) and prevent small counts from being derived 
 - Be limited to final results wherever possible (avoid exporting large numbers of intermediate files) 
 
+.. _info-out:
 Information required for files to be taken out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When requesting files to be taken out, you must provide: 
@@ -58,6 +59,7 @@ All files taken into the SRCP are reviewed before being moved into your project 
 - Research policy compliance 
 - No malicious software is introduced 
 
+.. _info-in:
 Information required for files to be taken in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For data files to be approved: 
@@ -101,7 +103,7 @@ Summary of process for downloading (taking out) files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. A user wishes to take out some files from the SRCP
-2. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__ with the information required (see above)
+2. They notify a Data Manager with :ref:`info-out`
 3. The Data Manager inspects the file(s) and confirms that it meets the requirements
 4. The Data Manager copies the file from the user’s project folder to their “download” triage folder and notifies the user
 5. The user connects to their “download” triage folder using SFTP and downloads the file
@@ -111,7 +113,7 @@ Summary of process for uploading (bringing in) files
 
 1. A user wishes to bring some files into the SRCP
 2. The user connects to their “upload” triage folder using SFTP and uploads the file
-3. They `notify a Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__  with the information required (see above)
+3. They notify a Data Manager with :ref:`info-in`
 4. The Data Manager inspects the file and confirms that it meets the requirements
 5. The Data Manager copies the file from the user’s “upload” triage folder to the user’s project folder and notifies the user
 6. The user uses the file that is now available in their project folder
