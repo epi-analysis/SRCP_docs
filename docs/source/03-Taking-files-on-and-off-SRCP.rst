@@ -16,7 +16,7 @@ Users **cannot access their project folders directly from outside the SRCP**. Al
 
 Files are moved in and out of the SRCP **using SFTP** (SSH File Transfer Protocol) and requires an SFTP client to be set up on your local computer - see below.
 
-Taking files off the SRCP
+Taking Files Off the SRCP
 -------------------------
 Requirements for files to be taken out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,7 +37,7 @@ Information required for files to be taken out
 When requesting files to be taken out, you must provide: 
 
 - The file name and location (note files in your home folder are not accessible by Data Managers) 
-- A description of what the file contains 
+- A description of what the file(s) contain(s) and how the disclosure rules are met 
 - How it was generated and if appropriate the code/environment required to load the file 
 - Why it is relevant to your research question 
 
@@ -62,13 +62,13 @@ All files taken into the SRCP are reviewed before being moved into your project 
 .. _info-in:
 Information required for files to be taken in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For data files to be approved: 
+For data files to be approved, explain how the following requirements are met: 
 
 - The data must be relevant to your research 
 - The data must be approved for use in your research question (if not publicly available)
 - If a particular software environment is needed to open the file, this must be provided
 
-For code to be approved: 
+For code to be approved, explain how the following requirements are met: 
 
 - The code must be relevant to your research 
 - The source must be reputable 
