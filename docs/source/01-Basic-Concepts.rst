@@ -1,4 +1,4 @@
-Basic Concepts
+Getting Started
 ===============
 .. _login-later:
 Logging in to SRCP
