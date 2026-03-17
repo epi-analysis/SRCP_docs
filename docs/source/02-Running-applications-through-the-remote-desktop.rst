@@ -105,6 +105,9 @@ To do
 
 Stata
 -----
+Stata is not available by default as a paid license is required. `Open a support ticket <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6>`__ if you would like to pay for Stata access.
+
+Once approved:
 
 1. Find the full Stata module name: ``$ module keyword stata`` and load it with ``$ module load xxxxxx``  where ``xxxxxx`` is the full module name
 2. Start Stata: ``$ xstata`` for the basic edition or ``$ xstata-mp`` for Stata/MP
