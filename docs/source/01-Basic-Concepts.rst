@@ -79,24 +79,12 @@ The remote desktop gives you the option of working with files and folders via a 
   :scale: 70 %
   :alt: SRCP remote desktop session example
 
-Disabling the lock screen
-~~~~~~~~~~~~~~~~~~~~~~~~~
-If a session is left idle, the lock screen will activate. You will be prompted for your password to unlock your session (the same as the log in password):
+Where is data found on the SRCP?
+--------------------------------
 
-.. figure:: ../../images/lock-screen.png
-  :scale: 70 %
-  :alt: Lock screen
+Data is held in your project folder ``/srv/project/<your_project_name>``
 
-The lock screen can be disabled through the Applications menu:
-
-.. figure:: ../../images/lock-screen-settings.png
-  :scale: 70 %
-  :alt: Lock screen settings
-
-Folder structure on SRCP
-------------------------
-
-There are 4 main folders in the main ``/srv/`` folder:
+In general there are 4 main folders in the main ``/srv/`` folder:
 
 ::
 
@@ -104,7 +92,7 @@ There are 4 main folders in the main ``/srv/`` folder:
    │   ├── home
    │   │   ├── each user has a folder corresponding to their username e.g. bb123
    │   ├── projects
-   │   │   ├── users will only be able to see project folders that they have access to
+   │   │   ├── the data for your project(s) is found here
    │   ├── data-manager
    │   │   ├── not accessible to non-data manager users
    │   └── shared
@@ -113,7 +101,7 @@ There are 4 main folders in the main ``/srv/`` folder:
 
 
 -  ``home`` - each user has a folder with 50GB of space for personal files, the name of the folder corresponds to their username e.g. bb123
--  ``projects`` - you will only have access to your project, and the Data Management Team will confirm the name of your folder. The data you requested should be found in the read-only **data** folder. You can keep code and copies of the data in the **analysis** subfolder. There is 1TB of space available.
+-  ``projects`` - you will only have access to your project, and the Data Management Team will confirm the name of your folder. The data you requested should be found in the read-only **data** folder. You can keep code and copies of the data in the **analysis** subfolder.
 -  ``data-manager`` - used by Data Managers to transfer data in and out of SRCP - not accessible to users
 -  ``shared`` - contains license files (and in the future helpful code snippets)
 
@@ -155,3 +143,17 @@ To find the data for your project:
 .. figure:: ../../images/analysis-data.png
   :scale: 80 %
   :alt: Analysis and data folders
+
+Disabling the lock screen
+-------------------------
+If a session is left idle, the lock screen will activate. You will be prompted for your password to unlock your session (the same as the log in password):
+
+.. figure:: ../../images/lock-screen.png
+  :scale: 70 %
+  :alt: Lock screen
+
+The lock screen can be disabled through the Applications menu:
+
+.. figure:: ../../images/lock-screen-settings.png
+  :scale: 70 %
+  :alt: Lock screen settings
