@@ -85,8 +85,8 @@ Each user is assigned a personal **triage area**, accessible externally via SFTP
 
 There are two folders: 
 
-Upload folder – for approved files entering the SRCP 
-Download folder – for approved files leaving the SRCP 
+1. Upload folder – for approved files entering the SRCP
+2. Download folder – for approved files leaving the SRCP 
 
 Important: 
 
