@@ -1,7 +1,7 @@
-Data management (internal Epidemiology Unit only)
+Data management (internal IMS only)
 =====================================================
 
-This section is for **Epidemiology Data Managers**, not for collaborators using the SRCP for their analyses.
+This section is for **IMS Data Managers**, not for collaborators using the SRCP for their analyses.
 
 Overview
 --------
