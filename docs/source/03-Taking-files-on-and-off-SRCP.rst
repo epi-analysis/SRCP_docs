@@ -43,7 +43,7 @@ When requesting files to be taken out, you must provide:
 
 How to request files to be taken out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This information can be provided when opening a new request `here <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/59>`__
+This information can be provided when opening a new request `here <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30>`__
 
 A note on machine learning models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,7 +76,7 @@ For code to be approved, explain how the following requirements are met:
 
 How to request files to be taken in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This information can be provided when opening a new request `here <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30/create/82>`__ 
+This information can be provided when opening a new request `here <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30>`__
 
 The SRCP Triage System
 ----------------------
@@ -103,7 +103,7 @@ Summary of process for downloading (taking out) files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. A user wishes to take out some files from the SRCP
-2. They notify a Data Manager with the :ref:`info-out`
+2. They notify a `Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30>`__ with the :ref:`info-out`
 3. The Data Manager inspects the file(s) and confirms that it meets the requirements
 4. The Data Manager copies the file from the user’s project folder to their “download” triage folder and notifies the user
 5. The user connects to their “download” triage folder using SFTP and downloads the file
@@ -113,7 +113,7 @@ Summary of process for uploading (bringing in) files
 
 1. A user wishes to bring some files into the SRCP
 2. The user connects to their “upload” triage folder using SFTP and uploads the file
-3. They notify a Data Manager with the :ref:`info-in`
+3. They notify a `Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30>`__ with the :ref:`info-in`
 4. The Data Manager inspects the file and confirms that it meets the requirements
 5. The Data Manager copies the file from the user’s “upload” triage folder to the user’s project folder and notifies the user
 6. The user uses the file that is now available in their project folder
@@ -208,13 +208,13 @@ Example of uploading (bringing in) files using WinSCP
   :scale: 50 %
   :alt: WinSCP file upload
 
-7. They notify a Data Manager with the :ref:`info-in`
+7. They notify a `Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30>`__ with the :ref:`info-in`
 
 .. _SFTP-download:
 Example of downloading (taking out) files using WinSCP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. They notify a Data Manager with the :ref:`info-out`
+1. They notify a `Data Manager <https://mrc-epid-dmt.atlassian.net/servicedesk/customer/portal/6/group/30>`__ ` with the :ref:`info-out`
 
 2. When you have received notification from the Data Manager that the files are ready for you to download, connect to the Cambridge VPN.
 
