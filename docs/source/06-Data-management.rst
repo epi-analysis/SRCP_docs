@@ -328,6 +328,7 @@ This guidance for Data Managers describes the process for reviewing files enteri
 
 High level steps
 ~~~~~~~~~~~~~~~~
+See also section 9 of the `SACRO guide to output checking <https://zenodo.org/records/10282526>`__ for THE DECISION TREE OF **DOOM**
 Outputs:
 ^^^^^^^^
 1. **Do you understand what you are being asked to check?**  
