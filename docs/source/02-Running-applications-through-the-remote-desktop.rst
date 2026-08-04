@@ -30,7 +30,7 @@ RStudio
 -------
 
 1. Find the RStudio module: ``$ module avail`` or ``$ module keyword studio`` and load it with ``$ module load xxxxxx`` where ``xxxxxx`` is the full module name
-2. Start RStudio ``$ rstudio``
+2. Start RStudio ``$ rstudio --no-sandbox``
 3. The RStudio window should open
 
 Set default CRAN
