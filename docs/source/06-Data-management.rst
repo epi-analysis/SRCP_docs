@@ -65,6 +65,7 @@ You should then receive a confirmation email titled **SRCP Resource Request**. W
 Billing
 ~~~~~~~~~~
 We are charged for using the SRCP by RCS:
+
 1. vHPC (Linux) - we are billed for the whole platform on March 16th each year. Projects can start at any time and are pro-rated in that first billing period. Once a project is >1 year in duration, we can then cancel it at any time and again pro rate it at the next billing date.
 2. Windows - as we are not platform managers, each project is billed separately. They must still be >1 year duration.
 
