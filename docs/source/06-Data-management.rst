@@ -194,7 +194,7 @@ Example of uploading a data release using WinSCP
   :scale: 50 %
   :alt: WinSCP file upload
 
-7.  Switch to a browser, log into the SRCP and :ref:`start a remote desktop session<remote-desktop>`, use the project ID that corresponds to the user whose data is being worked on
+7.  Switch to a browser, log into the SRCP and :ref:`start a remote desktop session<remote-desktop>`
 
 8.  Copy (not move) the data from your ``triage/<yourusername>/upload`` folder to the user’s project ``data`` subfolder:
 
