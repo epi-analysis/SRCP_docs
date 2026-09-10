@@ -62,13 +62,6 @@ To request a new project, `this form <https://www.hpc.cam.ac.uk/form/srcp-resour
 
 You should then receive a confirmation email titled **SRCP Resource Request**. Wait a few more minutes, and then you should get a **new ticket** from RCS support with a title like **HPCSSUP-123456 SRCP Resource Request**. Reply to this email with a copy of the data request form (required by Victoria Hollamby who is the Clinical School Research Governance Advisor).
 
-Billing
-~~~~~~~~~~
-We are charged for using the SRCP by RCS:
-
-1. vHPC (Linux) - we are billed for the whole platform on March 16th each year. Projects can start at any time and are pro-rated in that first billing period. Once a project is >1 year in duration, we can then cancel it at any time and again pro rate it at the next billing date.
-2. Windows - as we are not platform managers, each project is billed separately. They must still be >1 year duration.
-
 Setting up the project folder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -110,47 +103,8 @@ and the top (most recent) line should look like this:
 
    A:fdg:project-<project-id>-users@hpc.cam.ac.uk:rwaDdxtTnNcCoy
 
-Setting up users
-----------------
-Before a user can be set up, their project has to be set up first as the project details are needed for the application form. To set up a user on the SRCP:
-
-1. The user completes a request form which gets sent to the RCS support team
-2. The RCS support team send an email to the Epidemiology Platform Managers asking for the account to be approved
-3. The Epidemiology Platform Managers check the request and approve or deny as appropriate
-4. The RCS team create the account and send the details to the account owner and Epidemiology Platform Managers
-5. Since most users do not check their @cam.ac.uk email account, a follow up email with an offer of extra support is needed
-
-The first email that needs to be sent directs the user to fill in the request form, and can be found in the Email Templates section below. When the user has completed this, the Epidemiology Platform Managers receive an email describing the request. The following things need to be checked before approving:
-
-1. The name and CRSid should match the project id and data request number to make sure the user is being given access to the correct project and data. This can be checked in the `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ in the Users tab.
-2. The requested role should be Project User, so that the correct permissions are given. For example, the user cannot move files out of the triage area.
-
-If these items match up, then the request can be approved. The RCS team will then set up the account and notification will be given that it has been set up. When this has been received, the second email in the Email Templates section below can be sent.
-
-Resource utilisation
----------------------
-The SRCP is made up of nodes. The CPU nodes we use have 26 cores available, and we currently have 2 nodes (compute-0 and compute-1). GPU nodes have 24 CPU cores and 1 A100 GPU, and are more expensive. Nodes are paid for on a pro-rated annual basis, and we are not operating a hourly charge model like CSD3. When a project is set up we set a limit on the maximum number of cores that can be requested by each user in that project (note that this is also per node, so if there are 2 nodes, the user has that limit per project per node). For a single user it might be appropriate to set a limit of 3 cores, for example. The limit depends on the project requirements and additional costs can be passed on to the user. RCS support can change the core limits on a queue. The nodes are over allocated in that the sum of the core limits of projects assigned to a node are greater than 26. This is because current experience suggests that it is unlikely that all users will be requesting their maximum at once. Finding the appropriate level of over allocation is more of an art than science, and is work in progress! If the full allocation of cores for a project is already in use (for example if there are 2 users using a queue with a 3 core limit and one user is using both cores) then a request to start a remote desktop session will be queued until a core becomes available. Alternatively, the project core limit may not be reached but all the cores on a nodes might be in uses. Again, the request will be queued until a core is available.
-
-Account and partition for Data Managers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Data Managers can use a specific queue to avoid blocking users by specifying the **root** account and **managers** partition. For simple tasks like bringing data in or out you will only need 1 core. Some data checking could be more resource intensive and require more cores. If the session does not start immediately then we can request to increase the core limit.
-
-The queueing system is provided by SLURM, and the following commands may be useful. They can be found in `/srv/shared/scripts/slurm.txt`
-
-::
-
-   #Command to show jobs by user, showing which queue, node and how manys cpus they are using
-   $ squeue -o "%.7i %.9P %.8j %.8u %.2t %.10M %N %C"
-   
-   #Information about the nodes - how many CPUs are available and how many are being used
-   $ sinfo -o "%n %e %m %a %c %C"
-   
-   #Show total usage by user
-   $ sreport user top start=2023-01-01
-
 Bringing study data into the SRCP
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As summary of the process for bringing study data into the SRCP is:
 
@@ -246,6 +200,52 @@ To remove the permissions for the group when the project is finished (the -x fla
 1. Remove directory permissions for file inheritence **note the '-type d'**: ``$ find /srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:fg:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
 2. Remove directory permissions for directory inheritence **note the '-type d'**: ``$ find /srv/shared/data-management/<sharedproject> -type d -exec nfs4_setfacl -x "A:dg:project-<project-id>-users@hpc.cam.ac.uk:rxtncy" {} \;``
 3. Remove file permissions for file inheritence **note the '-type f'**: ``$ find /srv/shared/data-management/<sharedproject> -type f -exec nfs4_setfacl -x "A:g:project-<project-id>-users@hpc.cam.ac.uk:rtncy" {} \;``
+
+Billing
+~~~~~~~~~~
+We are charged for using the SRCP by RCS:
+
+1. vHPC (Linux) - we are billed for the whole platform on March 16th each year. Projects can start at any time and are pro-rated in that first billing period. Once a project is >1 year in duration, we can then cancel it at any time and again pro rate it at the next billing date.
+2. Windows - as we are not platform managers, each project is billed separately. They must still be >1 year duration.
+
+Setting up users
+----------------
+Before a user can be set up, their project has to be set up first as the project details are needed for the application form. To set up a user on the SRCP:
+
+1. The user completes a request form which gets sent to the RCS support team
+2. The RCS support team send an email to the Epidemiology Platform Managers asking for the account to be approved
+3. The Epidemiology Platform Managers check the request and approve or deny as appropriate
+4. The RCS team create the account and send the details to the account owner and Epidemiology Platform Managers
+5. Since most users do not check their @cam.ac.uk email account, a follow up email with an offer of extra support is needed
+
+The first email that needs to be sent directs the user to fill in the request form, and can be found in the Email Templates section below. When the user has completed this, the Epidemiology Platform Managers receive an email describing the request. The following things need to be checked before approving:
+
+1. The name and CRSid should match the project id and data request number to make sure the user is being given access to the correct project and data. This can be checked in the `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ in the Users tab.
+2. The requested role should be Project User, so that the correct permissions are given. For example, the user cannot move files out of the triage area.
+
+If these items match up, then the request can be approved. The RCS team will then set up the account and notification will be given that it has been set up. When this has been received, the second email in the Email Templates section below can be sent.
+
+Resource utilisation
+---------------------
+The SRCP is made up of nodes. The CPU nodes we use have 26 cores available, and we currently have 2 nodes (compute-0 and compute-1). GPU nodes have 24 CPU cores and 1 A100 GPU, and are more expensive. Nodes are paid for on a pro-rated annual basis, and we are not operating a hourly charge model like CSD3. When a project is set up we set a limit on the maximum number of cores that can be requested by each user in that project (note that this is also per node, so if there are 2 nodes, the user has that limit per project per node). For a single user it might be appropriate to set a limit of 3 cores, for example. The limit depends on the project requirements and additional costs can be passed on to the user. RCS support can change the core limits on a queue. The nodes are over allocated in that the sum of the core limits of projects assigned to a node are greater than 26. This is because current experience suggests that it is unlikely that all users will be requesting their maximum at once. Finding the appropriate level of over allocation is more of an art than science, and is work in progress! If the full allocation of cores for a project is already in use (for example if there are 2 users using a queue with a 3 core limit and one user is using both cores) then a request to start a remote desktop session will be queued until a core becomes available. Alternatively, the project core limit may not be reached but all the cores on a nodes might be in uses. Again, the request will be queued until a core is available.
+
+Account and partition for Data Managers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Data Managers can use a specific queue to avoid blocking users by specifying the **root** account and **managers** partition. For simple tasks like bringing data in or out you will only need 1 core. Some data checking could be more resource intensive and require more cores. If the session does not start immediately then we can request to increase the core limit.
+
+The queueing system is provided by SLURM, and the following commands may be useful. They can be found in `/srv/shared/scripts/slurm.txt`
+
+::
+
+   #Command to show jobs by user, showing which queue, node and how manys cpus they are using
+   $ squeue -o "%.7i %.9P %.8j %.8u %.2t %.10M %N %C"
+   
+   #Information about the nodes - how many CPUs are available and how many are being used
+   $ sinfo -o "%n %e %m %a %c %C"
+   
+   #Show total usage by user
+   $ sreport user top start=2023-01-01
 
 Process for users wishing to bring files into the SRCP
 ------------------------------------------------------
