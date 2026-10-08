@@ -354,7 +354,8 @@ Outputs:
    - Containers  
    - Binary files (e.g. `.pkl`, `.joblib`)  
    - Machine learning results  
-   - Machine learning models  
+   - Machine learning models
+   - Excel spreadsheets - not ideal since they can have many sheets and it is easy to hide data
 
    The file type determines the detailed checks required.
 
@@ -379,6 +380,7 @@ Inputs:
    - Code  
    - Containers  
    - Binary files (e.g. `.pkl`, `.joblib`)
+   - Excel spreadsheets - not ideal since they can have many sheets and it is easy to hide data
 
    The file type determines the detailed checks required.
 
