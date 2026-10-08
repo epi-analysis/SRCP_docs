@@ -29,7 +29,8 @@ Files to be taken out must:
 - Contain **no participant or sample IDs** 
 - Have clear labels/descriptions for all results 
 - Mask small counts (any count < 10 must be suppressed or masked) and prevent small counts from being derived 
-- Be limited to final results wherever possible (avoid exporting large numbers of intermediate files) 
+- Be limited to final results wherever possible (avoid exporting large numbers of intermediate files)
+- Excel spreadsheets - CSV format preferred
 
 .. _info-out:
 Information required for files to be taken out
@@ -72,7 +73,8 @@ For code to be approved, explain how the following requirements are met:
 
 - The code must be relevant to your research 
 - The source must be reputable 
-- It must not contain malware 
+- It must not contain malware
+- Excel spreadsheets - CSV format preferred
 
 How to request files to be taken in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
