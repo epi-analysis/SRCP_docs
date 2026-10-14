@@ -39,28 +39,30 @@ To set up a project on the SRCP, the following information is needed:
 1. The approved data request (e.g. for EPIC Norfolk this is the EPIC Norfolk Data Request Form) and associated reference number
 2. Folder name in the format ``year_month_initials_ENDRnumber`` e.g. 2024_10_TB_ENDR123_2024
 3. Hardware requirements for the core limit and storage for the project
-4. Which node should the project be assigned to
-
-Specifying the hardware needs some judgement. During the Visiting Worker process the user can specify any requirements for more resources such as additional cores for work with large genetic data sets. As standard we offer 3 cores per user and a total of 200GB of storage, and this can be changed later if required. Extra hardware has additional charges to cover our costs. The project is assigned to a particular node, which is a piece of hardware, with the objective of trying to keep a balanced allocation of projects across nodes. Current assignments can be seen with the following command:
-
-.. code-block:: console
-
-   $ sinfo -O Partition,MaxCPUsperNode,Nodelist --sort Nodelist
-
-This code snippet is available in ``/srv/shared/scripts/slurm.txt`` (to save having to retype it - copy and paste is disabled). Alternatively these allocations are captured on the Hardware tab in the coreLimitProject column of this `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ . Note that a core limit is the maxmimum that can be used by a project rather than per user. GPU nodes have to be set up on a case by case basis and are very expensive - the RCS team can supply more information. Storage is relatively cheap, around £115 per TB per year, so it is probably not necessary to charge extra unless whole Terrabytes are requested. The overall allocation is tracked on the same spreadsheet as above, under the Theoretical Max column. Again, most projects use well under their allocation so we don't actually have enough storage to accommodate the theoretical maximum.
 
 To request a new project, `this form <https://www.hpc.cam.ac.uk/form/srcp-resource-request>`__ needs to be completed. The following responses are suggested for standard EPIC Norfolk projects but could be changed if needed:
 
 1. Section 1 – SRCP Platform. Select "New project" and "vHPC". For vHPC the platform id is b864dfnfpqj
 2. Section 5 – Create a Project. The project name is will be the folder name, the suggested format is ``year_month_initials_ENDRnumber`` where initials are for the person doing the research. The description can be taken from the ENDR form.
 3. Section 6 – Project Managers. Select "Yes".
-4. Section 7 – Software Requirements. Enter "N/A".
-5. Section 8 – vHPC Infrastructure Specification. Leave blank or enter "N/A".
+4. Section 7 – Software Requirements. Leave blank.
+5. Section 8 – vHPC Infrastructure Specification. Under Other Compute Flavour enter "3 cores" and under Storage Capacity enter "200GB" **unless** special hardware requirements have been specified (and paid for!).
 6. Section 10.  Select "Yes".
-7. Section 11 – Data Compliance. Enter "N/A - uses data from the existing EPIC Norfolk study.".
-8. Section 12 – Data Provider Details. Enter "N/A" for all sections.
+7. Section 11 – Data Compliance. Leave blank.
+8. Section 12 – Data Provider Details. Leave blank.
+9. You should then receive a confirmation email titled **SRCP Resource Request**. Ignore this and wait a few more minutes.
+10. Then you should get a **new ticket** from RCS support with a title like **HPCSSUP-123456 SRCP Resource Request**. Reply to this email **from your @cam.ac.uk account** with a copy of the data request form (required by Victoria Hollamby who is the Clinical School Research Governance Advisor).
 
-You should then receive a confirmation email titled **SRCP Resource Request**. Wait a few more minutes, and then you should get a **new ticket** from RCS support with a title like **HPCSSUP-123456 SRCP Resource Request**. Reply to this email with a copy of the data request form (required by Victoria Hollamby who is the Clinical School Research Governance Advisor).
+A note on the nodes
+^^^^^^^^^^^^^^^^^^^
+
+Currently we have 2 nodes of 26 cores shared across most users. One user has a dedicated node that they pay for. Specifying the hardware needs some judgement. During the Visiting Worker process the user can specify any requirements for more resources such as additional cores for work with large genetic data sets. As standard we offer 3 cores per user and a total of 200GB of storage, and this can be changed later if required. Extra hardware has additional charges to cover our costs. The project is assigned to a particular node, which is a piece of hardware, with the objective of trying to keep a balanced allocation of projects across nodes. Current assignments can be seen with the following command:
+
+.. code-block:: console
+
+   $ sinfo -O Partition,MaxCPUsperNode,Nodelist --sort Nodelist
+
+This code snippet is available in ``/srv/shared/scripts/slurm.txt`` (to save having to retype it - copy and paste is disabled). Alternatively these allocations are captured on the Hardware tab in the coreLimitProject column of this `spreadsheet <https://universityofcambridgecloud-my.sharepoint.com/:x:/r/personal/trpb2_cam_ac_uk/Documents/SRCP%20project%20and%20user%20information.xlsx?d=w1ecb80016e454672ad51ca7c566c6662&csf=1&web=1&e=mCANbP>`__ . Note that a core limit is the maxmimum that can be used by a project rather than per user. GPU nodes have to be set up on a case by case basis and are very expensive - the RCS team can supply more information. Storage is relatively cheap, around £115 per TB per year, so it is probably not necessary to charge extra unless whole Terrabytes are requested. The overall allocation is tracked on the same spreadsheet as above, under the Theoretical Max column. Again, most projects use well under their allocation so we don't actually have enough storage to accommodate the theoretical maximum.
 
 Setting up the project folder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -210,6 +212,14 @@ We are charged for using the SRCP by RCS:
 
 Setting up users
 ----------------
+Rapid method for setting up users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the automated button in the SRCP Jira board (TBC)
+
+
+Default (slow) method for setting up users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Before a user can be set up, their project has to be set up first as the project details are needed for the application form. To set up a user on the SRCP:
 
 1. The user completes a request form which gets sent to the RCS support team
