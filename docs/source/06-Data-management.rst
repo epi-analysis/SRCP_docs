@@ -56,7 +56,7 @@ To request a new project, `this form <https://www.hpc.cam.ac.uk/form/srcp-resour
 A note on the nodes
 ^^^^^^^^^^^^^^^^^^^
 
-Currently we have 2 nodes of 26 cores shared across most users. One user has a dedicated node that they pay for. Specifying the hardware needs some judgement. During the Visiting Worker process the user can specify any requirements for more resources such as additional cores for work with large genetic data sets. As standard we offer 3 cores per user and a total of 200GB of storage, and this can be changed later if required. Extra hardware has additional charges to cover our costs. The project is assigned to a particular node, which is a piece of hardware, with the objective of trying to keep a balanced allocation of projects across nodes. Current assignments can be seen with the following command:
+Currently we have 2 nodes of 26 cores shared across most users. One user has a dedicated node that they pay for. During the Visiting Worker process the user can specify any requirements for more resources such as additional cores for work with large genetic data sets. As standard we offer 3 cores per user and a total of 200GB of storage, and this can be changed later if required. Extra hardware has additional charges to cover our costs. The project is assigned to a particular node, which is a piece of hardware, with the objective of trying to keep a balanced allocation of projects across nodes. Current assignments can be seen with the following command:
 
 .. code-block:: console
 
@@ -215,7 +215,37 @@ Setting up users
 Rapid method for setting up users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the automated button in the SRCP Jira board (TBC)
+This method uses automated buttons in the SRCP Jira board. Before a user can be set up, they need:
+
+1. A project and its 11 character id e.g. kds6us78er
+2. CRSid
+3. Completed training
+
+These details need to be entered on the Jira board or the automation will not work properly.
+
+The first piece of automation sends an email to RCS asking them to set up the account when the prerequisites above are complete. This is done by:
+
+1. Marking the subtask "S6 - Request New Project on SRCP" as Done
+2. **GO INTO THE SUBTASK** "S6 - Request New Project on SRCP"
+3. Click the "lightning bolt" to reveal the automation drop down
+4. Click "1 shot Request account - Request New Project on SRCP"
+5. Enter your CRSid
+6. A few minutes later you will receive a copy of the email that has been sent to RCS in the pre-agreed format
+7. A few minutes after that, you will get acknowledgement that a ticket has been opened on the HPC ticketing system for them to do the work
+8. At some point(!) you will get a "Done" notification for your ticket when the user is set up, or you can chase up your ticket.
+
+Now that the user is set up, you need to let them know that their account is ready via another automated email. Follow these steps:
+
+1. Mark the subtask "S6 - SRCP account set up by RSC" as Done
+2. **GO INTO THE SUBTASK** "S6 - SRCP account set up by RSC"
+3. Click the "lightning bolt" to reveal the automation drop down
+4. Click "Confirm account email - SRCP account set up by RSC"
+5. A few minutes later a ticket will be opened on our SRCP ticketing system
+6. This ticket can be closed - the email was sent to the user (To be improved by just cc'ing you into the email instead)
+
+Note that this will broadly be reproduced on the new Jira board.
+
+Another note - when the user fills out the form (below) they accept the SRCP Ts and Cs. However, they strictly already do this as part of the Visiting Worker Agreement, hence no need to do it again.
 
 
 Default (slow) method for setting up users
@@ -237,7 +267,7 @@ If these items match up, then the request can be approved. The RCS team will the
 
 Resource utilisation
 ---------------------
-The SRCP is made up of nodes. The CPU nodes we use have 26 cores available, and we currently have 2 nodes (compute-0 and compute-1). GPU nodes have 24 CPU cores and 1 A100 GPU, and are more expensive. Nodes are paid for on a pro-rated annual basis, and we are not operating a hourly charge model like CSD3. When a project is set up we set a limit on the maximum number of cores that can be requested by each user in that project (note that this is also per node, so if there are 2 nodes, the user has that limit per project per node). For a single user it might be appropriate to set a limit of 3 cores, for example. The limit depends on the project requirements and additional costs can be passed on to the user. RCS support can change the core limits on a queue. The nodes are over allocated in that the sum of the core limits of projects assigned to a node are greater than 26. This is because current experience suggests that it is unlikely that all users will be requesting their maximum at once. Finding the appropriate level of over allocation is more of an art than science, and is work in progress! If the full allocation of cores for a project is already in use (for example if there are 2 users using a queue with a 3 core limit and one user is using both cores) then a request to start a remote desktop session will be queued until a core becomes available. Alternatively, the project core limit may not be reached but all the cores on a nodes might be in uses. Again, the request will be queued until a core is available.
+The SRCP is made up of nodes. The CPU nodes we use have 26 cores available, and we currently have 3 nodes (compute-0 and compute-1 are "public" and compute-2 is dedicated to one project). GPU nodes have 24 CPU cores and 1 A100 GPU, and are more expensive. Nodes are paid for on a pro-rated annual basis, and we are not operating a hourly charge model like CSD3. When a project is set up we set a limit on the maximum number of cores that can be requested by each user in that project (note that this is also per node, so if there are 2 nodes, the user has that limit per project per node). For a standard project the usual limit is 3 cores. The limit depends on the project requirements and additional costs can be passed on to the user. RCS support can change the core limits for a project. The nodes are over allocated in that the sum of the core limits of projects are much greater than 26. This is because current experience suggests that it is unlikely that all users will be requesting their maximum at once. Finding the appropriate level of over allocation is more of an art than science, and is work in progress! If the full allocation of cores for a project is already in use (for example if there are 2 users using a queue with a 3 core limit and one user is using both cores) then a request to start a remote desktop session will be queued until a core becomes available. Alternatively, the project core limit may not be reached but all the cores on a nodes might be in use. Again, the request will be queued until a core is available. See below for useful commands to examine node usage.
 
 Account and partition for Data Managers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
